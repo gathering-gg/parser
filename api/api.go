@@ -11,7 +11,7 @@ import (
 	"net/url"
 	"time"
 
-	"gitlab.com/gathering-gg/gathering/config"
+	"github.com/gathering-gg/parser/config"
 )
 
 // Token set by cli

@@ -13,9 +13,9 @@ import (
 	"time"
 
 	"github.com/davecgh/go-spew/spew"
-	"gitlab.com/gathering-gg/gathering"
-	"gitlab.com/gathering-gg/gathering/api"
-	"gitlab.com/gathering-gg/gathering/config"
+	"github.com/gathering-gg/parser"
+	"github.com/gathering-gg/parser/api"
+	"github.com/gathering-gg/parser/config"
 )
 
 const fileName = "output_log.txt"
