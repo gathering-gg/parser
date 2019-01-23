@@ -19,7 +19,8 @@ If you want to install the CLI and use that:
 ```
 $ go install github.com/gathering-gg/parser/cli
 ```
-You can then execute it by running:
+You can then execute it by running (You may need to add [Go's bin to your
+path](https://github.com/golang/go/wiki/GOPATH)):
 ```
 $ gathering -token=YOUR_GATHERING_GG_TOKEN
 ```
