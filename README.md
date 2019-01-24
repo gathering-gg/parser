@@ -1,4 +1,5 @@
 # Magic: The Gathering Arena Log Parser #
+[![Build Status](https://travis-ci.org/gathering-gg/parser.svg?branch=master)](https://travis-ci.org/gathering-gg/parser)
 [![GoDoc](https://godoc.org/gathering-gg/parser?status.svg)](https://godoc.org/gathering-gg/parser)
 
 _Parser_ is a Go library and command line interface to parse the
