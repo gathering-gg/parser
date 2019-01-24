@@ -13,9 +13,9 @@ addons:
     packages: make
 install: go get -t -v -u ./...
 before_script:
-- choco install make
-- if [[ ! -z "$TRAVIS_TAG" ]]; then export VERSION=${TRAVIS_TAG:1}; fi
-script: make test release
+  - if [ $TRAVIS_OS_NAME = windows ]; then choco install make; fi
+  - if [[ ! -z "$TRAVIS_TAG" ]]; then export VERSION=${TRAVIS_TAG:1}; fi
+script: make release
 deploy:
   provider: releases
   api_key:
