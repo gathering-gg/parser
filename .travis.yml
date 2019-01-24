@@ -19,5 +19,6 @@ deploy:
     secure: c69+VffwL3gaYcrKqma/Vtc3yDkoBWOiXhNf/L62GkPkVhQAyyLtWlNaYy/trrBBn84NZTN9LqPDTAFUKiUFoMzTKYY988GkxUJ8xZuyQJZ2/4ycbxia2sYJKVP5VkdGjngMNfqcv8a15JurrVKEjC78fBQeO//nu07+eRtGtMK2URbEH0t7IwTVWiz/+ui8K8zihjZp+wf01sotmbsTzrRCXLFNwQSjmkb0rOgOCDgweQaLuKLM6oGu2VHSrrgNK/NbTRztCE3DXyWE/jbMPZvLIJs0EgQd9Gh4E7jmqj+Rr0yJ26iNKXNbO+xKsOmxoXrHMstnAm3rn18kNgEVoKObhQlqUjbBC3a1apAiBcV3XP1IvZyVU/ltcV76T9StXmETooIkIMAuDcnDnAa4wukwShG3DCVE09mhuheKRshQ8mYePo6Fd2CAyahlo+rtzeofCU7qVzEwp9wrMhbucQD/p7e+wnFUI0bNqC8D79adILzKA3O0AqawGBkVM7Ns3lpK0lvDh7ffMBS6Bh7iBS+GiEjYFHx3E0h9IfZ3v+qfEzM7+tThqu2Exdei+Jn83sBZdEkcUuxEJ1DlJm6EUNLmJtC/kWN7Dzl57vzS+jWm2T8TiG5t1GM7hdvzQ6u3szyMl2uUCmmlVa0IZXR4KrJfnW57QC19P7QoPX9ykqM=
   file_glob: true
   file: out/*
+  skip_cleanup: true
   on:
-    repo: gathering-gg/parser
+    tags: true
