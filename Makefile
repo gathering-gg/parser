@@ -58,6 +58,8 @@ $(DIST_DIR):
 	mkdir -p $@
 
 release: $(DIST_DIR) $(DIST_DIR)/$(BINARY) 
+	cd "$(DIST_DIR)" && zip "$(BINARY).zip" "$(BINARY)"
+	rm "$(DIST_DIR)/$(BINARY)"
 
 $(DIST_DIR)/$(BINARY): 
 	GOOS=$(GOOS) GOARCH=amd64 $(BUILD_CMD)
