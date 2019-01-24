@@ -8,9 +8,6 @@ os:
 env:
   matrix:
   - ARCH=amd64
-addons:
-  choco:
-    packages: make
 install: go get -t -v -u ./...
 before_script:
   - if [ $TRAVIS_OS_NAME = windows ]; then choco install make; fi
