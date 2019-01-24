@@ -97,3 +97,4 @@ release: test cov build
 	  -o gathering \
 	  ./cli
 	
+.PHONY: test clean cov build release
