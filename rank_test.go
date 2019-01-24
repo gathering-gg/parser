@@ -3,6 +3,7 @@ package gathering
 import (
 	"testing"
 
+	"github.com/davecgh/go-spew/spew"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -69,6 +70,7 @@ func TestParseLogGetRank(t *testing.T) {
 		}
 	}
 	a.Nil(err)
+	spew.Dump(rank)
 	a.Equal("EZIDLEQCFFAMLE27DG4TFGLT5Q", *rank.PlayerID)
 	a.Equal("Gold", *rank.LimitedClass)
 	a.Equal(4, *rank.LimitedLevel)

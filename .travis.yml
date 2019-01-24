@@ -11,7 +11,7 @@ env:
 install: go get -t -v -u ./...
 before_script:
 - if [[ ! -z "$TRAVIS_TAG" ]]; then export VERSION=${TRAVIS_TAG:1}; fi
-script: make release
+script: make test release
 deploy:
   provider: releases
   api_key:

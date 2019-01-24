@@ -6,7 +6,6 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/davecgh/go-spew/spew"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -77,16 +76,16 @@ func TestLogFindInventory(t *testing.T) {
 	files := map[string]*ArenaPlayerInventory{
 		"test/output_log0.txt": &ArenaPlayerInventory{
 			PlayerID:        "EZIDLEQCFFAMLE27DG4TFGLT5Q",
-			WcCommon:        11,
-			WcUncommon:      12,
-			WcRare:          11,
-			WcMythic:        7,
-			Gold:            4650,
-			Gems:            9220,
+			WcCommon:        15,
+			WcUncommon:      22,
+			WcRare:          14,
+			WcMythic:        9,
+			Gold:            9975,
+			Gems:            6220,
 			DraftTokens:     0,
 			SealedTokens:    0,
-			WcTrackPosition: 1,
-			VaultProgress:   24.8,
+			WcTrackPosition: 6,
+			VaultProgress:   39.4,
 		},
 	}
 	for f, expected := range files {
@@ -95,7 +94,6 @@ func TestLogFindInventory(t *testing.T) {
 		a.Nil(err)
 		inv, err := alog.Inventory()
 		a.Nil(err)
-		spew.Dump(inv)
 		a.True(reflect.DeepEqual(inv, expected))
 	}
 }
