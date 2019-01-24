@@ -8,8 +8,12 @@ os:
 env:
   matrix:
   - ARCH=amd64
+addons:
+  choco:
+    packages: make
 install: go get -t -v -u ./...
 before_script:
+- choco install make
 - if [[ ! -z "$TRAVIS_TAG" ]]; then export VERSION=${TRAVIS_TAG:1}; fi
 script: make test release
 deploy:
