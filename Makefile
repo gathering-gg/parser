@@ -58,7 +58,11 @@ $(DIST_DIR):
 	mkdir -p $@
 
 release: $(DIST_DIR) $(DIST_DIR)/$(BINARY) 
+ifeq ($(OS),Windows_NT) 
+	cd "$(DIST_DIR)" && 7za a "$(BINARY).zip" "$(BINARY)"
+else
 	cd "$(DIST_DIR)" && zip "$(BINARY).zip" "$(BINARY)"
+endif
 	rm "$(DIST_DIR)/$(BINARY)"
 
 $(DIST_DIR)/$(BINARY): 
