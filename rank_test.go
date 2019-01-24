@@ -57,7 +57,7 @@ func TestParseRankInfo(t *testing.T) {
 
 func TestParseLogGetRank(t *testing.T) {
 	a := assert.New(t)
-	raw := fileAsString("test-logs/momir-madness.log", t)
+	raw := fileAsString("test/output_log0.txt", t)
 	alog, err := ParseLog(raw)
 	a.Nil(err)
 	var rank *ArenaRankInfo
@@ -72,6 +72,6 @@ func TestParseLogGetRank(t *testing.T) {
 	a.Equal("EZIDLEQCFFAMLE27DG4TFGLT5Q", *rank.PlayerID)
 	a.Equal("Gold", *rank.LimitedClass)
 	a.Equal(4, *rank.LimitedLevel)
-	a.Equal("Silver", *rank.ConstructedClass)
-	a.Equal(13, *rank.ConstructedMatchesLost)
+	a.Equal("Gold", *rank.ConstructedClass)
+	a.Equal(56, *rank.ConstructedMatchesLost)
 }

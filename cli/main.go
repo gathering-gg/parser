@@ -12,7 +12,6 @@ import (
 	"strings"
 	"time"
 
-	"github.com/davecgh/go-spew/spew"
 	"github.com/gathering-gg/parser"
 	"github.com/gathering-gg/parser/api"
 	"github.com/gathering-gg/parser/config"
@@ -141,7 +140,6 @@ func onChange(f string) {
 		return
 	}
 	log.Printf("upload success!")
-	spew.Dump(data)
 }
 
 // main

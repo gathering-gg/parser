@@ -3,7 +3,6 @@ package gathering
 import (
 	"encoding/json"
 	"fmt"
-	"log"
 	"time"
 )
 
@@ -40,7 +39,6 @@ type MatchLog struct {
 
 // LogMatchEvent adds an event to the log
 func (a *ArenaMatch) LogMatchEvent(event *ArenaMatchEvent) {
-	log.Println("log match event")
 	var turn int
 	var life int
 	var seat int
