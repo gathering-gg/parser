@@ -147,7 +147,7 @@ func onChange(f string) {
 func main() {
 	var fileFlag = flag.String("file", "", "The absolute or relative file path where the log file is located. This is useful when running on non-windows platforms where the log directory is not well known.")
 	var tokenFlag = flag.String("token", "", "Required: Your authentication token")
-	var uploadFlag = flag.Bool("upload", true, "Upload raw file to server on start")
+	var uploadFlag = flag.Bool("upload", true, "Upload the log file instead of parsing. If provided, the client will not continue running, but will parse once, upload, and exit.")
 	var versionFlag = flag.Bool("version", false, "Show the current running version")
 	var timerFlag = flag.Int("timer", 30, "How often do you want the log file to be read in seconds? Changing this to be higher will delay updates to gathering.gg, but will increase performance. Defaults to 30 seconds")
 	flag.Parse()
@@ -177,7 +177,9 @@ func main() {
 	// is and can parse the log file and begin the watch loop.
 	if *uploadFlag {
 		log.Println("Uploading raw log file (this may take a while)")
+		onChange(file)
 		upload(file)
+		return
 	}
 	log.Printf("watching file: '%v'\n", file)
 	// New Watcher

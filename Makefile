@@ -70,7 +70,7 @@ $(DIST_DIR)/$(BINARY):
 
 build:
 	go build -ldflags \
-	  "-X 'github.com/gathering-gg/parser/config.Root=http://localhost:8600' -X 'gitlab.com/gathering-gg/gathering.version=$(VERSION)'" \
+	  "-X 'github.com/gathering-gg/parser/config.Root=http://localhost:8600' -X 'github.com/gathering-gg/parser/config.Version=$(VERSION)'" \
 	  -o gathering \
 	  ./cli
 
