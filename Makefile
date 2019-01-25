@@ -59,7 +59,7 @@ $(DIST_DIR):
 
 release: $(DIST_DIR) $(DIST_DIR)/$(BINARY) 
 ifeq ($(OS),Windows_NT) 
-	cd "$(DIST_DIR)" && 7za.exe a "$(BINARY).zip" "$(BINARY)"
+	cd "$(DIST_DIR)" && 7z.exe a "$(BINARY).zip" "$(BINARY)"
 else
 	cd "$(DIST_DIR)" && zip "$(BINARY).zip" "$(BINARY)"
 endif
