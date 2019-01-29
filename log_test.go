@@ -6,7 +6,6 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/davecgh/go-spew/spew"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -150,9 +149,6 @@ func TestLogMatchRecap(t *testing.T) {
 	matches, err := alog.Matches()
 	a.Len(matches, 1)
 	match := matches[0]
-	// Check cards played on turn 1
-	spew.Dump(match.MatchLog)
-	myObjects := match.SeenObjects[1]
-	a.Len(myObjects, 7)
-
+	a.Len(match.SeenObjects[1], 11)
+	a.Len(match.SeenObjects[2], 10)
 }
