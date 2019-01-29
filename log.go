@@ -181,7 +181,6 @@ func (l *Log) Matches() ([]*ArenaMatch, error) {
 	}
 	var found []*ArenaMatch
 	for _, value := range matches {
-		value.CondenseLogMatch()
 		found = append(found, value)
 	}
 	return found, nil

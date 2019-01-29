@@ -8,78 +8,48 @@ import (
 
 // ArenaMatch is a match in Arena. May not be completed yet
 type ArenaMatch struct {
-	MatchID                        string                 `json:"matchId"`
-	GameStart                      time.Time              `json:"gameStart"`
-	OpponentScreenName             string                 `json:"opponentScreenName"`
-	OpponentIsWotc                 bool                   `json:"opponentIsWotc"`
-	OpponentRankingClass           string                 `json:"opponentRankingClass"`
-	OpponentRankingTier            int                    `json:"opponentRankingTier"`
-	OpponentMythicPercentile       float64                `json:"opponentMythicPercentile"`
-	OpponentMythicLeaderboardPlace int                    `json:"opponentMythicLeaderboardPlace"`
-	EventID                        string                 `json:"eventId"`
-	SeatID                         *int                   `json:"seatId"`
-	TeamID                         *int                   `json:"teamId"`
-	GameNumber                     *int                   `json:"gameNumber"`
-	WinningTeamID                  *int                   `json:"winningTeamId"`
-	WinningReason                  *string                `json:"winningReason"`
-	TurnCount                      *int                   `json:"turnCount"`
-	SecondsCount                   *int                   `json:"secondsCount"`
-	CourseDeck                     *ArenaDeck             `json:"CourseDeck"`
-	MatchLog                       []MatchLog             `json:"matchLog"`
-	SeenObjects                    []ArenaMatchGameObject `json:"seenObjects"`
-}
-
-// MatchLog records things that happened during a match
-type MatchLog struct {
-	Turn         int                    `json:"turn"`
-	LifeTotalEnd int                    `json:"lifeEnd"`
-	SeatID       int                    `json:"seatId"`
-	Objects      []ArenaMatchGameObject `json:"objects"`
+	MatchID                        string                         `json:"matchId"`
+	GameStart                      time.Time                      `json:"gameStart"`
+	OpponentScreenName             string                         `json:"opponentScreenName"`
+	OpponentIsWotc                 bool                           `json:"opponentIsWotc"`
+	OpponentRankingClass           string                         `json:"opponentRankingClass"`
+	OpponentRankingTier            int                            `json:"opponentRankingTier"`
+	OpponentMythicPercentile       float64                        `json:"opponentMythicPercentile"`
+	OpponentMythicLeaderboardPlace int                            `json:"opponentMythicLeaderboardPlace"`
+	EventID                        string                         `json:"eventId"`
+	SeatID                         *int                           `json:"seatId"`
+	TeamID                         *int                           `json:"teamId"`
+	GameNumber                     *int                           `json:"gameNumber"`
+	WinningTeamID                  *int                           `json:"winningTeamId"`
+	WinningReason                  *string                        `json:"winningReason"`
+	TurnCount                      *int                           `json:"turnCount"`
+	SecondsCount                   *int                           `json:"secondsCount"`
+	CourseDeck                     *ArenaDeck                     `json:"CourseDeck"`
+	SeenObjects                    map[int][]ArenaMatchGameObject `json:"seenObjects"`
 }
 
 // LogMatchEvent adds an event to the log
 func (a *ArenaMatch) LogMatchEvent(event *ArenaMatchEvent) {
-	var turn int
-	var life int
-	var seat int
-	var objects []ArenaMatchGameObject
+	if a.SeenObjects == nil {
+		a.SeenObjects = make(map[int][]ArenaMatchGameObject)
+	}
 	for _, m := range event.GreToClientEvent.GreToClientMessages {
 		gsm := m.GameStateMessage
-		objects = append(objects, gsm.GameObjects...)
-		if gsm.TurnInfo != nil {
-			turn = gsm.TurnInfo.TurnNumber
-			seat = gsm.TurnInfo.ActivePlayer
+		for _, o := range gsm.GameObjects {
+			a.SeenObjects[o.OwnerSeatID] = append(a.SeenObjects[o.OwnerSeatID], o)
 		}
 	}
-	matchLog := MatchLog{
-		Turn:         turn,
-		LifeTotalEnd: life,
-		SeatID:       seat,
-		Objects:      objects,
-	}
-	a.MatchLog = append(a.MatchLog, matchLog)
-}
-
-// CondenseLogMatch takes all the details and simplifies
-// it down so we don't send everything to the server
-func (a *ArenaMatch) CondenseLogMatch() {
-	if a.SeatID == nil {
-		return
-	}
-	var simple []ArenaMatchGameObject
-	dedup := make(map[string]bool)
-	for _, m := range a.MatchLog {
-		for _, o := range m.Objects {
-			// If this is not your card
-			key := fmt.Sprintf("%d%d", o.GrpID, o.InstanceID)
-			if o.OwnerSeatID != *a.SeatID && o.Type == "GameObjectType_Card" && !dedup[key] {
-				simple = append(simple, o)
-				dedup[key] = true
+	for k, v := range a.SeenObjects {
+		uniq := make(map[string]bool)
+		var objects []ArenaMatchGameObject
+		for _, o := range v {
+			if _, ok := uniq[o.Hash()]; !ok && o.Type == "GameObjectType_Card" {
+				uniq[o.Hash()] = true
+				objects = append(objects, o)
 			}
 		}
+		a.SeenObjects[k] = objects
 	}
-	a.MatchLog = nil
-	a.SeenObjects = simple
 }
 
 // ArenaMatchEvent is an event in the match
@@ -132,6 +102,11 @@ type ArenaMatchGameObject struct {
 	ZoneID      int    `json:"zoneId"`
 	Visibility  string `json:"visibility"`
 	OwnerSeatID int    `json:"ownerSeatId"`
+}
+
+// Hash returns a unique string for this object
+func (a ArenaMatchGameObject) Hash() string {
+	return fmt.Sprintf("%d", a.GrpID)
 }
 
 // ArenaMatchEndParams are the params which hold the results of the match

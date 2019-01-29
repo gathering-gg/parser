@@ -140,3 +140,15 @@ func TestLogFindMatches(t *testing.T) {
 		}
 	}
 }
+
+func TestLogMatchRecap(t *testing.T) {
+	a := assert.New(t)
+	file := "test/boros-casual-play.txt"
+	alog, err := ParseLog(fileAsString(file, t))
+	a.Nil(err)
+	matches, err := alog.Matches()
+	a.Len(matches, 1)
+	match := matches[0]
+	a.Len(match.SeenObjects[1], 11)
+	a.Len(match.SeenObjects[2], 10)
+}
