@@ -6,6 +6,7 @@ import (
 	"reflect"
 	"testing"
 
+	"github.com/davecgh/go-spew/spew"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -139,4 +140,19 @@ func TestLogFindMatches(t *testing.T) {
 			a.NotNil(m.CourseDeck)
 		}
 	}
+}
+
+func TestLogMatchRecap(t *testing.T) {
+	a := assert.New(t)
+	file := "test/boros-casual-play.txt"
+	alog, err := ParseLog(fileAsString(file, t))
+	a.Nil(err)
+	matches, err := alog.Matches()
+	a.Len(matches, 1)
+	match := matches[0]
+	// Check cards played on turn 1
+	spew.Dump(match.MatchLog)
+	myObjects := match.SeenObjects[1]
+	a.Len(myObjects, 7)
+
 }

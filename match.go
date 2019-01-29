@@ -2,84 +2,78 @@ package gathering
 
 import (
 	"encoding/json"
-	"fmt"
 	"time"
 )
 
 // ArenaMatch is a match in Arena. May not be completed yet
 type ArenaMatch struct {
-	MatchID                        string                 `json:"matchId"`
-	GameStart                      time.Time              `json:"gameStart"`
-	OpponentScreenName             string                 `json:"opponentScreenName"`
-	OpponentIsWotc                 bool                   `json:"opponentIsWotc"`
-	OpponentRankingClass           string                 `json:"opponentRankingClass"`
-	OpponentRankingTier            int                    `json:"opponentRankingTier"`
-	OpponentMythicPercentile       float64                `json:"opponentMythicPercentile"`
-	OpponentMythicLeaderboardPlace int                    `json:"opponentMythicLeaderboardPlace"`
-	EventID                        string                 `json:"eventId"`
-	SeatID                         *int                   `json:"seatId"`
-	TeamID                         *int                   `json:"teamId"`
-	GameNumber                     *int                   `json:"gameNumber"`
-	WinningTeamID                  *int                   `json:"winningTeamId"`
-	WinningReason                  *string                `json:"winningReason"`
-	TurnCount                      *int                   `json:"turnCount"`
-	SecondsCount                   *int                   `json:"secondsCount"`
-	CourseDeck                     *ArenaDeck             `json:"CourseDeck"`
-	MatchLog                       []MatchLog             `json:"matchLog"`
-	SeenObjects                    []ArenaMatchGameObject `json:"seenObjects"`
+	MatchID                        string                       `json:"matchId"`
+	GameStart                      time.Time                    `json:"gameStart"`
+	OpponentScreenName             string                       `json:"opponentScreenName"`
+	OpponentIsWotc                 bool                         `json:"opponentIsWotc"`
+	OpponentRankingClass           string                       `json:"opponentRankingClass"`
+	OpponentRankingTier            int                          `json:"opponentRankingTier"`
+	OpponentMythicPercentile       float64                      `json:"opponentMythicPercentile"`
+	OpponentMythicLeaderboardPlace int                          `json:"opponentMythicLeaderboardPlace"`
+	EventID                        string                       `json:"eventId"`
+	SeatID                         *int                         `json:"seatId"`
+	TeamID                         *int                         `json:"teamId"`
+	GameNumber                     *int                         `json:"gameNumber"`
+	WinningTeamID                  *int                         `json:"winningTeamId"`
+	WinningReason                  *string                      `json:"winningReason"`
+	TurnCount                      *int                         `json:"turnCount"`
+	SecondsCount                   *int                         `json:"secondsCount"`
+	CourseDeck                     *ArenaDeck                   `json:"CourseDeck"`
+	SeenObjects                    map[int]ArenaMatchGameObject `json:"seenObjects"`
+	MatchLog                       map[int]MatchLog             `json:"matchLog"`
 }
 
 // MatchLog records things that happened during a match
+// The Objects is a map of SeatID to played cards during that
+// particular turn. Note that cards played during opponents turns
+// still count for a particular "turn".
 type MatchLog struct {
-	Turn         int                    `json:"turn"`
-	LifeTotalEnd int                    `json:"lifeEnd"`
-	SeatID       int                    `json:"seatId"`
-	Objects      []ArenaMatchGameObject `json:"objects"`
+	Turn    int                            `json:"turn"`
+	Life    map[int]int                    `json:"life"`
+	Objects map[int][]ArenaMatchGameObject `json:"objects"`
 }
 
 // LogMatchEvent adds an event to the log
 func (a *ArenaMatch) LogMatchEvent(event *ArenaMatchEvent) {
 	var turn int
-	var life int
-	var seat int
-	var objects []ArenaMatchGameObject
+	life := make(map[int]int)
+	objects := make(map[int][]ArenaMatchGameObject)
 	for _, m := range event.GreToClientEvent.GreToClientMessages {
 		gsm := m.GameStateMessage
-		objects = append(objects, gsm.GameObjects...)
 		if gsm.TurnInfo != nil {
 			turn = gsm.TurnInfo.TurnNumber
-			seat = gsm.TurnInfo.ActivePlayer
 		}
-	}
-	matchLog := MatchLog{
-		Turn:         turn,
-		LifeTotalEnd: life,
-		SeatID:       seat,
-		Objects:      objects,
-	}
-	a.MatchLog = append(a.MatchLog, matchLog)
-}
-
-// CondenseLogMatch takes all the details and simplifies
-// it down so we don't send everything to the server
-func (a *ArenaMatch) CondenseLogMatch() {
-	if a.SeatID == nil {
-		return
-	}
-	var simple []ArenaMatchGameObject
-	dedup := make(map[string]bool)
-	for _, m := range a.MatchLog {
-		for _, o := range m.Objects {
-			// If this is not your card
-			key := fmt.Sprintf("%d%d", o.GrpID, o.InstanceID)
-			if o.OwnerSeatID != *a.SeatID && o.Type == "GameObjectType_Card" && !dedup[key] {
-				simple = append(simple, o)
-				dedup[key] = true
+		if gsm.Players != nil {
+			for _, p := range gsm.Players {
+				life[p.SystemSeatNumber] = p.LifeTotal
 			}
 		}
+		for _, o := range gsm.GameObjects {
+			objects[o.OwnerSeatID] = append(objects[o.OwnerSeatID], o)
+		}
 	}
-	a.MatchLog = nil
-	a.SeenObjects = simple
+	matchLog, ok := a.MatchLog[turn]
+	if !ok {
+		matchLog = MatchLog{
+			Turn:    turn,
+			Life:    life,
+			Objects: objects,
+		}
+	} else {
+		matchLog.Life = life
+		for k, v := range objects {
+			matchLog.Objects[k] = append(matchLog.Objects[k], v...)
+		}
+	}
+	if a.MatchLog == nil {
+		a.MatchLog = make(map[int]MatchLog)
+	}
+	a.MatchLog[turn] = matchLog
 }
 
 // ArenaMatchEvent is an event in the match
