@@ -152,3 +152,15 @@ func TestLogMatchRecap(t *testing.T) {
 	a.Len(match.SeenObjects[1], 11)
 	a.Len(match.SeenObjects[2], 10)
 }
+
+func TestLogCrackBooster(t *testing.T) {
+	a := assert.New(t)
+	file := "test/new-deck-constructed-7-1-daily-open-booster.txt"
+	alog, err := ParseLog(fileAsString(file, t))
+	a.Nil(err)
+	boosters, err := alog.Boosters()
+	a.Len(boosters, 1)
+	b := boosters[0]
+	a.Len(b.CardsOpened, 8)
+	a.Equal(69167, b.CardsOpened[0].GrpID)
+}

@@ -9,4 +9,5 @@ type UploadData struct {
 	Rank       *ArenaRankInfo        `json:"rank"`
 	Auth       *ArenaAuthRequest     `json:"auth"`
 	Matches    []*ArenaMatch         `json:"matches"`
+	Boosters   []*Booster            `json:"boosters"`
 }

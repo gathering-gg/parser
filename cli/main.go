@@ -105,6 +105,12 @@ func ParseAll(f string) (gathering.UploadData, error) {
 	} else {
 		data.Decks = decks
 	}
+	boosters, err := alog.Boosters()
+	if err != nil {
+		log.Printf("error getting boosters: %v\n", err.Error())
+	} else {
+		data.Boosters = boosters
+	}
 	matches, err := alog.Matches()
 	if err != nil {
 		log.Printf("error getting matches: %v\n", err.Error())

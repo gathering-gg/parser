@@ -112,6 +112,21 @@ func (l *Log) Decks() ([]ArenaDeck, error) {
 	return nil, ErrNotFound
 }
 
+// Boosters finds all the opened boosters
+func (l *Log) Boosters() ([]*Booster, error) {
+	// TODO: Put in same loop
+	boosters := make([]*Booster, 0)
+	for _, s := range l.Segments {
+		if s.IsCrackBooster() {
+			b, err := s.ParseCrackBooster()
+			if err == nil {
+				boosters = append(boosters, b)
+			}
+		}
+	}
+	return boosters, ErrNotFound
+}
+
 // Matches finds the player matches
 // This is a little more involved, since we really need 3 pieces of information
 // and they are not together.

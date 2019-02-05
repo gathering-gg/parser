@@ -34,6 +34,7 @@ const (
 	MatchStart
 	MatchEnd
 	MatchEvent
+	CrackBooster
 )
 
 var segmentTypeChecks = map[SegmentType]*regexp.Regexp{
@@ -47,6 +48,7 @@ var segmentTypeChecks = map[SegmentType]*regexp.Regexp{
 	MatchEnd:                          regexp.MustCompile(`DuelScene\.GameStop`),
 	MatchEvent:                        regexp.MustCompile(`GREMessageType_GameStateMessage|GameStateType_Diff`),
 	EventDeckSubmit:                   regexp.MustCompile(`<==\sEvent\.DeckSubmit\(\d+\)`),
+	CrackBooster:                      regexp.MustCompile(`<==\sPlayerInventory\.CrackBoostersV3\(\d+\)`),
 }
 
 // Segment is a piece of the log

@@ -77,7 +77,7 @@ type ArenaEventPayEntry struct {
 	ModuleInstanceData ArenaModuleInstanceData
 	CurrentEventState  ArenaEventState
 	CurrentModule      string
-	CardPool           interface{}
+	CardPool           []int
 	CourseDeck         *ArenaDeck
 }
 
@@ -89,7 +89,7 @@ type ArenaEventGetPlayerCourse struct {
 	ModuleInstanceData ArenaModuleInstanceData
 	CurrentEventState  ArenaEventState
 	CurrentModule      string
-	CardPool           interface{}
+	CardPool           []int
 	CourseDeck         *ArenaDeck
 }
 
