@@ -33,18 +33,23 @@ func NewWatcher(pathToFile string, tick time.Duration) *Watcher {
 // Start starts the watcher
 func (w *Watcher) Start() {
 	go func() {
+		w.tick()
 		for range w.ticker.C {
-			size, err := w.size()
-			if err != nil {
-				w.Errors <- err
-			} else if size != w.lastSize {
-				w.lastSize = size
-				w.Events <- Event{
-					Size: size,
-				}
-			}
+			w.tick()
 		}
 	}()
+}
+
+func (w *Watcher) tick() {
+	size, err := w.size()
+	if err != nil {
+		w.Errors <- err
+	} else if size != w.lastSize {
+		w.lastSize = size
+		w.Events <- Event{
+			Size: size,
+		}
+	}
 }
 
 // Stop stops the watcher
