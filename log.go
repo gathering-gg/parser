@@ -66,15 +66,26 @@ func (l *Log) Collection() (map[string]int, error) {
 }
 
 // Rank finds the rank information
-func (l *Log) Rank() (*ArenaRankInfo, error) {
-	// TODO: Put in same loop
-	for i := len(l.Segments) - 1; i >= 0; i-- {
-		s := l.Segments[i]
+// The game doesn't ask for the entire rank info often, so we
+// go through the log and update the parsed rank with changes
+// so we return the most up to date version
+func (l *Log) Rank() (rank *ArenaRankInfo, err error) {
+	for _, s := range l.Segments {
 		if s.IsRankInfo() {
-			return s.ParseRankInfo()
+			rank, err = s.ParseRankInfo()
+			if err != nil {
+				return
+			}
+		}
+		if s.IsRankUpdated() && rank != nil {
+			updated, err := s.ParseRankUpdated()
+			if err != nil {
+				continue
+			}
+			rank.Update(updated)
 		}
 	}
-	return nil, ErrNotFound
+	return
 }
 
 // Inventory finds the player inventory information

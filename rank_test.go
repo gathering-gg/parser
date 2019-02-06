@@ -75,3 +75,15 @@ func TestParseLogGetRank(t *testing.T) {
 	a.Equal("Gold", *rank.ConstructedClass)
 	a.Equal(56, *rank.ConstructedMatchesLost)
 }
+
+func TestRankUp(t *testing.T) {
+	a := assert.New(t)
+	raw := fileAsString("test/rank-up.txt", t)
+	alog, err := ParseLog(raw)
+	a.Nil(err)
+	rank, err := alog.Rank()
+	a.Nil(err)
+	a.Equal("Gold", *rank.ConstructedClass)
+	a.Equal(4, *rank.ConstructedLevel)
+	a.Equal(2, *rank.ConstructedStep)
+}
