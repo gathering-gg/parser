@@ -6,6 +6,7 @@ import (
 	"net/http/httptest"
 	"testing"
 
+	"github.com/gathering-gg/parser/config"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -27,7 +28,7 @@ func setup() {
 	// test server
 	mux = http.NewServeMux()
 	server = httptest.NewServer(mux)
-	baseURL = server.URL
+	config.Root = server.URL
 }
 
 // teardown closes the test HTTP server.
