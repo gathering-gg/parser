@@ -135,7 +135,7 @@ func (l *Log) Boosters() ([]*Booster, error) {
 			}
 		}
 	}
-	return boosters, ErrNotFound
+	return boosters, nil
 }
 
 // Matches finds the player matches

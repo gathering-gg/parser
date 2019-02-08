@@ -1,6 +1,9 @@
 package gathering
 
-import "encoding/json"
+import (
+	"encoding/json"
+	"time"
+)
 
 // ==> PlayerInventory.CrackBoostersV3(276):
 // <== PlayerInventory.CrackBoostersV3(276)
@@ -24,6 +27,7 @@ type Booster struct {
 	WildCardTrackUnCommons int           `json:"wildCardTrackUncommons"`
 	WildCardTrackRares     int           `json:"wildCardTrackRares"`
 	WildCardTrackMythics   int           `json:"wildCardTrackMythics"`
+	OpenedAt               time.Time     `json:"openedAt"`
 }
 
 // IsCrackBooster checks to see if the user opened a booster
@@ -35,5 +39,8 @@ func (s *Segment) IsCrackBooster() bool {
 func (s *Segment) ParseCrackBooster() (*Booster, error) {
 	var booster Booster
 	err := json.Unmarshal([]byte(stripNonJSON(s.Text)), &booster)
+	if s.Time != nil {
+		booster.OpenedAt = *s.Time
+	}
 	return &booster, err
 }
