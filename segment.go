@@ -27,7 +27,7 @@ const (
 	EventGetCombinedRankInfo
 	EventJoin
 	EventPayEntry
-	EventGetPlayerCourse // Momir: 18436
+	EventGetPlayerCourse
 	EventDeckSubmit
 	EventMatchCreated
 	PlayerAuth
@@ -36,6 +36,8 @@ const (
 	MatchEvent
 	CrackBooster
 	InventoryRankUpdated
+	EventClaimPrize
+	IncomingInventoryUpdate
 )
 
 var segmentTypeChecks = map[SegmentType]*regexp.Regexp{
@@ -51,6 +53,8 @@ var segmentTypeChecks = map[SegmentType]*regexp.Regexp{
 	EventDeckSubmit:                   regexp.MustCompile(`<==\sEvent\.DeckSubmit\(\d+\)`),
 	CrackBooster:                      regexp.MustCompile(`<==\sPlayerInventory\.CrackBoostersV3\(\d+\)`),
 	InventoryRankUpdated:              regexp.MustCompile(`Incoming\sRank\.Updated`),
+	EventClaimPrize:                   regexp.MustCompile(`<==\sEvent\.ClaimPrize\(\d+\)`),
+	IncomingInventoryUpdate:           regexp.MustCompile(`Incoming\sInventory\.Updated`),
 }
 
 // Segment is a piece of the log

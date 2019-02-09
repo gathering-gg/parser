@@ -159,8 +159,30 @@ func TestLogCrackBooster(t *testing.T) {
 	alog, err := ParseLog(fileAsString(file, t))
 	a.Nil(err)
 	boosters, err := alog.Boosters()
+	a.Nil(err)
 	a.Len(boosters, 1)
 	b := boosters[0]
 	a.Len(b.CardsOpened, 8)
 	a.Equal(69167, b.CardsOpened[0].GrpID)
+}
+
+func TestLogEvents(t *testing.T) {
+	a := assert.New(t)
+	file := "test/new-deck-constructed-7-1-daily-open-booster.txt"
+	alog, err := ParseLog(fileAsString(file, t))
+	a.Nil(err)
+	eventResults, err := alog.Events()
+	a.Nil(err)
+	a.Len(eventResults, 1)
+	e := eventResults[0]
+	a.NotNil(e.ClaimPrize)
+	a.NotNil(e.Prize)
+	a.Equal("c01bca9a-17de-47f2-97df-04dd6a90c0da", e.ClaimPrize.ID)
+	a.Equal("Constructed_Event", e.ClaimPrize.InternalEventName)
+	a.Equal(7, e.ClaimPrize.ModuleInstanceData.WinLossGate.MaxWins)
+	a.Equal(7, e.ClaimPrize.ModuleInstanceData.WinLossGate.CurrentWins)
+	a.Equal(1, e.ClaimPrize.ModuleInstanceData.WinLossGate.CurrentLosses)
+	a.Equal(67906, e.Prize.Delta.CardsAdded[0])
+	a.Equal(66127, e.Prize.Delta.CardsAdded[1])
+	a.Equal(1000, e.Prize.Delta.GoldDelta)
 }

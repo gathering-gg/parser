@@ -1,6 +1,8 @@
 package gathering
 
-import "encoding/json"
+import (
+	"encoding/json"
+)
 
 // ArenaPlayerInventory is your player profile details
 type ArenaPlayerInventory struct {
@@ -26,26 +28,26 @@ type ArenaPlayerInventoryBooster struct {
 
 // ArenaInventoryUpdateDelta holds the delta change in a players inventory
 type ArenaInventoryUpdateDelta struct {
-	GemsDelta          int
-	BoosterDelta       []ArenaPlayerInventoryBooster
-	CardsAdded         []int
-	DecksAdded         []interface{}
-	VanityItemsAdded   []interface{}
-	VanityItemsRemoved []interface{}
-	DraftTokensDelta   int
-	GoldDelta          int
-	SealedTokensDelta  int
-	VaultProgressDelta float64
-	WcCommonDelta      int
-	WcUncommonDelta    int
-	WcRareDelta        int
-	WcMythicDelta      int
+	GemsDelta          int                           `json:"gemsDelta"`
+	BoosterDelta       []ArenaPlayerInventoryBooster `json:"boosterDelta"`
+	CardsAdded         []int                         `json:"cardsAdded"`
+	DecksAdded         []interface{}                 `json:"decksAdded"`
+	VanityItemsAdded   []interface{}                 `json:"vanityItemsAdded"`
+	VanityItemsRemoved []interface{}                 `json:"vanityItemsRemoved"`
+	DraftTokensDelta   int                           `json:"draftTokensDelta"`
+	GoldDelta          int                           `json:"goldDelta"`
+	SealedTokensDelta  int                           `json:"sealedTokensDelta"`
+	VaultProgressDelta float64                       `json:"vaultProgressDelta"`
+	WcCommonDelta      int                           `json:"wcCommonDelta"`
+	WcUncommonDelta    int                           `json:"wcUncommonDelta"`
+	WcRareDelta        int                           `json:"wcRarreDelta"`
+	WcMythicDelta      int                           `json:"wcMythicDelta"`
 }
 
 // ArenaInventoryUpdate holds the incoming update for the player
 type ArenaInventoryUpdate struct {
-	Delta   *ArenaInventoryUpdateDelta
-	context *string
+	Delta   *ArenaInventoryUpdateDelta `json:"delta"`
+	Context string                     `json:"context"`
 }
 
 // IsPlayerInventory checks if a segment contains player inventory
@@ -53,9 +55,21 @@ func (s *Segment) IsPlayerInventory() bool {
 	return s.SegmentType == PlayerInventoryGetPlayerInventory
 }
 
+// IsInventoryUpdate checks if a segment is an inventory update
+func (s *Segment) IsInventoryUpdate() bool {
+	return s.SegmentType == IncomingInventoryUpdate
+}
+
 // ParsePlayerInventory parses the player inventory information from a segment
 func (s *Segment) ParsePlayerInventory() (*ArenaPlayerInventory, error) {
 	var inv ArenaPlayerInventory
 	err := json.Unmarshal([]byte(stripNonJSON(s.Text)), &inv)
 	return &inv, err
+}
+
+// ParseInventoryUpdate parses an incoming inventory update
+func (s *Segment) ParseInventoryUpdate() (*ArenaInventoryUpdate, error) {
+	var update ArenaInventoryUpdate
+	err := json.Unmarshal([]byte(stripNonJSON(s.Text)), &update)
+	return &update, err
 }

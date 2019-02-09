@@ -117,6 +117,12 @@ func ParseAll(f string) (gathering.UploadData, error) {
 	} else {
 		data.Matches = matches
 	}
+	events, err := alog.Events()
+	if err != nil {
+		log.Printf("error getting events: %v\n", err.Error())
+	} else {
+		data.Events = events
+	}
 	running, err := gathering.IsArenaRunning()
 	if err != nil {
 		log.Printf("error getting mtga.exe running status: %v\n", err.Error())

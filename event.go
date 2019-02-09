@@ -23,11 +23,8 @@ const (
 // of an event, or just signed on to finish an event.
 // The server will use the ID to track individual events.
 type ArenaEvent struct {
-	ID     string
-	Joined *ArenaEventJoin
-	Payed  *ArenaEventPayEntry
-	// TODO: Matches
-	Prize ArenaEventClaimPrizeRequest
+	ClaimPrize *ArenaEventClaimPrize `json:"claimPrize"`
+	Prize      *ArenaInventoryUpdate `json:"prize"`
 }
 
 // ArenaEventJoin is the payload when a user joins an event
@@ -60,6 +57,36 @@ type ArenaEventClaimPrizeRequestParams struct {
 // prizes are.
 type ArenaEventClaimPrizeRequest struct {
 	params *ArenaEventClaimPrizeRequestParams
+}
+
+// ArenaEventClaimPrizeModuleInstanceData has the data in claim prize
+// about the event
+type ArenaEventClaimPrizeModuleInstanceData struct {
+	HasPaidEntry string                           `json:"HasPaidEntry"`
+	DeckSelected bool                             `json:"DeckSelected"`
+	WinLossGate  *ArenaEventClaimPrizeWinLossGate `json:"WinLossGate"`
+}
+
+// ArenaEventClaimPrizeWinLossGate has the player record for an event as well
+// as max wins/losses and the matches played.
+type ArenaEventClaimPrizeWinLossGate struct {
+	MaxWins           int      `json:"MaxWins"`
+	MaxLosses         int      `json:"MaxLosses"`
+	CurrentWins       int      `json:"CurrentWins"`
+	CurrentLosses     int      `json:"CurrentLosses"`
+	ProcessedMatchIds []string `json:"ProcessedMatchIds"`
+}
+
+// ArenaEventClaimPrize is what is sent to the client when the user claims their
+// prize after finishing an event
+type ArenaEventClaimPrize struct {
+	ID                 string                                  `json:"Id"`
+	InternalEventName  string                                  `json:"InternalEventName"`
+	ModuleInstanceData *ArenaEventClaimPrizeModuleInstanceData `json:"ModuleinstanceData"`
+	CurrentEventState  int                                     `json:"CurrentEventState"`
+	CurrentModule      string                                  `json:"CurrentModule"`
+	CardPool           []int                                   `json:"Cardpool"`
+	CourseDeck         *ArenaDeck                              `json:"CourseDeck"`
 }
 
 // ArenaModuleInstanceData is instance data in a request.
@@ -114,6 +141,11 @@ func (s *Segment) JoinedEvent() bool {
 	return s.IsEventGetPlayerCourse() || s.IsEventDeckSubmit()
 }
 
+// IsClaimPrize checks if this segment claims a prize
+func (s *Segment) IsClaimPrize() bool {
+	return s.SegmentType == EventClaimPrize
+}
+
 // ParseEventJoin parses out an event from JSON
 func (s *Segment) ParseEventJoin() (*ArenaEventJoin, error) {
 	text := stripNonJSON(s.Text)
@@ -143,6 +175,13 @@ func (s *Segment) ParseJoinedEvent() (*ArenaEventGetPlayerCourse, error) {
 	var course ArenaEventGetPlayerCourse
 	err := json.Unmarshal([]byte(stripNonJSON(s.Text)), &course)
 	return &course, err
+}
+
+// ParseEventClaimPrize parses an event claim prize
+func (s *Segment) ParseEventClaimPrize() (*ArenaEventClaimPrize, error) {
+	var prize ArenaEventClaimPrize
+	err := json.Unmarshal([]byte(stripNonJSON(s.Text)), &prize)
+	return &prize, err
 }
 
 // ParseMatches finds the matches in a log

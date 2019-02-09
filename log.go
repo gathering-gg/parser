@@ -212,6 +212,35 @@ func (l *Log) Matches() ([]*ArenaMatch, error) {
 	return found, nil
 }
 
+// Events finds Arena Events in the logs
+func (l *Log) Events() ([]*ArenaEvent, error) {
+	events := make([]*ArenaEvent, 0)
+	for i, s := range l.Segments {
+		if s.IsClaimPrize() {
+			event := &ArenaEvent{}
+			claim, err := s.ParseEventClaimPrize()
+			if err != nil {
+				continue
+			}
+			event.ClaimPrize = claim
+			// Go back a few segments to find the inventory change
+			for j := i; j > i-10; j-- {
+				back := l.Segments[j]
+				if back.IsInventoryUpdate() {
+					update, err := back.ParseInventoryUpdate()
+					if err != nil {
+						break
+					}
+					event.Prize = update
+					break
+				}
+			}
+			events = append(events, event)
+		}
+	}
+	return events, nil
+}
+
 // Find and Parse 1/8/2019 2:07:00 PM
 func parseDate(line string) *time.Time {
 	re := regexp.MustCompile(`(?m)\d+\/\d+\/\d{4}\s\d+:\d+:\d+\s[APM]{2}`)
