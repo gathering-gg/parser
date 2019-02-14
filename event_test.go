@@ -7,6 +7,7 @@ import (
 )
 
 func TestParseEventJoin(t *testing.T) {
+	t.Skip()
 	a := assert.New(t)
 	s := &Segment{
 		Line: "[UnityCrossThreadLogger]1/8/2019 2:11:59 PM",
