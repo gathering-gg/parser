@@ -3,6 +3,7 @@ package gathering
 import (
 	"encoding/json"
 	"fmt"
+	"log"
 	"time"
 )
 
@@ -170,5 +171,8 @@ func (s *Segment) ParseMatchEvent() (*ArenaMatchEvent, error) {
 	// seat 2 played
 	var event ArenaMatchEvent
 	err := json.Unmarshal([]byte(stripNonJSON(s.Text)), &event)
+	if err != nil {
+		log.Println(stripNonJSON(s.Text))
+	}
 	return &event, err
 }

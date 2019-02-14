@@ -92,7 +92,6 @@ func TestParsePayEntry(t *testing.T) {
 }
 
 func TestParseEventGetPlayerCourse(t *testing.T) {
-	t.Skip()
 	a := assert.New(t)
 	s := &Segment{
 		Line: "[UnityCrossThreadLogger]1/8/2019 2:12:00 PM",
@@ -104,7 +103,7 @@ func TestParseEventGetPlayerCourse(t *testing.T) {
   "ModuleInstanceData": {
     "HasPaidEntry": "Gold"
   },
-  "CurrentEventState": 1,
+  "CurrentEventState": "Transition",
   "CurrentModule": "TransitionToMatches",
   "CardPool": null,
   "CourseDeck": {

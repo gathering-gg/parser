@@ -72,7 +72,7 @@ type ArenaEventClaimPrize struct {
 	ID                 string                                  `json:"Id"`
 	InternalEventName  string                                  `json:"InternalEventName"`
 	ModuleInstanceData *ArenaEventClaimPrizeModuleInstanceData `json:"ModuleinstanceData"`
-	CurrentEventState  int                                     `json:"CurrentEventState"`
+	CurrentEventState  string                                  `json:"CurrentEventState"`
 	CurrentModule      string                                  `json:"CurrentModule"`
 	CardPool           []int                                   `json:"Cardpool"`
 	CourseDeck         *ArenaDeck                              `json:"CourseDeck"`

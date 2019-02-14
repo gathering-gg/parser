@@ -136,6 +136,7 @@ func stripNonJSON(text string) string {
 	text = regexp.MustCompile(`<<<<<<<<<<.*`).ReplaceAllString(text, `$1.$2`)
 	text = regexp.MustCompile(`\[\w.*`).ReplaceAllString(text, `$1.$2`)
 	text = regexp.MustCompile(`\dx[\d\w]+.*`).ReplaceAllString(text, `$1.$2`)
+	text = regexp.MustCompile(`(?m)ZoneTransferUXEvent.*`).ReplaceAllString(text, `$1.$2`)
 	text = strings.TrimLeftFunc(text, func(r rune) bool {
 		return r != '{' && r != '['
 	})
