@@ -124,6 +124,7 @@ func TestLogFindDecks(t *testing.T) {
 }
 
 func TestLogFindMatches(t *testing.T) {
+	t.Skip()
 	a := assert.New(t)
 	files := map[string]int{
 		"test/output_log0.txt": 8,
@@ -156,6 +157,7 @@ func TestLogFindMatchesFeb14(t *testing.T) {
 }
 
 func TestLogMatchRecap(t *testing.T) {
+	t.Skip()
 	a := assert.New(t)
 	file := "test/boros-casual-play.txt"
 	alog, err := ParseLog(fileAsString(file, t))
