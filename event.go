@@ -7,17 +7,6 @@ import (
 	"strings"
 )
 
-// ArenaEventState is the state of an event
-type ArenaEventState int
-
-// ArenaEventStates
-const (
-	NotJoined ArenaEventState = iota
-	Playing
-	ClaimPrize
-	Complete
-)
-
 // ArenaEvent encapsulates the various stages a player may be in an event.
 // When the log is parsed, the player may have started an event, be in the middle
 // of an event, or just signed on to finish an event.
@@ -32,7 +21,7 @@ type ArenaEvent struct {
 type ArenaEventJoin struct {
 	ID                string
 	InternalEventName string
-	CurrentEventState ArenaEventState
+	CurrentEventState string
 	CurrentModule     string
 	CardPool          []int
 	CourseDeck        ArenaDeck
@@ -102,7 +91,7 @@ type ArenaEventPayEntry struct {
 	ID                 string
 	InternalEventName  string
 	ModuleInstanceData ArenaModuleInstanceData
-	CurrentEventState  ArenaEventState
+	CurrentEventState  string
 	CurrentModule      string
 	CardPool           []int
 	CourseDeck         *ArenaDeck
@@ -114,7 +103,7 @@ type ArenaEventGetPlayerCourse struct {
 	ID                 string
 	InternalEventName  string
 	ModuleInstanceData ArenaModuleInstanceData
-	CurrentEventState  ArenaEventState
+	CurrentEventState  string
 	CurrentModule      string
 	CardPool           []int
 	CourseDeck         *ArenaDeck

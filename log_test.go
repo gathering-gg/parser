@@ -141,6 +141,20 @@ func TestLogFindMatches(t *testing.T) {
 	}
 }
 
+func TestLogFindMatchesFeb14(t *testing.T) {
+	a := assert.New(t)
+	raw := fileAsString("test/feb-14-2018-update.txt", t)
+	alog, err := ParseLog(raw)
+	a.Nil(err)
+	matches, err := alog.Matches()
+	a.Nil(err)
+	a.Len(matches, 5)
+	for _, m := range matches {
+		a.NotNil(m.MatchID)
+		a.NotNil(m.CourseDeck)
+	}
+}
+
 func TestLogMatchRecap(t *testing.T) {
 	a := assert.New(t)
 	file := "test/boros-casual-play.txt"
