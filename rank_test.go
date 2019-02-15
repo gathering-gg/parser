@@ -58,7 +58,8 @@ func TestParseRankInfo(t *testing.T) {
 
 func TestParseLogGetRank(t *testing.T) {
 	a := assert.New(t)
-	f, _ := os.Open("test/output_log0.txt")
+	f, err := os.Open("test/output_log0.txt")
+	a.Nil(err)
 	alog, err := ParseLog(f)
 	a.Nil(err)
 	var rank *ArenaRankInfo
@@ -79,7 +80,8 @@ func TestParseLogGetRank(t *testing.T) {
 
 func TestRankUp(t *testing.T) {
 	a := assert.New(t)
-	f, _ := os.Open("test/rank-up.txt")
+	f, err := os.Open("test/rank-up.txt")
+	a.Nil(err)
 	alog, err := ParseLog(f)
 	a.Nil(err)
 	rank, err := alog.Rank()

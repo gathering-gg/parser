@@ -50,7 +50,8 @@ func TestLogFindRank(t *testing.T) {
 		},
 	}
 	for f, expected := range files {
-		o, _ := os.Open(f)
+		o, err := os.Open(f)
+		a.Nil(err)
 		alog, err := ParseLog(o)
 		a.Nil(err)
 		rank, err := alog.Rank()
@@ -77,7 +78,8 @@ func TestLogFindInventory(t *testing.T) {
 		},
 	}
 	for f, expected := range files {
-		o, _ := os.Open(f)
+		o, err := os.Open(f)
+		a.Nil(err)
 		alog, err := ParseLog(o)
 		a.Nil(err)
 		inv, err := alog.Inventory()
@@ -88,7 +90,8 @@ func TestLogFindInventory(t *testing.T) {
 
 func TestLogParseAuth(t *testing.T) {
 	a := assert.New(t)
-	f, _ := os.Open("test/output_log0.txt")
+	f, err := os.Open("test/output_log0.txt")
+	a.Nil(err)
 	alog, err := ParseLog(f)
 	a.Nil(err)
 	name, err := alog.Auth()
@@ -102,7 +105,8 @@ func TestLogFindDecks(t *testing.T) {
 		"test/output_log0.txt": 12,
 	}
 	for f, i := range files {
-		o, _ := os.Open(f)
+		o, err := os.Open(f)
+		a.Nil(err)
 		alog, err := ParseLog(o)
 		a.Nil(err)
 		decks, err := alog.Decks()
@@ -147,7 +151,8 @@ func TestLogMatchRecap(t *testing.T) {
 func TestLogCrackBooster(t *testing.T) {
 	a := assert.New(t)
 	file := "test/new-deck-constructed-7-1-daily-open-booster.txt"
-	f, _ := os.Open(file)
+	f, err := os.Open(file)
+	a.Nil(err)
 	alog, err := ParseLog(f)
 	a.Nil(err)
 	boosters, err := alog.Boosters()
