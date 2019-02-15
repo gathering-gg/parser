@@ -48,7 +48,7 @@ func ParseLog(f *os.File) (*Log, error) {
 		}
 		if err != nil {
 			log.Printf("unexpected error reading log file: %v\n", err.Error())
-			continue
+			break
 		}
 		if segmentStartRegex.Match(b) {
 			t := UnityLogger

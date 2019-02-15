@@ -1,25 +1,12 @@
 package gathering
 
 import (
-	"io/ioutil"
 	"os"
 	"reflect"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
 )
-
-func fileAsString(f string, t *testing.T) string {
-	file, err := os.Open(f)
-	if err != nil {
-		t.Fatalf("File not found")
-	}
-	raw, err := ioutil.ReadAll(file)
-	if err != nil {
-		t.Fatalf("Error reading file")
-	}
-	return string(raw[:])
-}
 
 func TestLogFindCollection(t *testing.T) {
 	a := assert.New(t)
@@ -173,8 +160,9 @@ func TestLogCrackBooster(t *testing.T) {
 
 func TestLogEvents(t *testing.T) {
 	a := assert.New(t)
-	file := "test/feb-14-2018-update.txt"
-	f, _ := os.Open(file)
+	file := "test/valentines-2019-update.txt"
+	f, err := os.Open(file)
+	a.Nil(err)
 	alog, err := ParseLog(f)
 	a.Nil(err)
 	eventResults, err := alog.Events()
