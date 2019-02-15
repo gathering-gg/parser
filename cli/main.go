@@ -3,7 +3,6 @@ package main
 import (
 	"flag"
 	"fmt"
-	"io/ioutil"
 	"log"
 	"os"
 	"os/user"
@@ -33,11 +32,6 @@ func siformat(numIn int64) string {
 	return fmt.Sprintf("%.1f%s%s", num, "Yi", suffix)
 }
 
-func readFile(f string) (string, error) {
-	b, err := ioutil.ReadFile(f)
-	return string(b), err
-}
-
 func upload(loc string) error {
 	file, err := os.Open(loc)
 	if err != nil {
@@ -60,13 +54,13 @@ func upload(loc string) error {
 }
 
 // ParseAll gets all data from a log
-func ParseAll(f string) (gathering.UploadData, error) {
+func ParseAll(filePath string) (gathering.UploadData, error) {
 	data := gathering.UploadData{}
-	str, err := readFile(f)
+	f, err := os.Open(filePath)
 	if err != nil {
 		return data, err
 	}
-	alog, err := gathering.ParseLog(str)
+	alog, err := gathering.ParseLog(f)
 	if err != nil {
 		return data, err
 	}
@@ -95,7 +89,7 @@ func ParseAll(f string) (gathering.UploadData, error) {
 		// TODO: Make this prettier, we only need the name
 		data.Auth = &gathering.ArenaAuthRequest{
 			Payload: gathering.ArenaAuthRequestPayload{
-				PlayerName: name,
+				PlayerName: string(name),
 			},
 		}
 	}

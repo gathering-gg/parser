@@ -7,22 +7,20 @@ import (
 )
 
 func TestParseEventJoin(t *testing.T) {
-	t.Skip()
-	// TODO: Use new log to fix
 	a := assert.New(t)
 	s := &Segment{
-		Line: "[UnityCrossThreadLogger]1/8/2019 2:11:59 PM",
-		Text: `
+		Line: []byte(`[UnityCrossThreadLogger]1/8/2019 2:11:59 PM`),
+		Text: []byte(`
 <== Event.Join(57)
 {
   "Id": "6c236ae7-81ff-4024-a836-cc055194fafe",
   "InternalEventName": "Momir_20190107",
   "ModuleInstanceData": {},
-  "CurrentEventState": 0,
+  "CurrentEventState": "state",
   "CurrentModule": "PayEntry",
   "CardPool": null,
   "CourseDeck": null
-}`,
+}`),
 	}
 	joined, err := s.ParseEventJoin()
 	a.Nil(err)
@@ -32,11 +30,10 @@ func TestParseEventJoin(t *testing.T) {
 }
 
 func TestParsePayEntry(t *testing.T) {
-	t.Skip()
 	a := assert.New(t)
 	s := &Segment{
-		Line: "[UnityCrossThreadLogger]1/8/2019 2:11:59 PM",
-		Text: `
+		Line: []byte(`[UnityCrossThreadLogger]1/8/2019 2:11:59 PM`),
+		Text: []byte(`
 <== Event.PayEntry(58)
 {
   "Id": "6c236ae7-81ff-4024-a836-cc055194fafe",
@@ -44,7 +41,7 @@ func TestParsePayEntry(t *testing.T) {
   "ModuleInstanceData": {
     "HasPaidEntry": "Gold"
   },
-  "CurrentEventState": 1,
+  "CurrentEventState": "state",
   "CurrentModule": "TransitionToMatches",
   "CardPool": null,
   "CourseDeck": {
@@ -82,7 +79,7 @@ func TestParsePayEntry(t *testing.T) {
     "lockedForEdit": false,
     "isValid": false
   }
-}`,
+}`),
 	}
 	payed, err := s.ParseEventPayEntry()
 	a.Nil(err)
@@ -94,8 +91,8 @@ func TestParsePayEntry(t *testing.T) {
 func TestParseEventGetPlayerCourse(t *testing.T) {
 	a := assert.New(t)
 	s := &Segment{
-		Line: "[UnityCrossThreadLogger]1/8/2019 2:12:00 PM",
-		Text: `
+		Line: []byte(`[UnityCrossThreadLogger]1/8/2019 2:12:00 PM`),
+		Text: []byte(`
 <== Event.GetPlayerCourse(63)
 {
   "Id": "6c236ae7-81ff-4024-a836-cc055194fafe",
@@ -143,7 +140,7 @@ func TestParseEventGetPlayerCourse(t *testing.T) {
   }
 }
 new prize bar state is: PrizeDisplay
-`,
+`),
 	}
 	pc, err := s.ParseJoinedEvent()
 	a.Nil(err)

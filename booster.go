@@ -38,7 +38,7 @@ func (s *Segment) IsCrackBooster() bool {
 // ParseCrackBooster parses a booster from the log
 func (s *Segment) ParseCrackBooster() (*Booster, error) {
 	var booster Booster
-	err := json.Unmarshal([]byte(stripNonJSON(s.Text)), &booster)
+	err := json.Unmarshal(stripNonJSON(s.Text), &booster)
 	if s.Time != nil {
 		booster.OpenedAt = *s.Time
 	}

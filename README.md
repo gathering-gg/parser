@@ -66,3 +66,33 @@ new features as well!
 ## Future Work ##
 1. Performance. Not a lot of work has gone into performance - I'd like this to be the fastest parser around.
 
+## Profiling ##
+https://blog.golang.org/profiling-go-programs
+
+```
+var cpuprofile = flag.String("cpuprofile", "", "write cpu profile to file")
+var memprofile = flag.String("memprofile", "", "write memory profile to this file")
+
+// 
+
+if *cpuprofile != "" {
+  f, err := os.Create("cpu.prof")
+    if err != nil {
+      log.Fatal(err)
+    }
+  pprof.StartCPUProfile(f)
+    defer pprof.StopCPUProfile()
+}
+if *memprofile != "" {
+  f, err := os.Create(*memprofile)
+    if err != nil {
+      log.Fatal(err)
+    }
+  defer func() {
+    pprof.WriteHeapProfile(f)
+      f.Close()
+  }()
+}
+
+// Add onChange(file) to bottom of main()
+```

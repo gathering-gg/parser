@@ -28,3 +28,7 @@ test-logs
 output*
 gathering*
 out
+
+*.prof
+*.mprof
+profile-log.txt

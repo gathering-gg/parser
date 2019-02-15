@@ -63,13 +63,13 @@ func (s *Segment) IsInventoryUpdate() bool {
 // ParsePlayerInventory parses the player inventory information from a segment
 func (s *Segment) ParsePlayerInventory() (*ArenaPlayerInventory, error) {
 	var inv ArenaPlayerInventory
-	err := json.Unmarshal([]byte(stripNonJSON(s.Text)), &inv)
+	err := json.Unmarshal(stripNonJSON(s.Text), &inv)
 	return &inv, err
 }
 
 // ParseInventoryUpdate parses an incoming inventory update
 func (s *Segment) ParseInventoryUpdate() (*ArenaInventoryUpdate, error) {
 	var update ArenaInventoryUpdate
-	err := json.Unmarshal([]byte(stripNonJSON(s.Text)), &update)
+	err := json.Unmarshal(stripNonJSON(s.Text), &update)
 	return &update, err
 }

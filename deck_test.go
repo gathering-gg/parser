@@ -16,7 +16,7 @@ func TestIsArenaDeck(t *testing.T) {
 func TestParseEmpty(t *testing.T) {
 	a := assert.New(t)
 	s := &Segment{
-		Text: "",
+		Text: []byte(``),
 	}
 	a.False(s.IsArenaDecks())
 	decks, err := s.ParseArenaDecks()
@@ -28,7 +28,7 @@ func TestParseEmpty(t *testing.T) {
 func TestParseEmptyArrayWithText(t *testing.T) {
 	a := assert.New(t)
 	s := &Segment{
-		Text: "<== Deck.GetDeckLists(9) [] RandomOtherText",
+		Text: []byte(`<== Deck.GetDeckLists(9) [] RandomOtherText`),
 	}
 	decks, err := s.ParseArenaDecks()
 	a.Nil(err)

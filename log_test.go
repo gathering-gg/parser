@@ -1,7 +1,6 @@
 package gathering
 
 import (
-	"io/ioutil"
 	"os"
 	"reflect"
 	"testing"
@@ -9,26 +8,15 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func fileAsString(f string, t *testing.T) string {
-	file, err := os.Open(f)
-	if err != nil {
-		t.Fatalf("File not found")
-	}
-	raw, err := ioutil.ReadAll(file)
-	if err != nil {
-		t.Fatalf("Error reading file")
-	}
-	return string(raw[:])
-}
-
 func TestLogFindCollection(t *testing.T) {
 	a := assert.New(t)
-	files := []string{
+	paths := []string{
 		"test/output_log0.txt",
 	}
-	for _, f := range files {
-		raw := fileAsString(f, t)
-		alog, err := ParseLog(raw)
+	for _, p := range paths {
+		f, err := os.Open(p)
+		a.Nil(err)
+		alog, err := ParseLog(f)
 		a.Nil(err)
 		col, err := alog.Collection()
 		a.Nil(err)
@@ -62,8 +50,9 @@ func TestLogFindRank(t *testing.T) {
 		},
 	}
 	for f, expected := range files {
-		raw := fileAsString(f, t)
-		alog, err := ParseLog(raw)
+		o, err := os.Open(f)
+		a.Nil(err)
+		alog, err := ParseLog(o)
 		a.Nil(err)
 		rank, err := alog.Rank()
 		a.Nil(err)
@@ -89,8 +78,9 @@ func TestLogFindInventory(t *testing.T) {
 		},
 	}
 	for f, expected := range files {
-		raw := fileAsString(f, t)
-		alog, err := ParseLog(raw)
+		o, err := os.Open(f)
+		a.Nil(err)
+		alog, err := ParseLog(o)
 		a.Nil(err)
 		inv, err := alog.Inventory()
 		a.Nil(err)
@@ -100,12 +90,13 @@ func TestLogFindInventory(t *testing.T) {
 
 func TestLogParseAuth(t *testing.T) {
 	a := assert.New(t)
-	raw := fileAsString("test/output_log0.txt", t)
-	alog, err := ParseLog(raw)
+	f, err := os.Open("test/output_log0.txt")
+	a.Nil(err)
+	alog, err := ParseLog(f)
 	a.Nil(err)
 	name, err := alog.Auth()
 	a.Nil(err)
-	a.Equal("Abattoir#66546", name)
+	a.Equal("Abattoir#66546", string(name))
 }
 
 func TestLogFindDecks(t *testing.T) {
@@ -114,8 +105,9 @@ func TestLogFindDecks(t *testing.T) {
 		"test/output_log0.txt": 12,
 	}
 	for f, i := range files {
-		raw := fileAsString(f, t)
-		alog, err := ParseLog(raw)
+		o, err := os.Open(f)
+		a.Nil(err)
+		alog, err := ParseLog(o)
 		a.Nil(err)
 		decks, err := alog.Decks()
 		a.Nil(err)
@@ -124,28 +116,10 @@ func TestLogFindDecks(t *testing.T) {
 }
 
 func TestLogFindMatches(t *testing.T) {
-	t.Skip()
 	a := assert.New(t)
-	files := map[string]int{
-		"test/output_log0.txt": 8,
-	}
-	for f, i := range files {
-		raw := fileAsString(f, t)
-		alog, err := ParseLog(raw)
-		a.Nil(err)
-		matches, err := alog.Matches()
-		a.Nil(err)
-		a.Len(matches, i)
-		for _, m := range matches {
-			a.NotNil(m.CourseDeck)
-		}
-	}
-}
-
-func TestLogFindMatchesFeb14(t *testing.T) {
-	a := assert.New(t)
-	raw := fileAsString("test/feb-14-2018-update.txt", t)
-	alog, err := ParseLog(raw)
+	f, err := os.Open("test/valentines-2019-update.txt")
+	a.Nil(err)
+	alog, err := ParseLog(f)
 	a.Nil(err)
 	matches, err := alog.Matches()
 	a.Nil(err)
@@ -157,22 +131,29 @@ func TestLogFindMatchesFeb14(t *testing.T) {
 }
 
 func TestLogMatchRecap(t *testing.T) {
-	t.Skip()
 	a := assert.New(t)
-	file := "test/boros-casual-play.txt"
-	alog, err := ParseLog(fileAsString(file, t))
+	f, err := os.Open("test/valentines-2019-update.txt")
+	a.Nil(err)
+	alog, err := ParseLog(f)
 	a.Nil(err)
 	matches, err := alog.Matches()
-	a.Len(matches, 1)
-	match := matches[0]
+	a.Len(matches, 5)
+	var match *ArenaMatch
+	for _, m := range matches {
+		if m.MatchID == "93958637-81bb-4b15-a48a-340d264682db" {
+			match = m
+		}
+	}
 	a.Len(match.SeenObjects[1], 11)
-	a.Len(match.SeenObjects[2], 10)
+	a.Len(match.SeenObjects[2], 8)
 }
 
 func TestLogCrackBooster(t *testing.T) {
 	a := assert.New(t)
 	file := "test/new-deck-constructed-7-1-daily-open-booster.txt"
-	alog, err := ParseLog(fileAsString(file, t))
+	f, err := os.Open(file)
+	a.Nil(err)
+	alog, err := ParseLog(f)
 	a.Nil(err)
 	boosters, err := alog.Boosters()
 	a.Nil(err)
@@ -184,8 +165,10 @@ func TestLogCrackBooster(t *testing.T) {
 
 func TestLogEvents(t *testing.T) {
 	a := assert.New(t)
-	file := "test/feb-14-2018-update.txt"
-	alog, err := ParseLog(fileAsString(file, t))
+	file := "test/valentines-2019-update.txt"
+	f, err := os.Open(file)
+	a.Nil(err)
+	alog, err := ParseLog(f)
 	a.Nil(err)
 	eventResults, err := alog.Events()
 	a.Nil(err)

@@ -3,7 +3,6 @@ package gathering
 import (
 	"encoding/json"
 	"fmt"
-	"log"
 	"time"
 )
 
@@ -134,7 +133,7 @@ func (s *Segment) IsMatchEnd() bool {
 // ArenaMatch object)
 func (s *Segment) ParseMatchStart() (*ArenaMatch, error) {
 	var match ArenaMatch
-	err := json.Unmarshal([]byte(stripNonJSON(s.Text)), &match)
+	err := json.Unmarshal(stripNonJSON(s.Text), &match)
 	if s.Time != nil {
 		match.GameStart = *s.Time
 	}
@@ -144,7 +143,7 @@ func (s *Segment) ParseMatchStart() (*ArenaMatch, error) {
 // ParseMatchEnd parses the match end. Contains the match ID
 func (s *Segment) ParseMatchEnd() (*ArenaMatchEnd, error) {
 	var match ArenaMatchEnd
-	err := json.Unmarshal([]byte(stripNonJSON(s.Text)), &match)
+	err := json.Unmarshal(stripNonJSON(s.Text), &match)
 	return &match, err
 }
 
@@ -157,22 +156,7 @@ func (s *Segment) IsMatchEvent() bool {
 // ParseMatchEvent looks through the match segments and pulls out
 // cards played by whom
 func (s *Segment) ParseMatchEvent() (*ArenaMatchEvent, error) {
-	// grpID, type
-	// ZONEID => match these. 35, hand?
-	// ownerSeatID who's info
-	// I think we want:
-	// greToClientEvent.greToClientMessages[0].gameStateMessage.type ==
-	// "type": "GameStateType_Diff",
-	// turnInfo.turnNumber
-	// zoneID: int
-	// type: zoneType
-	// GAME OBJECTS
-	//payload.PerformActionResp.Actions[].GrpID
-	// seat 2 played
 	var event ArenaMatchEvent
-	err := json.Unmarshal([]byte(stripNonJSON(s.Text)), &event)
-	if err != nil {
-		log.Println(stripNonJSON(s.Text))
-	}
+	err := json.Unmarshal(stripNonJSON(s.Text), &event)
 	return &event, err
 }

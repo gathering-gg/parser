@@ -64,13 +64,13 @@ func (s *Segment) IsRankUpdated() bool {
 // ParseRankInfo parses the rank information out of a segment.
 func (s *Segment) ParseRankInfo() (*ArenaRankInfo, error) {
 	var rank ArenaRankInfo
-	err := json.Unmarshal([]byte(stripNonJSON(s.Text)), &rank)
+	err := json.Unmarshal(stripNonJSON(s.Text), &rank)
 	return &rank, err
 }
 
 // ParseRankUpdated parses the rank update
 func (s *Segment) ParseRankUpdated() (*RankUpdated, error) {
 	var update RankUpdated
-	err := json.Unmarshal([]byte(stripNonJSON(s.Text)), &update)
+	err := json.Unmarshal(stripNonJSON(s.Text), &update)
 	return &update, err
 }

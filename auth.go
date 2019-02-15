@@ -17,11 +17,11 @@ func (s *Segment) IsPlayerAuth() bool {
 }
 
 // ParseAuth returns the players username
-func (s *Segment) ParseAuth() (string, error) {
+func (s *Segment) ParseAuth() ([]byte, error) {
 	re := segmentTypeChecks[PlayerAuth].Copy()
-	matches := re.FindStringSubmatch(s.Text)
+	matches := re.FindSubmatch(s.Text)
 	if len(matches) == 2 {
 		return matches[1], nil
 	}
-	return "", ErrNotFound
+	return nil, ErrNotFound
 }
