@@ -7,8 +7,6 @@ import (
 )
 
 func TestParseEventJoin(t *testing.T) {
-	t.Skip()
-	// TODO: Use new log to fix
 	a := assert.New(t)
 	s := &Segment{
 		Line: []byte(`[UnityCrossThreadLogger]1/8/2019 2:11:59 PM`),
@@ -18,7 +16,7 @@ func TestParseEventJoin(t *testing.T) {
   "Id": "6c236ae7-81ff-4024-a836-cc055194fafe",
   "InternalEventName": "Momir_20190107",
   "ModuleInstanceData": {},
-  "CurrentEventState": 0,
+  "CurrentEventState": "state",
   "CurrentModule": "PayEntry",
   "CardPool": null,
   "CourseDeck": null
@@ -32,7 +30,6 @@ func TestParseEventJoin(t *testing.T) {
 }
 
 func TestParsePayEntry(t *testing.T) {
-	t.Skip()
 	a := assert.New(t)
 	s := &Segment{
 		Line: []byte(`[UnityCrossThreadLogger]1/8/2019 2:11:59 PM`),
@@ -44,7 +41,7 @@ func TestParsePayEntry(t *testing.T) {
   "ModuleInstanceData": {
     "HasPaidEntry": "Gold"
   },
-  "CurrentEventState": 1,
+  "CurrentEventState": "state",
   "CurrentModule": "TransitionToMatches",
   "CardPool": null,
   "CourseDeck": {
