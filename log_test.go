@@ -125,27 +125,9 @@ func TestLogFindDecks(t *testing.T) {
 }
 
 func TestLogFindMatches(t *testing.T) {
-	t.Skip()
 	a := assert.New(t)
-	files := map[string]int{
-		"test/output_log0.txt": 8,
-	}
-	for f, i := range files {
-		o, _ := os.Open(f)
-		alog, err := ParseLog(o)
-		a.Nil(err)
-		matches, err := alog.Matches()
-		a.Nil(err)
-		a.Len(matches, i)
-		for _, m := range matches {
-			a.NotNil(m.CourseDeck)
-		}
-	}
-}
-
-func TestLogFindMatchesFeb14(t *testing.T) {
-	a := assert.New(t)
-	f, _ := os.Open("test/feb-14-2018-update.txt")
+	f, err := os.Open("test/valentines-2019-update.txt")
+	a.Nil(err)
 	alog, err := ParseLog(f)
 	a.Nil(err)
 	matches, err := alog.Matches()
@@ -158,16 +140,21 @@ func TestLogFindMatchesFeb14(t *testing.T) {
 }
 
 func TestLogMatchRecap(t *testing.T) {
-	t.Skip()
 	a := assert.New(t)
-	f, _ := os.Open("test/boros-casual-play.txt")
+	f, err := os.Open("test/valentines-2019-update.txt")
+	a.Nil(err)
 	alog, err := ParseLog(f)
 	a.Nil(err)
 	matches, err := alog.Matches()
-	a.Len(matches, 1)
-	match := matches[0]
+	a.Len(matches, 5)
+	var match *ArenaMatch
+	for _, m := range matches {
+		if m.MatchID == "93958637-81bb-4b15-a48a-340d264682db" {
+			match = m
+		}
+	}
 	a.Len(match.SeenObjects[1], 11)
-	a.Len(match.SeenObjects[2], 10)
+	a.Len(match.SeenObjects[2], 8)
 }
 
 func TestLogCrackBooster(t *testing.T) {
