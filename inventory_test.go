@@ -17,7 +17,7 @@ func TestIsPlayerInventory(t *testing.T) {
 func TestParseGetPlayerInventory(t *testing.T) {
 	a := assert.New(t)
 	s := &Segment{
-		Text: `
+		Text: []byte(`
 <== PlayerInventory.GetPlayerInventory(14)
 {
   "playerId": "EZIDLEQCFFAMLE27DG4TFGLT5Q",
@@ -59,7 +59,7 @@ func TestParseGetPlayerInventory(t *testing.T) {
     "petModSelection": null
   }
 }
-`,
+`),
 	}
 	inv, err := s.ParsePlayerInventory()
 	a.Nil(err)

@@ -1,6 +1,7 @@
 package gathering
 
 import (
+	"os"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -16,7 +17,7 @@ func TestIsRankInfo(t *testing.T) {
 func TestParseEmptyRank(t *testing.T) {
 	a := assert.New(t)
 	s := &Segment{
-		Text: "<== Rank",
+		Text: []byte(`<== Rank`),
 	}
 	_, err := s.ParseRankInfo()
 	a.NotNil(err)
@@ -26,7 +27,7 @@ func TestParseEmptyRank(t *testing.T) {
 func TestParseRankInfo(t *testing.T) {
 	a := assert.New(t)
 	s := &Segment{
-		Text: `
+		Text: []byte(`
 <== Event.GetCombinedRankInfo(11)
 {
   "playerId": "EZIDLEQCFFAMLE27DG4TFGLT5Q",
@@ -44,7 +45,7 @@ func TestParseRankInfo(t *testing.T) {
   "limitedMatchesWon": 29,
   "limitedMatchesLost": 31,
   "limitedMatchesDrawn": 0
-}`,
+}`),
 	}
 	rank, err := s.ParseRankInfo()
 	a.Nil(err)
@@ -57,8 +58,8 @@ func TestParseRankInfo(t *testing.T) {
 
 func TestParseLogGetRank(t *testing.T) {
 	a := assert.New(t)
-	raw := fileAsString("test/output_log0.txt", t)
-	alog, err := ParseLog(raw)
+	f, _ := os.Open("test/output_log0.txt")
+	alog, err := ParseLog(f)
 	a.Nil(err)
 	var rank *ArenaRankInfo
 	for i := len(alog.Segments) - 1; i >= 0; i-- {
@@ -78,8 +79,8 @@ func TestParseLogGetRank(t *testing.T) {
 
 func TestRankUp(t *testing.T) {
 	a := assert.New(t)
-	raw := fileAsString("test/rank-up.txt", t)
-	alog, err := ParseLog(raw)
+	f, _ := os.Open("test/rank-up.txt")
+	alog, err := ParseLog(f)
 	a.Nil(err)
 	rank, err := alog.Rank()
 	a.Nil(err)

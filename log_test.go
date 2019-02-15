@@ -23,12 +23,13 @@ func fileAsString(f string, t *testing.T) string {
 
 func TestLogFindCollection(t *testing.T) {
 	a := assert.New(t)
-	files := []string{
+	paths := []string{
 		"test/output_log0.txt",
 	}
-	for _, f := range files {
-		raw := fileAsString(f, t)
-		alog, err := ParseLog(raw)
+	for _, p := range paths {
+		f, err := os.Open(p)
+		a.Nil(err)
+		alog, err := ParseLog(f)
 		a.Nil(err)
 		col, err := alog.Collection()
 		a.Nil(err)
@@ -62,8 +63,8 @@ func TestLogFindRank(t *testing.T) {
 		},
 	}
 	for f, expected := range files {
-		raw := fileAsString(f, t)
-		alog, err := ParseLog(raw)
+		o, _ := os.Open(f)
+		alog, err := ParseLog(o)
 		a.Nil(err)
 		rank, err := alog.Rank()
 		a.Nil(err)
@@ -89,8 +90,8 @@ func TestLogFindInventory(t *testing.T) {
 		},
 	}
 	for f, expected := range files {
-		raw := fileAsString(f, t)
-		alog, err := ParseLog(raw)
+		o, _ := os.Open(f)
+		alog, err := ParseLog(o)
 		a.Nil(err)
 		inv, err := alog.Inventory()
 		a.Nil(err)
@@ -100,12 +101,12 @@ func TestLogFindInventory(t *testing.T) {
 
 func TestLogParseAuth(t *testing.T) {
 	a := assert.New(t)
-	raw := fileAsString("test/output_log0.txt", t)
-	alog, err := ParseLog(raw)
+	f, _ := os.Open("test/output_log0.txt")
+	alog, err := ParseLog(f)
 	a.Nil(err)
 	name, err := alog.Auth()
 	a.Nil(err)
-	a.Equal("Abattoir#66546", name)
+	a.Equal("Abattoir#66546", string(name))
 }
 
 func TestLogFindDecks(t *testing.T) {
@@ -114,8 +115,8 @@ func TestLogFindDecks(t *testing.T) {
 		"test/output_log0.txt": 12,
 	}
 	for f, i := range files {
-		raw := fileAsString(f, t)
-		alog, err := ParseLog(raw)
+		o, _ := os.Open(f)
+		alog, err := ParseLog(o)
 		a.Nil(err)
 		decks, err := alog.Decks()
 		a.Nil(err)
@@ -130,8 +131,8 @@ func TestLogFindMatches(t *testing.T) {
 		"test/output_log0.txt": 8,
 	}
 	for f, i := range files {
-		raw := fileAsString(f, t)
-		alog, err := ParseLog(raw)
+		o, _ := os.Open(f)
+		alog, err := ParseLog(o)
 		a.Nil(err)
 		matches, err := alog.Matches()
 		a.Nil(err)
@@ -144,8 +145,8 @@ func TestLogFindMatches(t *testing.T) {
 
 func TestLogFindMatchesFeb14(t *testing.T) {
 	a := assert.New(t)
-	raw := fileAsString("test/feb-14-2018-update.txt", t)
-	alog, err := ParseLog(raw)
+	f, _ := os.Open("test/feb-14-2018-update.txt")
+	alog, err := ParseLog(f)
 	a.Nil(err)
 	matches, err := alog.Matches()
 	a.Nil(err)
@@ -159,8 +160,8 @@ func TestLogFindMatchesFeb14(t *testing.T) {
 func TestLogMatchRecap(t *testing.T) {
 	t.Skip()
 	a := assert.New(t)
-	file := "test/boros-casual-play.txt"
-	alog, err := ParseLog(fileAsString(file, t))
+	f, _ := os.Open("test/boros-casual-play.txt")
+	alog, err := ParseLog(f)
 	a.Nil(err)
 	matches, err := alog.Matches()
 	a.Len(matches, 1)
@@ -172,7 +173,8 @@ func TestLogMatchRecap(t *testing.T) {
 func TestLogCrackBooster(t *testing.T) {
 	a := assert.New(t)
 	file := "test/new-deck-constructed-7-1-daily-open-booster.txt"
-	alog, err := ParseLog(fileAsString(file, t))
+	f, _ := os.Open(file)
+	alog, err := ParseLog(f)
 	a.Nil(err)
 	boosters, err := alog.Boosters()
 	a.Nil(err)
@@ -185,7 +187,8 @@ func TestLogCrackBooster(t *testing.T) {
 func TestLogEvents(t *testing.T) {
 	a := assert.New(t)
 	file := "test/feb-14-2018-update.txt"
-	alog, err := ParseLog(fileAsString(file, t))
+	f, _ := os.Open(file)
+	alog, err := ParseLog(f)
 	a.Nil(err)
 	eventResults, err := alog.Events()
 	a.Nil(err)
