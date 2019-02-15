@@ -13,6 +13,6 @@ func (s *Segment) IsCollection() bool {
 // check if this segment contains a Collection with `IsCollection()`
 func (s *Segment) ParseCollection() (map[string]int, error) {
 	var collection map[string]int
-	err := json.Unmarshal([]byte(stripNonJSON(s.Text)), &collection)
+	err := json.Unmarshal(stripNonJSON(s.Text), &collection)
 	return collection, err
 }

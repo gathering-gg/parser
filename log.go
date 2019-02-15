@@ -1,15 +1,23 @@
 package gathering
 
 import (
+	"bufio"
+	"bytes"
 	"errors"
+	"io"
 	"log"
+	"os"
 	"regexp"
-	"strings"
 	"time"
 )
 
 // ErrNotFound is the error returned when a log item is not found
 var ErrNotFound = errors.New("not found")
+var segmentStartRegex = regexp.MustCompile(`\[UnityCrossThreadLogger\].*|\[Client GRE\]`)
+var clientGRE = []byte("Client GRE")
+var newLineDelimiter = []byte("\n")
+var findDate = regexp.MustCompile(`(?m)\d+\/\d+\/\d{4}\s\d+:\d+:\d+\s[APM]{2}`)
+var dateLayout = "1/2/2006 15:04:05 PM"
 
 // Log is the well-structured format of the output_log.txt, parsed into Segments
 type Log struct {
@@ -17,37 +25,56 @@ type Log struct {
 }
 
 // ParseLog returns a log file parsed into Segments
-func ParseLog(raw string) (*Log, error) {
-	split := regexp.MustCompile(`\r?\n`).Split(raw, -1)
-	r := regexp.MustCompile(`\[UnityCrossThreadLogger\].*|\[Client GRE\]`)
+func ParseLog(f *os.File) (*Log, error) {
+	reader := bufio.NewReader(f)
 	var segments []*Segment
-	var text string
 	previous := &Segment{
 		Range: []int{0},
 	}
-	for i, s := range split {
-		if r.MatchString(s) {
+	// This won't succeed with lines longer than 4096 bytes, but a brief
+	// look through the log files show that lines generally aren't longer than
+	// 1000 characters, and those that _are_ we can ignore.
+	// https://stackoverflow.com/questions/8757389/reading-file-line-by-line-in-go
+	i := 0
+	var buffer bytes.Buffer
+	for {
+		i++
+		b, err := reader.ReadBytes('\n')
+		if err == io.EOF {
+			break
+		}
+		if err == bufio.ErrBufferFull {
+			continue
+		}
+		if err != nil {
+			log.Printf("unexpected error reading log file: %v\n", err.Error())
+			continue
+		}
+		if segmentStartRegex.Match(b) {
 			t := UnityLogger
-			if strings.Contains(s, "Client GRE") {
+			if bytes.Contains(b, clientGRE) {
 				t = ClientGRE
 			}
-			previous.Text = text
-			previous.Range = append(previous.Range, i-1)
-			previous.SegmentType = parseType(text)
+			// buffer.WriteTo(previous.Text)
+			previous.Text = make([]byte, buffer.Len())
+			copy(previous.Text, buffer.Bytes())
+			// previous.Text = buffer.Bytes()
+			previous.Range = append(previous.Range, i)
+			previous.SegmentType = parseType(previous.Text)
 			segments = append(segments, previous)
-			text = ""
+			buffer.Reset()
 			previous = &Segment{
 				LoggerType: t,
-				Time:       parseDate(s),
-				Line:       s,
+				Time:       parseDate(b),
+				Line:       b,
 				Range:      []int{i},
 			}
 		} else {
-			text = text + "\n" + s
+			buffer.Write(b)
 		}
 	}
-	previous.Text = text
-	previous.Range = append(previous.Range, len(split)-1)
+	previous.Text = buffer.Bytes()
+	previous.Range = append(previous.Range, i)
 	return &Log{
 		Segments: segments,
 	}, nil
@@ -101,14 +128,14 @@ func (l *Log) Inventory() (*ArenaPlayerInventory, error) {
 }
 
 // Auth finds the player's ingame name
-func (l *Log) Auth() (string, error) {
+func (l *Log) Auth() ([]byte, error) {
 	// TODO: Put in same loop
 	for _, s := range l.Segments {
 		if s.IsPlayerAuth() {
 			return s.ParseAuth()
 		}
 	}
-	return "", ErrNotFound
+	return nil, ErrNotFound
 }
 
 // Decks finds the player decks
@@ -242,11 +269,9 @@ func (l *Log) Events() ([]*ArenaEvent, error) {
 }
 
 // Find and Parse 1/8/2019 2:07:00 PM
-func parseDate(line string) *time.Time {
-	re := regexp.MustCompile(`(?m)\d+\/\d+\/\d{4}\s\d+:\d+:\d+\s[APM]{2}`)
-	date := re.FindString(line)
-	layout := "1/2/2006 15:04:05 PM"
-	t, err := time.ParseInLocation(layout, date, time.Local)
+func parseDate(line []byte) *time.Time {
+	date := findDate.Find(line)
+	t, err := time.ParseInLocation(dateLayout, string(date), time.Local)
 	if err != nil {
 		return nil
 	}
@@ -254,9 +279,9 @@ func parseDate(line string) *time.Time {
 	return &t
 }
 
-func parseType(text string) SegmentType {
+func parseType(b []byte) SegmentType {
 	for s, r := range segmentTypeChecks {
-		if r.MatchString(text) {
+		if r.Match(b) {
 			return s
 		}
 	}

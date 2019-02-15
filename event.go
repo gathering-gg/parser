@@ -2,9 +2,6 @@ package gathering
 
 import (
 	"encoding/json"
-	"log"
-	"regexp"
-	"strings"
 )
 
 // ArenaEvent encapsulates the various stages a player may be in an event.
@@ -137,24 +134,16 @@ func (s *Segment) IsClaimPrize() bool {
 
 // ParseEventJoin parses out an event from JSON
 func (s *Segment) ParseEventJoin() (*ArenaEventJoin, error) {
-	text := stripNonJSON(s.Text)
 	var join ArenaEventJoin
-	err := json.Unmarshal([]byte(text), &join)
-	if err != nil {
-		return nil, err
-	}
-	return &join, nil
+	err := json.Unmarshal(stripNonJSON(s.Text), &join)
+	return &join, err
 }
 
 // ParseEventPayEntry parses out a pay entry value
 func (s *Segment) ParseEventPayEntry() (*ArenaEventPayEntry, error) {
-	text := stripNonJSON(s.Text)
 	var pay ArenaEventPayEntry
-	err := json.Unmarshal([]byte(text), &pay)
-	if err != nil {
-		return nil, err
-	}
-	return &pay, nil
+	err := json.Unmarshal(stripNonJSON(s.Text), &pay)
+	return &pay, err
 
 }
 
@@ -162,66 +151,13 @@ func (s *Segment) ParseEventPayEntry() (*ArenaEventPayEntry, error) {
 // to verify the deck the player is using going into a game.
 func (s *Segment) ParseJoinedEvent() (*ArenaEventGetPlayerCourse, error) {
 	var course ArenaEventGetPlayerCourse
-	err := json.Unmarshal([]byte(stripNonJSON(s.Text)), &course)
+	err := json.Unmarshal(stripNonJSON(s.Text), &course)
 	return &course, err
 }
 
 // ParseEventClaimPrize parses an event claim prize
 func (s *Segment) ParseEventClaimPrize() (*ArenaEventClaimPrize, error) {
 	var prize ArenaEventClaimPrize
-	err := json.Unmarshal([]byte(stripNonJSON(s.Text)), &prize)
+	err := json.Unmarshal(stripNonJSON(s.Text), &prize)
 	return &prize, err
-}
-
-// ParseMatches finds the matches in a log
-func ParseMatches(raw string) []ArenaMatch {
-	texts := splitLogText(raw, logSplitRegex)
-	var match *ArenaMatch
-	var matches []ArenaMatch
-	for _, t := range texts {
-		isMatchDeck := regexp.MustCompile(isMatchPlayerCourse)
-		isMatchStart := regexp.MustCompile(isMatchStartRegex)
-		isMatchEnd := regexp.MustCompile(isMatchEndRegex)
-		// The Player Course shows what they started searching for, and with
-		// which deck, which we need to know what they played with
-		if isMatchDeck.MatchString(t) {
-			if match != nil {
-				match = nil
-			}
-			playerCourse := strings.SplitN(t, "\n", 3)[2]
-			if err := parseJSONBackoff(playerCourse, &match); err != nil {
-				log.Printf("Error Parsing Player Course: %v", err.Error())
-				continue
-			}
-		}
-		if isMatchStart.MatchString(t) {
-			incomingMatchJSON := strings.SplitN(t, "\n", 2)[1]
-			// Need to chomp off the first part until we get to the JSON
-			incomingMatchJSON = strings.TrimPrefix(incomingMatchJSON, "(-1) Incoming Event.MatchCreated ")
-			if err := json.Unmarshal([]byte(incomingMatchJSON), &match); err != nil {
-				log.Printf("Error Parsing Match Start: %v", err.Error())
-				continue
-			}
-		}
-		// Okay, we have a match, now what was the result?
-		if isMatchEnd.MatchString(t) && match != nil {
-			matchEndJSON := strings.SplitN(t, "\n", 3)[2]
-			var result ArenaMatchEnd
-			err := json.Unmarshal([]byte(matchEndJSON), &result)
-			if err != nil {
-				log.Printf("Error Parsing Match: %v", err.Error())
-				continue
-			}
-			match.SeatID = result.Params.PayloadObject.SeatID
-			match.TeamID = result.Params.PayloadObject.TeamID
-			match.GameNumber = result.Params.PayloadObject.GameNumber
-			match.WinningTeamID = result.Params.PayloadObject.WinningTeamID
-			match.WinningReason = result.Params.PayloadObject.WinningReason
-			match.TurnCount = result.Params.PayloadObject.TurnCount
-			match.SecondsCount = result.Params.PayloadObject.SecondsCount
-			matches = append(matches, *match)
-			match = nil
-		}
-	}
-	return matches
 }

@@ -32,6 +32,6 @@ func (s *Segment) IsArenaDecks() bool {
 // ArenaDecks by calling `IsArenaDecks()`
 func (s *Segment) ParseArenaDecks() ([]ArenaDeck, error) {
 	var decks []ArenaDeck
-	err := json.Unmarshal([]byte(stripNonJSON(s.Text)), &decks)
+	err := json.Unmarshal(stripNonJSON(s.Text), &decks)
 	return decks, err
 }
