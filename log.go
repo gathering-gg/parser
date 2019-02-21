@@ -216,10 +216,10 @@ func (l *Log) Matches() ([]*ArenaMatch, error) {
 			}
 			m := end.Params.PayloadObject
 			match = matches[m.MatchID]
-			// This is bad.
-			if m.MatchID != match.MatchID {
-				log.Printf("error: end.MatchID != start.MatchID. Unsure state of what happened to last match. Skipping.")
-				continue
+			if match == nil || m.MatchID != match.MatchID {
+				// We are missing the first part of the match.
+				// Get what we can and let the server figure out the rest.
+				match = m
 			}
 			match.SeatID = m.SeatID
 			match.TeamID = m.TeamID
