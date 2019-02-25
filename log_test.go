@@ -5,6 +5,7 @@ import (
 	"reflect"
 	"testing"
 
+	"github.com/davecgh/go-spew/spew"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -144,8 +145,9 @@ func TestLogMatchRecap(t *testing.T) {
 			match = m
 		}
 	}
-	a.Len(match.SeenObjects[1], 11)
-	a.Len(match.SeenObjects[2], 8)
+	game := match.Games[len(match.Games)-1]
+	a.Len(game.SeenObjects[1], 11)
+	a.Len(game.SeenObjects[2], 8)
 }
 
 func TestLogCrackBooster(t *testing.T) {
@@ -184,4 +186,19 @@ func TestLogEvents(t *testing.T) {
 	a.Equal(70140, e.Prize.Delta.CardsAdded[0])
 	a.Equal(70141, e.Prize.Delta.CardsAdded[1])
 	a.Equal(0, e.Prize.Delta.GoldDelta)
+}
+
+func TestLogBestOfThree(t *testing.T) {
+	// GREMessageType_ConnectResp
+	a := assert.New(t)
+	f, err := os.Open("test/bo3-small.txt")
+	a.Nil(err)
+	alog, err := ParseLog(f)
+	a.Nil(err)
+	matches, err := alog.Matches()
+	a.Nil(err)
+	a.Len(matches, 1)
+	for _, m := range matches {
+		spew.Dump(m)
+	}
 }
