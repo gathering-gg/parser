@@ -220,8 +220,7 @@ func (l *Log) Matches() ([]*ArenaMatch, error) {
 			}
 			match.LogMatchEvent(event)
 		}
-		// if s.is sideboard ending
-		if s.IsSideboardStop() {
+		if match != nil && s.IsSideboardStop() {
 			match.currentGame++
 			match.Games = append(match.Games, &ArenaGame{
 				GameStart: s.Time,
@@ -243,7 +242,7 @@ func (l *Log) Matches() ([]*ArenaMatch, error) {
 			match.UpdateGameEnd(end.Params.PayloadObject)
 			matches[*m.MatchID] = match
 		}
-		if s.IsMatchCompleted() {
+		if match != nil && s.IsMatchCompleted() {
 			end, err := s.ParseMatchCompleted()
 			if err != nil {
 				log.Printf("error parsing match end: %v\n", err.Error())
