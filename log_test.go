@@ -5,7 +5,6 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/davecgh/go-spew/spew"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -199,6 +198,16 @@ func TestLogBestOfThree(t *testing.T) {
 	a.Nil(err)
 	a.Len(matches, 1)
 	for _, m := range matches {
-		spew.Dump(m)
+		a.NotNil(m.MatchID)
+		a.True(len(m.Games) > 1)
+		for _, g := range m.Games {
+			a.NotNil(g.GameStart)
+			a.NotNil(g.Number)
+			a.NotNil(g.MatchID)
+			a.NotNil(g.SeatID)
+			a.NotNil(g.TeamID)
+			a.NotNil(g.WinningTeamID)
+			a.NotNil(g.WinningReason)
+		}
 	}
 }

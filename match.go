@@ -52,6 +52,12 @@ func (a *ArenaMatch) UpdateGameEnd(end *ArenaGame) {
 	game.SecondsCount = end.SecondsCount
 }
 
+// UpdateMatchCompleted updates the match object with the completed
+// status
+func (a *ArenaMatch) UpdateMatchCompleted(com *ArenaMatchCompleted) {
+
+}
+
 // LogMatchEvent adds an event to the log
 func (a *ArenaMatch) LogMatchEvent(event *ArenaMatchEvent) {
 	game := a.Games[len(a.Games)-1]

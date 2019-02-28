@@ -9,8 +9,6 @@ import (
 	"os"
 	"regexp"
 	"time"
-
-	"github.com/davecgh/go-spew/spew"
 )
 
 // ErrNotFound is the error returned when a log item is not found
@@ -251,7 +249,7 @@ func (l *Log) Matches() ([]*ArenaMatch, error) {
 				log.Printf("error parsing match end: %v\n", err.Error())
 				break
 			}
-			spew.Dump(end)
+			match.UpdateMatchCompleted(end)
 			match = nil
 		}
 	}
