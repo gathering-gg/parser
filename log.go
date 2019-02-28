@@ -165,6 +165,21 @@ func (l *Log) Boosters() ([]*Booster, error) {
 	return boosters, nil
 }
 
+func reverseDeckLookup(segments []*Segment, i int) (*ArenaDeck, error) {
+	for j := i; j >= 0; j-- {
+		s := segments[j]
+		if s.JoinedEvent() {
+			course, err := s.ParseJoinedEvent()
+			if err != nil {
+				log.Printf("error parsing get player course: %v\n", err.Error())
+				return nil, err
+			}
+			return course.CourseDeck, nil
+		}
+	}
+	return nil, ErrNotFound
+}
+
 // Matches finds the player matches
 // This is a little more involved, since we really need 3 pieces of information
 // and they are not together.
@@ -174,32 +189,29 @@ func (l *Log) Boosters() ([]*Booster, error) {
 // The result may not be known when we start parsing, so those values are all
 // optional. The server only needs the MatchID to tie together the data.
 func (l *Log) Matches() ([]*ArenaMatch, error) {
+	// New Algo
 	matches := make(map[string]*ArenaMatch)
 	var match *ArenaMatch
 	for i, s := range l.Segments {
 		if s.IsMatchStart() {
 			var err error
 			match, err = s.ParseMatchStart()
+			match.Games = append(match.Games, &ArenaGame{
+				GameStart: match.GameStart,
+			})
 			if err != nil {
 				log.Printf("error parsing match start: %v\n", err.Error())
 				continue
 			}
-			// Depending on the mode the player is playing we need to
-			// look for a different thing.
-			for j := i; j >= 0; j-- {
-				s := l.Segments[j]
-				if s.JoinedEvent() {
-					course, err := s.ParseJoinedEvent()
-					if err != nil {
-						log.Printf("error parsing get player course: %v\n", err.Error())
-						break
-					}
-					match.CourseDeck = course.CourseDeck
-					break
-				}
+			deck, err := reverseDeckLookup(l.Segments, i)
+			if err != nil {
+				log.Printf("error finding match deck: %v\n", err.Error())
+				continue
 			}
+			match.CourseDeck = deck
 			matches[match.MatchID] = match
 		}
+		// same as normal, but the logs go into the current game
 		if match != nil && s.IsMatchEvent() {
 			event, err := s.ParseMatchEvent()
 			if err != nil {
@@ -208,6 +220,12 @@ func (l *Log) Matches() ([]*ArenaMatch, error) {
 			}
 			match.LogMatchEvent(event)
 		}
+		if match != nil && s.IsSideboardStop() {
+			match.currentGame++
+			match.Games = append(match.Games, &ArenaGame{
+				GameStart: s.Time,
+			})
+		}
 		if s.IsMatchEnd() {
 			end, err := s.ParseMatchEnd()
 			if err != nil {
@@ -215,20 +233,22 @@ func (l *Log) Matches() ([]*ArenaMatch, error) {
 				break
 			}
 			m := end.Params.PayloadObject
-			match = matches[m.MatchID]
-			if match == nil || m.MatchID != match.MatchID {
+			match = matches[*m.MatchID]
+			if match == nil || *m.MatchID != match.MatchID {
 				// We are missing the first part of the match.
 				// Get what we can and let the server figure out the rest.
-				match = m
+				continue
 			}
-			match.SeatID = m.SeatID
-			match.TeamID = m.TeamID
-			match.GameNumber = m.GameNumber
-			match.WinningTeamID = m.WinningTeamID
-			match.WinningReason = m.WinningReason
-			match.TurnCount = m.TurnCount
-			match.SecondsCount = m.SecondsCount
-			matches[m.MatchID] = match
+			match.UpdateGameEnd(end.Params.PayloadObject)
+			matches[*m.MatchID] = match
+		}
+		if match != nil && s.IsMatchCompleted() {
+			end, err := s.ParseMatchCompleted()
+			if err != nil {
+				log.Printf("error parsing match end: %v\n", err.Error())
+				break
+			}
+			match.UpdateMatchCompleted(end)
 			match = nil
 		}
 	}

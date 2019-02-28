@@ -39,6 +39,9 @@ const (
 	InventoryRankUpdated
 	EventClaimPrize
 	IncomingInventoryUpdate
+	DuelSceneSideboardingStart
+	DuelSceneSideboardingStop
+	MatchCompleted
 )
 
 var segmentTypeChecks = map[SegmentType]*regexp.Regexp{
@@ -56,6 +59,9 @@ var segmentTypeChecks = map[SegmentType]*regexp.Regexp{
 	InventoryRankUpdated:              regexp.MustCompile(`Incoming\sRank\.Updated`),
 	EventClaimPrize:                   regexp.MustCompile(`<==\sEvent\.ClaimPrize\(\d+\)`),
 	IncomingInventoryUpdate:           regexp.MustCompile(`Incoming\sInventory\.Updated`),
+	DuelSceneSideboardingStart:        regexp.MustCompile(`DuelScene\.SideboardingStart`),
+	DuelSceneSideboardingStop:         regexp.MustCompile(`DuelScene\.SideboardingStop`),
+	MatchCompleted:                    regexp.MustCompile(`MatchGameRoomStateType_MatchCompleted`),
 }
 
 var cleaners = []*regexp.Regexp{
