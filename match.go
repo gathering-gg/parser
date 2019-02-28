@@ -55,7 +55,7 @@ func (a *ArenaMatch) UpdateGameEnd(end *ArenaGame) {
 // UpdateMatchCompleted updates the match object with the completed
 // status
 func (a *ArenaMatch) UpdateMatchCompleted(com *ArenaMatchCompleted) {
-
+	// TODO: I'm not sure we need anything here, but maybe some sanity setters?
 }
 
 // LogMatchEvent adds an event to the log
