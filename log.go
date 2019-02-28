@@ -198,7 +198,9 @@ func (l *Log) Matches() ([]*ArenaMatch, error) {
 		if s.IsMatchStart() {
 			var err error
 			match, err = s.ParseMatchStart()
-			match.Games = append(match.Games, &ArenaGame{})
+			match.Games = append(match.Games, &ArenaGame{
+				GameStart: match.GameStart,
+			})
 			if err != nil {
 				log.Printf("error parsing match start: %v\n", err.Error())
 				continue
@@ -223,7 +225,9 @@ func (l *Log) Matches() ([]*ArenaMatch, error) {
 		// if s.is sideboard ending
 		if s.IsSideboardStop() {
 			match.currentGame++
-			match.Games = append(match.Games, &ArenaGame{})
+			match.Games = append(match.Games, &ArenaGame{
+				GameStart: s.Time,
+			})
 		}
 		if s.IsMatchEnd() {
 			end, err := s.ParseMatchEnd()

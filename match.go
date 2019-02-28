@@ -12,7 +12,7 @@ type ArenaMatch struct {
 	currentGame                    int
 	MatchID                        string       `json:"matchId"`
 	Games                          []*ArenaGame `json:"games"`
-	GameStart                      time.Time    `json:"gameStart"`
+	GameStart                      *time.Time   `json:"gameStart"`
 	EventID                        string       `json:"eventId"`
 	OpponentScreenName             string       `json:"opponentScreenName"`
 	OpponentIsWotc                 bool         `json:"opponentIsWotc"`
@@ -25,6 +25,7 @@ type ArenaMatch struct {
 
 // ArenaGame is a game within a match
 type ArenaGame struct {
+	GameStart     *time.Time                     `json:"gameStart"`
 	Number        *int                           `json:"number"`
 	MatchID       *string                        `json:"matchId"`
 	SeatID        *int                           `json:"seatId"`
@@ -233,7 +234,7 @@ func (s *Segment) ParseMatchStart() (*ArenaMatch, error) {
 	var match ArenaMatch
 	err := json.Unmarshal(stripNonJSON(s.Text), &match)
 	if s.Time != nil {
-		match.GameStart = *s.Time
+		match.GameStart = s.Time
 	}
 	return &match, err
 }
