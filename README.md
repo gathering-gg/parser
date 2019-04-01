@@ -63,9 +63,6 @@ Please contribute! If you have a problem with the parser you can [open an
 issue](https://github.com/gathering-gg/parser/issues/new). Feel free to ask for
 new features as well!
 
-## Future Work ##
-1. Performance. Not a lot of work has gone into performance - I'd like this to be the fastest parser around.
-
 ## Profiling ##
 https://blog.golang.org/profiling-go-programs
 
