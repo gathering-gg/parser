@@ -102,7 +102,7 @@ func TestLogParseAuth(t *testing.T) {
 func TestLogFindDecks(t *testing.T) {
 	a := assert.New(t)
 	files := map[string]int{
-		"test/output_log0.txt": 12,
+		"test/cosmetics.txt": 20,
 	}
 	for f, i := range files {
 		o, err := os.Open(f)
@@ -117,13 +117,13 @@ func TestLogFindDecks(t *testing.T) {
 
 func TestLogFindMatches(t *testing.T) {
 	a := assert.New(t)
-	f, err := os.Open("test/valentines-2019-update.txt")
+	f, err := os.Open("test/cosmetics.txt")
 	a.Nil(err)
 	alog, err := ParseLog(f)
 	a.Nil(err)
 	matches, err := alog.Matches()
 	a.Nil(err)
-	a.Len(matches, 5)
+	a.Len(matches, 1)
 	for _, m := range matches {
 		a.NotNil(m.MatchID)
 		a.NotNil(m.CourseDeck)
@@ -132,21 +132,21 @@ func TestLogFindMatches(t *testing.T) {
 
 func TestLogMatchRecap(t *testing.T) {
 	a := assert.New(t)
-	f, err := os.Open("test/valentines-2019-update.txt")
+	f, err := os.Open("test/cosmetics.txt")
 	a.Nil(err)
 	alog, err := ParseLog(f)
 	a.Nil(err)
 	matches, err := alog.Matches()
-	a.Len(matches, 5)
+	a.Len(matches, 1)
 	var match *ArenaMatch
 	for _, m := range matches {
-		if m.MatchID == "93958637-81bb-4b15-a48a-340d264682db" {
+		if m.MatchID == "57f28bff-c2d0-4a06-8b68-24a5c304e15e" {
 			match = m
 		}
 	}
 	game := match.Games[len(match.Games)-1]
-	a.Len(game.SeenObjects[1], 11)
-	a.Len(game.SeenObjects[2], 8)
+	a.Len(game.SeenObjects[1], 8)
+	a.Len(game.SeenObjects[2], 9)
 }
 
 func TestLogCrackBooster(t *testing.T) {
@@ -165,6 +165,8 @@ func TestLogCrackBooster(t *testing.T) {
 }
 
 func TestLogEvents(t *testing.T) {
+	t.Skip()
+	// TODO: Join event and check structure
 	a := assert.New(t)
 	file := "test/valentines-2019-update.txt"
 	f, err := os.Open(file)
@@ -188,7 +190,8 @@ func TestLogEvents(t *testing.T) {
 }
 
 func TestLogBestOfThree(t *testing.T) {
-	// GREMessageType_ConnectResp
+	t.Skip()
+	// TODO: Play another best of 3
 	a := assert.New(t)
 	f, err := os.Open("test/bo3-small.txt")
 	a.Nil(err)
