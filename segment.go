@@ -54,7 +54,7 @@ var segmentTypeChecks = map[SegmentType]*regexp.Regexp{
 	MatchStart:                        regexp.MustCompile(`Incoming\sEvent\.MatchCreated`),
 	MatchEnd:                          regexp.MustCompile(`DuelScene\.GameStop`),
 	MatchEvent:                        regexp.MustCompile(`"GREMessageType_GameStateMessage"|GameStateType_Diff`),
-	EventDeckSubmit:                   regexp.MustCompile(`<==\sEvent\.DeckSubmit\(\d+\)`),
+	EventDeckSubmit:                   regexp.MustCompile(`<==\sEvent\.DeckSubmitV3\(\d+\)`),
 	CrackBooster:                      regexp.MustCompile(`<==\sPlayerInventory\.CrackBoostersV3\(\d+\)`),
 	InventoryRankUpdated:              regexp.MustCompile(`Incoming\sRank\.Updated`),
 	EventClaimPrize:                   regexp.MustCompile(`<==\sEvent\.ClaimPrize\(\d+\)`),

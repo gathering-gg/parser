@@ -6,20 +6,16 @@ import (
 
 // ArenaDeck is the log format for an ArenaDeck
 type ArenaDeck struct {
-	ID          string          `json:"id"`
-	Name        string          `json:"name"`
-	Description string          `json:"description"`
-	Format      string          `json:"format"`
-	ResourceID  string          `json:"resourceId"`
-	DeckTileID  int             `json:"deckTileId"`
-	MainDeck    []ArenaDeckCard `json:"mainDeck"`
-	Sideboard   []ArenaDeckCard `json:"sideboard"`
-}
-
-// ArenaDeckCard hold the info of the cards in a deck
-type ArenaDeckCard struct {
-	ID       string `json:"id"`
-	Quantity int    `json:"quantity"`
+	ID          string `json:"id"`
+	Name        string `json:"name"`
+	Description string `json:"description"`
+	Format      string `json:"format"`
+	DeckTileID  int    `json:"deckTileId"`
+	MainDeck    []int  `json:"mainDeck"`
+	Sideboard   []int  `json:"sideboard"`
+	// TODO: What types are these?
+	// cardSkins
+	// cardBack
 }
 
 // IsArenaDecks checks if a segment contains Arena Decks
