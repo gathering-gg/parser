@@ -48,7 +48,7 @@ var segmentTypeChecks = map[SegmentType]*regexp.Regexp{
 	PlayerInventoryGetPlayerInventory: regexp.MustCompile(`<==\sPlayerInventory\.GetPlayerInventory\(\d*\)`),
 	PlayerInventoryGetPlayerCards:     regexp.MustCompile(`<==\sPlayerInventory\.GetPlayerCardsV3\(\d*\)`),
 	EventGetCombinedRankInfo:          regexp.MustCompile(`<==\sEvent\.GetCombinedRankInfo\(\d+\)`),
-	DeckGetDeckLists:                  regexp.MustCompile(`<==\sDeck\.GetDeckLists\(\d+\)`),
+	DeckGetDeckLists:                  regexp.MustCompile(`<==\sDeck\.GetDeckListsV3\(\d+\)`),
 	PlayerAuth:                        regexp.MustCompile(`"screenName":\s"(.*)"`),
 	EventGetPlayerCourse:              regexp.MustCompile(`<==\sEvent\.GetPlayerCourse\(\d+\)`),
 	MatchStart:                        regexp.MustCompile(`Incoming\sEvent\.MatchCreated`),
