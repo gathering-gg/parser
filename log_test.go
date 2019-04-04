@@ -102,7 +102,7 @@ func TestLogParseAuth(t *testing.T) {
 func TestLogFindDecks(t *testing.T) {
 	a := assert.New(t)
 	files := map[string]int{
-		"test/output_log0.txt": 12,
+		"test/cosmetics.txt": 20,
 	}
 	for f, i := range files {
 		o, err := os.Open(f)
@@ -117,13 +117,13 @@ func TestLogFindDecks(t *testing.T) {
 
 func TestLogFindMatches(t *testing.T) {
 	a := assert.New(t)
-	f, err := os.Open("test/valentines-2019-update.txt")
+	f, err := os.Open("test/cosmetics.txt")
 	a.Nil(err)
 	alog, err := ParseLog(f)
 	a.Nil(err)
 	matches, err := alog.Matches()
 	a.Nil(err)
-	a.Len(matches, 5)
+	a.Len(matches, 1)
 	for _, m := range matches {
 		a.NotNil(m.MatchID)
 		a.NotNil(m.CourseDeck)
@@ -132,21 +132,21 @@ func TestLogFindMatches(t *testing.T) {
 
 func TestLogMatchRecap(t *testing.T) {
 	a := assert.New(t)
-	f, err := os.Open("test/valentines-2019-update.txt")
+	f, err := os.Open("test/cosmetics.txt")
 	a.Nil(err)
 	alog, err := ParseLog(f)
 	a.Nil(err)
 	matches, err := alog.Matches()
-	a.Len(matches, 5)
+	a.Len(matches, 1)
 	var match *ArenaMatch
 	for _, m := range matches {
-		if m.MatchID == "93958637-81bb-4b15-a48a-340d264682db" {
+		if m.MatchID == "57f28bff-c2d0-4a06-8b68-24a5c304e15e" {
 			match = m
 		}
 	}
 	game := match.Games[len(match.Games)-1]
-	a.Len(game.SeenObjects[1], 11)
-	a.Len(game.SeenObjects[2], 8)
+	a.Len(game.SeenObjects[1], 8)
+	a.Len(game.SeenObjects[2], 9)
 }
 
 func TestLogCrackBooster(t *testing.T) {
@@ -166,7 +166,7 @@ func TestLogCrackBooster(t *testing.T) {
 
 func TestLogEvents(t *testing.T) {
 	a := assert.New(t)
-	file := "test/valentines-2019-update.txt"
+	file := "test/march-constructed.txt"
 	f, err := os.Open(file)
 	a.Nil(err)
 	alog, err := ParseLog(f)
@@ -177,18 +177,17 @@ func TestLogEvents(t *testing.T) {
 	e := eventResults[0]
 	a.NotNil(e.ClaimPrize)
 	a.NotNil(e.Prize)
-	a.Equal("d2fcb515-beb0-41c2-a069-6a6a7aa3d099", e.ClaimPrize.ID)
-	a.Equal("Valentines_2019", e.ClaimPrize.InternalEventName)
-	a.Equal(5, e.ClaimPrize.ModuleInstanceData.WinLossGate.MaxWins)
-	a.Equal(5, e.ClaimPrize.ModuleInstanceData.WinLossGate.CurrentWins)
-	a.Equal(0, e.ClaimPrize.ModuleInstanceData.WinLossGate.CurrentLosses)
-	a.Equal(70140, e.Prize.Delta.CardsAdded[0])
-	a.Equal(70141, e.Prize.Delta.CardsAdded[1])
-	a.Equal(0, e.Prize.Delta.GoldDelta)
+	a.Equal("00f2bcfe-e5c3-45ba-9950-05d10d2687ad", e.ClaimPrize.ID)
+	a.Equal("Constructed_Event", e.ClaimPrize.InternalEventName)
+	a.Equal(7, e.ClaimPrize.ModuleInstanceData.WinLossGate.MaxWins)
+	a.Equal(4, e.ClaimPrize.ModuleInstanceData.WinLossGate.CurrentWins)
+	a.Equal(3, e.ClaimPrize.ModuleInstanceData.WinLossGate.CurrentLosses)
+	a.Equal(67692, e.Prize.Delta.CardsAdded[0])
+	a.Equal(66821, e.Prize.Delta.CardsAdded[1])
+	a.Equal(500, e.Prize.Delta.GoldDelta)
 }
 
 func TestLogBestOfThree(t *testing.T) {
-	// GREMessageType_ConnectResp
 	a := assert.New(t)
 	f, err := os.Open("test/bo3-small.txt")
 	a.Nil(err)

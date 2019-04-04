@@ -52,26 +52,16 @@ func TestParsePayEntry(t *testing.T) {
     "resourceId": "00000000-0000-0000-0000-000000000000",
     "deckTileId": null,
     "mainDeck": [
-      {
-        "id": "67015",
-        "quantity": 12
-      },
-      {
-        "id": "67017",
-        "quantity": 12
-      },
-      {
-        "id": "67019",
-        "quantity": 12
-      },
-      {
-        "id": "67021",
-        "quantity": 12
-      },
-      {
-        "id": "67023",
-        "quantity": 12
-      }
+        67015,
+        12,
+        67017,
+        12,
+        67019,
+        12,
+        67021,
+        12,
+        67023,
+        12
     ],
     "sideboard": [],
     "lastUpdated": "0001-01-01T00:00:00",
@@ -111,26 +101,16 @@ func TestParseEventGetPlayerCourse(t *testing.T) {
     "resourceId": "00000000-0000-0000-0000-000000000000",
     "deckTileId": null,
     "mainDeck": [
-      {
-        "id": "67015",
-        "quantity": 12
-      },
-      {
-        "id": "67017",
-        "quantity": 12
-      },
-      {
-        "id": "67019",
-        "quantity": 12
-      },
-      {
-        "id": "67021",
-        "quantity": 12
-      },
-      {
-        "id": "67023",
-        "quantity": 12
-      }
+        67015,
+        12,
+        67017,
+        12,
+        67019,
+        12,
+        67021,
+        12,
+        67023,
+        12
     ],
     "sideboard": [],
     "lastUpdated": "0001-01-01T00:00:00",
