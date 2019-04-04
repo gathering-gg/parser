@@ -1,0 +1,4522 @@
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+[UnityCrossThreadLogger]4/2/2019 3:01:41 PM
+(-1) Incoming Quest.Updated []
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+[UnityCrossThreadLogger]4/2/2019 3:01:41 PM
+(-1) Incoming TrackProgress.Updated [
+  {
+    "trackName": "EarlyPlayerProgression",
+    "rewardWebDiff": {
+      "currentUnlockedNodes": [
+        3,
+        4
+      ],
+      "currentAvailableNodes": [
+        0,
+        1,
+        2,
+        8,
+        9
+      ],
+      "oldUnlockedNodes": [
+        3,
+        4
+      ],
+      "oldAvailableNodes": [
+        0,
+        1,
+        2,
+        8,
+        9
+      ],
+      "inventoryDelta": {
+        "cardsAdded": [],
+        "boosterDelta": [],
+        "decksAdded": [],
+        "voucherItemsDelta": [],
+        "wcCommonDelta": 0,
+        "wcUncommonDelta": 0,
+        "wcRareDelta": 0,
+        "wcMythicDelta": 0,
+        "goldDelta": 0,
+        "gemsDelta": 0,
+        "earnedGemsDelta": 0,
+        "draftTokensDelta": 0,
+        "sealedTokensDelta": 0,
+        "wcTrackPosition": -1,
+        "vaultProgressDelta": 0,
+        "newNValCommon": -1,
+        "newNValUncommon": -1,
+        "newNValRare": -1,
+        "newNValMythic": -1,
+        "vanityItemsAdded": [],
+        "vanityItemsRemoved": [],
+        "artSkinsAdded": [],
+        "artSkinsRemoved": [],
+        "invEtag": "",
+        "cardEtag": "",
+        "cosmeticEtag": ""
+      }
+    }
+  }
+]
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+[Client GRE]4/2/2019 3:01:41 PM: EZIDLEQCFFAMLE27DG4TFGLT5Q to Match: ClientToMatchServiceMessageType_ClientToGREUIMessage
+{
+  "requestId": 191,
+  "clientToMatchServiceMessageType": "ClientToMatchServiceMessageType_ClientToGREUIMessage",
+  "payload": "CDUQAcICBQoBAhoA"
+}
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+[UnityCrossThreadLogger]Skins seen: 67992=DA 66819=DA 68012=DA 67992=DA 68012=DA .
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+[UnityCrossThreadLogger]Skins seen: 67992=DA 66819=DA 68012=DA 67992=DA 68012=DA .
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+[UnityCrossThreadLogger]4/2/2019 3:01:41 PM
+==> Log.Info(290):
+{
+  "jsonrpc": "2.0",
+  "method": "Log.Info",
+  "params": {
+    "messageName": "DuelScene.GameStop",
+    "humanContext": "General information about a game that has ended within a match.",
+    "payloadObject": {
+      "playerId": "EZIDLEQCFFAMLE27DG4TFGLT5Q",
+      "seatId": 1,
+      "teamId": 1,
+      "gameNumber": 1,
+      "matchId": "05fe1d74-4fe4-4210-bd79-f8aebfef248a",
+      "eventId": "Constructed_Event",
+      "startingTeamId": 2,
+      "winningTeamId": 2,
+      "winningReason": "ResultReason_Concede",
+      "mulliganedHands": [],
+      "turnCount": 16,
+      "turnCountInFullControl": 0,
+      "secondsCount": 256,
+      "secondsCountInFullControl": 0,
+      "ropeShownCount": 0,
+      "ropeExpiredCount": 0
+    },
+    "transactionId": "00000000-0000-0000-0000-000000000000"
+  },
+  "id": "290"
+}
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+[UnityCrossThreadLogger]4/2/2019 3:01:41 PM
+==> Log.Info(291):
+{
+  "jsonrpc": "2.0",
+  "method": "Log.Info",
+  "params": {
+    "messageName": "DuelScene.EndOfMatchReport",
+    "humanContext": "End of match report",
+    "payloadObject": {
+      "matchId": "05fe1d74-4fe4-4210-bd79-f8aebfef248a",
+      "maxCreatures": 3,
+      "maxLands": 3,
+      "maxArtifactsAndEnchantments": 0,
+      "longestPassPriorityWaitTimeInSeconds": "00:00:09.7919975",
+      "shortestPassPriorityWaitTimeInSeconds": "00:00:00.3740018",
+      "averagePassPriorityWaitTimeInSeconds": 2.270973,
+      "receivedPriorityCount": 30,
+      "passedPriorityCount": 15,
+      "respondedToPriorityCount": 15,
+      "spellsCastWithAutoPayCount": 17,
+      "spellsCastWithManualManaCount": 0,
+      "spellsCastWithMixedPayManaCount": 0,
+      "abilityUseByGrpId": "",
+      "abilityCanceledByGrpId": "",
+      "averageActionsByLocalPhaseStep": "Phase_Main1, Step_None : 1.375 Phase_Main2, Step_None : 0.125 ",
+      "averageActionsByOpponentPhaseStep": "Phase_Main1, Step_None : 0.125",
+      "playerId": "EZIDLEQCFFAMLE27DG4TFGLT5Q"
+    },
+    "transactionId": "00000000-0000-0000-0000-000000000000"
+  },
+  "id": "291"
+}
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+[UnityCrossThreadLogger]4/2/2019 3:01:41 PM
+==> Log.Info(292):
+{
+  "jsonrpc": "2.0",
+  "method": "Log.Info",
+  "params": {
+    "messageName": "DuelScene.EmotesUsedReport",
+    "humanContext": "A tally of emotes used by a player during a match.",
+    "payloadObject": {
+      "matchId": "05fe1d74-4fe4-4210-bd79-f8aebfef248a",
+      "emotes": [],
+      "playerId": "EZIDLEQCFFAMLE27DG4TFGLT5Q"
+    },
+    "transactionId": "00000000-0000-0000-0000-000000000000"
+  },
+  "id": "292"
+}
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+[UnityCrossThreadLogger]Skins seen: 67992=DA 66819=DA 68012=DA 67992=DA 68012=DA .
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+[Client GRE]4/2/2019 3:01:41 PM: Match to EZIDLEQCFFAMLE27DG4TFGLT5Q: MatchGameRoomStateChangedEvent
+{
+  "transactionId": "5c70042a-3a23-4f69-bbd6-8ca2658a511c",
+  "timestamp": "636898285010052041",
+  "matchGameRoomStateChangedEvent": {
+    "gameRoomInfo": {
+      "gameRoomConfig": {
+        "eventId": "Constructed_Event",
+        "matchId": "05fe1d74-4fe4-4210-bd79-f8aebfef248a"
+      },
+      "stateType": "MatchGameRoomStateType_MatchCompleted",
+      "finalMatchResult": {
+        "matchId": "05fe1d74-4fe4-4210-bd79-f8aebfef248a",
+        "matchCompletedReason": "MatchCompletedReasonType_Success",
+        "resultList": [
+          {
+            "scope": "MatchScope_Game",
+            "result": "ResultType_WinLoss",
+            "winningTeamId": 2
+          },
+          {
+            "scope": "MatchScope_Match",
+            "result": "ResultType_WinLoss",
+            "winningTeamId": 2
+          }
+        ]
+      }
+    }
+  }
+}
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+[UnityCrossThreadLogger]STATE CHANGED Playing -> MatchCompleted
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+[Client GRE]GREConnection.HandleWebSocketClosed(CloseType "NormalClosure" reason "{"Details":{"Function":"ProcessReceive","Description":"Closed by remote end"}}")
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+[UnityCrossThreadLogger]STATE CHANGED MatchCompleted -> Disconnected
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+[UnityCrossThreadLogger]4/2/2019 3:01:41 PM
+<== Log.Info(290)
+True
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+[UnityCrossThreadLogger]4/2/2019 3:01:41 PM
+<== Log.Info(291)
+True
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+[UnityCrossThreadLogger]4/2/2019 3:01:41 PM
+<== Log.Info(292)
+True
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+Coroutine couldn't be started because the the game object 'critter_bird(Clone)' is inactive!
+ 
+(Filename:  Line: 784)
+
+Unloading 7 Unused Serialized files (Serialized files now loaded: 20)
+Applying Global Quality Level 0 - Low
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+
+Unloading 3472 unused Assets to reduce memory usage. Loaded Objects now: 113724.
+Total: 514.467600 ms (FindLiveObjects: 9.601300 ms CreateObjectMapping: 10.018900 ms MarkObjects: 491.723500 ms  DeleteObjects: 3.122900 ms)
+
+[UnityCrossThreadLogger]4/2/2019 3:01:48 PM
+==> PlayerInventory.GetPlayerInventory(293):
+{
+  "jsonrpc": "2.0",
+  "method": "PlayerInventory.GetPlayerInventory",
+  "params": {},
+  "id": "293"
+}
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+[UnityCrossThreadLogger]4/2/2019 3:01:48 PM
+==> Log.Info(294):
+{
+  "jsonrpc": "2.0",
+  "method": "Log.Info",
+  "params": {
+    "messageName": "Client.SceneChange",
+    "humanContext": "Client changed scenes to EventLanding, duration 00:04:33.7790076",
+    "payloadObject": {
+      "fromSceneName": "DuelScene",
+      "toSceneName": "EventLanding",
+      "timestamp": "2019-04-02T19:01:48.1283517Z",
+      "duration": "00:04:33.7790076",
+      "initiator": "User",
+      "context": "Constructed_Event",
+      "playerId": "EZIDLEQCFFAMLE27DG4TFGLT5Q"
+    },
+    "transactionId": "00000000-0000-0000-0000-000000000000"
+  },
+  "id": "294"
+}
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+AudioManager: Failed to PostEvent: sfx_amb_city_gen_amb_loop_stop on Object: Listener
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+[UnityCrossThreadLogger]4/2/2019 3:01:48 PM
+<== PlayerInventory.GetPlayerInventory(293)
+{
+  "playerId": "EZIDLEQCFFAMLE27DG4TFGLT5Q",
+  "wcCommon": 37,
+  "wcUncommon": 45,
+  "wcRare": 7,
+  "wcMythic": 15,
+  "gold": 24175,
+  "gems": 8100,
+  "draftTokens": 0,
+  "sealedTokens": 0,
+  "wcTrackPosition": 15,
+  "vaultProgress": 32.8,
+  "boosters": [],
+  "vanityItems": {
+    "pets": [],
+    "avatars": [],
+    "cardBacks": [
+      {
+        "name": "CardBack_EmbossedDefaultArena",
+        "mods": []
+      }
+    ]
+  },
+  "vouchers": [],
+  "vanitySelections": {
+    "avatarSelection": null,
+    "avatarModSelection": null,
+    "cardBackSelection": null,
+    "cardBackModSelection": null,
+    "petSelection": null,
+    "petModSelection": null
+  }
+}
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+[UnityCrossThreadLogger]4/2/2019 3:01:48 PM
+<== Log.Info(294)
+True
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+AudioManager: Failed to PostEvent: sfx_amb_city_gen_amb_loop_stop on Object: Listener
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+[UnityCrossThreadLogger]4/2/2019 3:01:48 PM
+==> Config.JoinEventQueueStatus(295):
+{
+  "jsonrpc": "2.0",
+  "method": "Config.JoinEventQueueStatus",
+  "params": {},
+  "id": "295"
+}
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+[UnityCrossThreadLogger]4/2/2019 3:01:48 PM
+==> Event.GetPlayerCourseV2(296):
+{
+  "jsonrpc": "2.0",
+  "method": "Event.GetPlayerCourseV2",
+  "params": {
+    "eventName": "Constructed_Event"
+  },
+  "id": "296"
+}
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+[UnityCrossThreadLogger]4/2/2019 3:01:48 PM
+<== Config.JoinEventQueueStatus(295)
+true
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+[UnityCrossThreadLogger]4/2/2019 3:01:48 PM
+<== Event.GetPlayerCourseV2(296)
+{
+  "Id": "00f2bcfe-e5c3-45ba-9950-05d10d2687ad",
+  "InternalEventName": "Constructed_Event",
+  "PlayerId": null,
+  "ModuleInstanceData": {
+    "HasPaidEntry": "Gold",
+    "DeckSelected": true,
+    "WinLossGate": {
+      "MaxWins": 7,
+      "MaxLosses": 3,
+      "CurrentWins": 4,
+      "CurrentLosses": 3,
+      "ProcessedMatchIds": [
+        "74810e32-d84a-43e9-b2a5-f0a81f359b67",
+        "3edcec9a-7d64-4f8b-9bde-edda6c93e288",
+        "5286f215-7e22-4347-bafb-f6764c6d3073",
+        "85d6140e-26e6-41ee-97f4-fc74598d54a6",
+        "4598a1eb-ce1d-419a-b320-76a156f97936",
+        "ee479eb0-c9e2-4694-af61-63397f83ae48",
+        "05fe1d74-4fe4-4210-bd79-f8aebfef248a"
+      ]
+    }
+  },
+  "CurrentEventState": "DoneWithMatches",
+  "CurrentModule": "ClaimPrize",
+  "CardPool": null,
+  "CourseDeck": {
+    "cardSkins": [
+      {
+        "grpId": 67992,
+        "ccv": "DA"
+      },
+      {
+        "grpId": 66819,
+        "ccv": "DA"
+      },
+      {
+        "grpId": 68012,
+        "ccv": "DA"
+      }
+    ],
+    "id": "acd08352-afba-467f-b3f0-9907fec24513",
+    "name": "RDW",
+    "description": "",
+    "format": "Standard",
+    "deckTileId": 66819,
+    "mainDeck": [
+      66819,
+      4,
+      67021,
+      19,
+      67358,
+      4,
+      68012,
+      4,
+      67362,
+      4,
+      68576,
+      4,
+      67992,
+      4,
+      66263,
+      4,
+      67408,
+      4,
+      69235,
+      4,
+      68560,
+      4,
+      69243,
+      1
+    ],
+    "sideboard": [
+      68569,
+      4,
+      69355,
+      3,
+      66477,
+      1,
+      66815,
+      1
+    ],
+    "cardBack": "CardBack_EmbossedDefaultArena",
+    "lastUpdated": "2019-04-02T02:31:15.8195654"
+  },
+  "PreviousOpponents": []
+}
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+new prize bar state is: QuestShow
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+[UnityCrossThreadLogger]4/2/2019 3:01:48 PM
+==> PlayerInventory.GetPlayerSequenceData(297):
+{
+  "jsonrpc": "2.0",
+  "method": "PlayerInventory.GetPlayerSequenceData",
+  "params": {},
+  "id": "297"
+}
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+The referenced script on this Behaviour (Game Object 'Condition') is missing!
+ 
+(Filename:  Line: 1789)
+
+[UnityCrossThreadLogger]4/2/2019 3:01:48 PM
+<== PlayerInventory.GetPlayerSequenceData(297)
+{
+  "playerId": "EZIDLEQCFFAMLE27DG4TFGLT5Q",
+  "dailySequence": 4,
+  "weeklySequence": 9,
+  "dailyLastAwarded": "2019-04-02T18:57:01.6625895",
+  "weeklyLastAwarded": "2019-04-02T18:57:01.6625895"
+}
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+new prize bar state is: QuestReward
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+new prize bar state is: PrizeDisplay
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+new prize bar state is: PrizeReward
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+[UnityCrossThreadLogger]4/2/2019 3:01:51 PM
+==> Event.ClaimPrize(298):
+{
+  "jsonrpc": "2.0",
+  "method": "Event.ClaimPrize",
+  "params": {
+    "eventName": "Constructed_Event"
+  },
+  "id": "298"
+}
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+[UnityCrossThreadLogger]4/2/2019 3:01:51 PM
+(-1) Incoming Inventory.Updated {
+  "delta": {
+    "gemsDelta": 0,
+    "boosterDelta": [],
+    "cardsAdded": [
+      67692,
+      66821
+    ],
+    "decksAdded": [],
+    "vanityItemsAdded": [],
+    "vanityItemsRemoved": [],
+    "draftTokensDelta": 0,
+    "goldDelta": 500,
+    "sealedTokensDelta": 0,
+    "vaultProgressDelta": 0.3,
+    "wcCommonDelta": 0,
+    "wcMythicDelta": 0,
+    "wcRareDelta": 0,
+    "wcUncommonDelta": 0,
+    "artSkinsAdded": [],
+    "voucherItemsDelta": []
+  },
+  "aetherizedCards": [
+    {
+      "grpId": 67692,
+      "goldAwarded": 0,
+      "gemsAwarded": 0,
+      "set": ""
+    },
+    {
+      "grpId": 69131,
+      "goldAwarded": 0,
+      "gemsAwarded": 0,
+      "set": ""
+    },
+    {
+      "grpId": 66821,
+      "goldAwarded": 0,
+      "gemsAwarded": 0,
+      "set": ""
+    }
+  ],
+  "context": "Event.Prize.Constructed_Event"
+}
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+[UnityCrossThreadLogger]4/2/2019 3:01:51 PM
+==> PlayerInventory.GetPlayerInventory(299):
+{
+  "jsonrpc": "2.0",
+  "method": "PlayerInventory.GetPlayerInventory",
+  "params": {},
+  "id": "299"
+}
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+[UnityCrossThreadLogger]4/2/2019 3:01:51 PM
+==> PlayerInventory.GetPlayerCardsV3(300):
+{
+  "jsonrpc": "2.0",
+  "method": "PlayerInventory.GetPlayerCardsV3",
+  "params": {},
+  "id": "300"
+}
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+[UnityCrossThreadLogger]4/2/2019 3:01:51 PM
+==> PlayerInventory.GetPlayerArtSkins(301):
+{
+  "jsonrpc": "2.0",
+  "method": "PlayerInventory.GetPlayerArtSkins",
+  "params": {},
+  "id": "301"
+}
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+[UnityCrossThreadLogger]4/2/2019 3:01:51 PM
+==> Deck.GetDeckListsV3(302):
+{
+  "jsonrpc": "2.0",
+  "method": "Deck.GetDeckListsV3",
+  "params": {},
+  "id": "302"
+}
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+[UnityCrossThreadLogger]4/2/2019 3:01:51 PM
+<== Event.ClaimPrize(298)
+{
+  "Id": "00f2bcfe-e5c3-45ba-9950-05d10d2687ad",
+  "InternalEventName": "Constructed_Event",
+  "PlayerId": null,
+  "ModuleInstanceData": {
+    "HasPaidEntry": "Gold",
+    "DeckSelected": true,
+    "WinLossGate": {
+      "MaxWins": 7,
+      "MaxLosses": 3,
+      "CurrentWins": 4,
+      "CurrentLosses": 3,
+      "ProcessedMatchIds": [
+        "74810e32-d84a-43e9-b2a5-f0a81f359b67",
+        "3edcec9a-7d64-4f8b-9bde-edda6c93e288",
+        "5286f215-7e22-4347-bafb-f6764c6d3073",
+        "85d6140e-26e6-41ee-97f4-fc74598d54a6",
+        "4598a1eb-ce1d-419a-b320-76a156f97936",
+        "ee479eb0-c9e2-4694-af61-63397f83ae48",
+        "05fe1d74-4fe4-4210-bd79-f8aebfef248a"
+      ]
+    },
+    "HasClaimedPrize": true
+  },
+  "CurrentEventState": "Completed",
+  "CurrentModule": "Complete",
+  "CardPool": null,
+  "CourseDeck": {
+    "id": "acd08352-afba-467f-b3f0-9907fec24513",
+    "name": "RDW",
+    "description": "",
+    "format": "Standard",
+    "resourceId": "00000000-0000-0000-0000-000000000000",
+    "deckTileId": 66819,
+    "mainDeck": [
+      {
+        "id": "66819",
+        "quantity": 4
+      },
+      {
+        "id": "67021",
+        "quantity": 19
+      },
+      {
+        "id": "67358",
+        "quantity": 4
+      },
+      {
+        "id": "68012",
+        "quantity": 4
+      },
+      {
+        "id": "67362",
+        "quantity": 4
+      },
+      {
+        "id": "68576",
+        "quantity": 4
+      },
+      {
+        "id": "67992",
+        "quantity": 4
+      },
+      {
+        "id": "66263",
+        "quantity": 4
+      },
+      {
+        "id": "67408",
+        "quantity": 4
+      },
+      {
+        "id": "69235",
+        "quantity": 4
+      },
+      {
+        "id": "68560",
+        "quantity": 4
+      },
+      {
+        "id": "69243",
+        "quantity": 1
+      }
+    ],
+    "sideboard": [
+      {
+        "id": "68569",
+        "quantity": 4
+      },
+      {
+        "id": "69355",
+        "quantity": 3
+      },
+      {
+        "id": "66477",
+        "quantity": 1
+      },
+      {
+        "id": "66815",
+        "quantity": 1
+      }
+    ],
+    "lastUpdated": "2019-04-02T02:31:15.8195654",
+    "lockedForUse": false,
+    "lockedForEdit": false,
+    "cardBack": "CardBack_EmbossedDefaultArena",
+    "isValid": false
+  },
+  "PreviousOpponents": []
+}
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+[UnityCrossThreadLogger]4/2/2019 3:01:51 PM
+<== PlayerInventory.GetPlayerInventory(299)
+{
+  "playerId": "EZIDLEQCFFAMLE27DG4TFGLT5Q",
+  "wcCommon": 37,
+  "wcUncommon": 45,
+  "wcRare": 7,
+  "wcMythic": 15,
+  "gold": 24675,
+  "gems": 8100,
+  "draftTokens": 0,
+  "sealedTokens": 0,
+  "wcTrackPosition": 15,
+  "vaultProgress": 33.1,
+  "boosters": [],
+  "vanityItems": {
+    "pets": [],
+    "avatars": [],
+    "cardBacks": [
+      {
+        "name": "CardBack_EmbossedDefaultArena",
+        "mods": []
+      }
+    ]
+  },
+  "vouchers": [],
+  "vanitySelections": {
+    "avatarSelection": null,
+    "avatarModSelection": null,
+    "cardBackSelection": null,
+    "cardBackModSelection": null,
+    "petSelection": null,
+    "petModSelection": null
+  }
+}
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+[UnityCrossThreadLogger]4/2/2019 3:01:51 PM
+<== PlayerInventory.GetPlayerCardsV3(300)
+{
+  "68286": 1,
+  "68298": 3,
+  "69108": 1,
+  "68136": 2,
+  "67770": 4,
+  "67772": 4,
+  "68300": 1,
+  "66241": 4,
+  "67992": 4,
+  "68018": 2,
+  "68020": 4,
+  "66235": 2,
+  "68022": 4,
+  "68786": 1,
+  "67700": 4,
+  "67860": 4,
+  "67272": 4,
+  "67950": 2,
+  "68144": 2,
+  "67864": 3,
+  "67780": 4,
+  "67208": 4,
+  "67866": 4,
+  "68034": 4,
+  "68040": 4,
+  "68150": 4,
+  "67960": 2,
+  "68156": 4,
+  "67794": 4,
+  "66877": 3,
+  "68050": 2,
+  "66451": 2,
+  "67964": 4,
+  "67876": 3,
+  "68268": 2,
+  "68054": 4,
+  "67972": 4,
+  "67706": 4,
+  "68056": 4,
+  "67880": 2,
+  "67882": 4,
+  "68276": 3,
+  "67718": 4,
+  "67978": 1,
+  "67726": 3,
+  "67440": 4,
+  "67728": 4,
+  "66641": 4,
+  "68164": 4,
+  "67900": 4,
+  "67986": 4,
+  "67904": 2,
+  "67742": 4,
+  "67162": 4,
+  "66903": 2,
+  "68068": 3,
+  "67660": 3,
+  "68070": 4,
+  "68256": 2,
+  "67914": 4,
+  "67818": 1,
+  "67822": 4,
+  "67170": 4,
+  "68250": 1,
+  "69110": 1,
+  "68252": 2,
+  "66211": 2,
+  "66213": 4,
+  "67998": 2,
+  "68767": 1,
+  "68000": 4,
+  "67756": 4,
+  "67924": 4,
+  "68002": 4,
+  "68769": 3,
+  "67760": 4,
+  "67240": 4,
+  "68090": 4,
+  "67930": 4,
+  "66393": 4,
+  "68012": 4,
+  "68092": 2,
+  "68014": 4,
+  "67932": 4,
+  "66739": 4,
+  "67330": 4,
+  "67256": 4,
+  "66677": 2,
+  "68202": 4,
+  "68200": 4,
+  "68198": 4,
+  "68196": 4,
+  "68194": 4,
+  "68188": 4,
+  "68186": 4,
+  "68184": 4,
+  "68182": 4,
+  "68178": 4,
+  "68724": 4,
+  "68729": 4,
+  "68736": 4,
+  "68726": 4,
+  "68732": 4,
+  "67920": 4,
+  "67980": 2,
+  "67868": 4,
+  "68190": 2,
+  "68140": 2,
+  "67946": 4,
+  "67840": 4,
+  "68168": 2,
+  "67708": 4,
+  "68158": 2,
+  "68148": 2,
+  "67696": 4,
+  "68076": 3,
+  "68106": 4,
+  "67862": 2,
+  "67712": 4,
+  "67912": 3,
+  "67948": 1,
+  "68160": 2,
+  "67796": 4,
+  "67934": 4,
+  "67872": 2,
+  "68030": 3,
+  "67714": 1,
+  "68680": 4,
+  "68511": 4,
+  "68520": 4,
+  "68526": 4,
+  "68638": 4,
+  "68560": 4,
+  "68172": 4,
+  "67792": 4,
+  "67820": 4,
+  "67944": 3,
+  "67974": 2,
+  "67732": 4,
+  "68042": 1,
+  "67342": 3,
+  "68553": 3,
+  "68519": 4,
+  "68603": 4,
+  "68521": 4,
+  "68647": 4,
+  "68615": 3,
+  "68656": 2,
+  "66087": 1,
+  "67310": 1,
+  "68679": 4,
+  "68546": 4,
+  "68533": 4,
+  "68562": 2,
+  "68675": 4,
+  "68535": 4,
+  "68645": 2,
+  "67690": 3,
+  "65971": 3,
+  "66947": 3,
+  "65991": 2,
+  "66407": 4,
+  "67870": 2,
+  "67692": 3,
+  "67902": 3,
+  "66647": 3,
+  "66649": 1,
+  "66223": 2,
+  "67748": 1,
+  "66205": 2,
+  "66745": 1,
+  "67586": 1,
+  "68733": 4,
+  "68476": 4,
+  "68633": 4,
+  "68658": 4,
+  "68514": 4,
+  "68646": 4,
+  "68602": 1,
+  "68026": 3,
+  "68482": 4,
+  "68588": 4,
+  "68498": 4,
+  "68612": 4,
+  "68622": 4,
+  "68697": 4,
+  "68491": 4,
+  "67498": 2,
+  "68088": 2,
+  "67926": 4,
+  "67736": 4,
+  "67694": 4,
+  "67962": 4,
+  "67922": 3,
+  "68134": 1,
+  "68635": 4,
+  "68486": 4,
+  "68580": 4,
+  "68740": 4,
+  "68473": 4,
+  "68112": 4,
+  "67358": 4,
+  "67250": 4,
+  "67970": 2,
+  "66277": 2,
+  "67940": 2,
+  "66283": 1,
+  "66071": 3,
+  "66103": 1,
+  "67806": 3,
+  "66263": 4,
+  "67388": 4,
+  "67824": 4,
+  "67196": 4,
+  "67598": 4,
+  "67928": 4,
+  "68100": 4,
+  "67898": 3,
+  "67852": 4,
+  "67684": 4,
+  "68594": 4,
+  "68678": 4,
+  "68655": 4,
+  "68589": 4,
+  "68739": 3,
+  "66325": 1,
+  "68310": 3,
+  "66275": 4,
+  "68110": 4,
+  "66893": 4,
+  "66257": 2,
+  "66811": 2,
+  "66831": 2,
+  "66847": 2,
+  "66817": 1,
+  "68064": 1,
+  "68052": 2,
+  "66491": 1,
+  "67996": 4,
+  "67854": 4,
+  "68048": 2,
+  "68104": 1,
+  "68523": 4,
+  "68719": 4,
+  "68517": 4,
+  "68575": 4,
+  "68468": 4,
+  "68706": 3,
+  "68488": 4,
+  "68565": 4,
+  "68481": 4,
+  "68515": 4,
+  "68624": 4,
+  "68593": 4,
+  "67206": 4,
+  "68597": 4,
+  "68617": 3,
+  "66863": 2,
+  "68192": 3,
+  "66925": 1,
+  "67228": 4,
+  "67548": 4,
+  "68102": 3,
+  "67812": 2,
+  "66707": 1,
+  "65985": 2,
+  "66029": 1,
+  "67176": 3,
+  "67166": 4,
+  "67646": 2,
+  "66489": 1,
+  "68650": 2,
+  "67005": 3,
+  "67710": 4,
+  "67798": 1,
+  "68146": 1,
+  "67298": 4,
+  "68060": 4,
+  "67790": 4,
+  "67816": 3,
+  "68543": 4,
+  "67982": 3,
+  "66929": 4,
+  "68634": 2,
+  "66943": 1,
+  "67514": 4,
+  "67460": 4,
+  "67482": 4,
+  "67326": 4,
+  "68122": 4,
+  "67464": 4,
+  "67316": 4,
+  "66157": 4,
+  "67292": 4,
+  "67324": 4,
+  "67478": 4,
+  "66901": 1,
+  "66911": 1,
+  "67308": 2,
+  "67320": 2,
+  "66793": 1,
+  "67600": 1,
+  "67918": 3,
+  "68176": 2,
+  "68082": 1,
+  "66995": 1,
+  "68522": 4,
+  "68478": 4,
+  "68627": 4,
+  "68616": 2,
+  "68584": 3,
+  "68579": 4,
+  "68490": 4,
+  "68662": 4,
+  "68709": 2,
+  "68694": 3,
+  "68561": 4,
+  "68665": 3,
+  "68485": 4,
+  "68572": 4,
+  "68607": 4,
+  "68470": 4,
+  "68479": 4,
+  "68464": 4,
+  "68600": 4,
+  "68475": 4,
+  "68591": 4,
+  "68480": 2,
+  "68484": 4,
+  "68474": 4,
+  "68567": 4,
+  "68619": 4,
+  "68637": 4,
+  "68487": 4,
+  "68660": 4,
+  "68691": 4,
+  "68571": 4,
+  "68550": 4,
+  "68610": 4,
+  "68725": 4,
+  "68728": 4,
+  "68611": 4,
+  "68727": 3,
+  "68537": 4,
+  "68507": 4,
+  "68496": 4,
+  "68618": 4,
+  "67936": 1,
+  "67146": 2,
+  "67740": 4,
+  "68128": 4,
+  "67128": 3,
+  "68032": 4,
+  "66967": 1,
+  "68086": 1,
+  "67688": 2,
+  "67174": 4,
+  "67720": 4,
+  "67160": 4,
+  "68062": 4,
+  "66493": 1,
+  "67724": 4,
+  "66645": 2,
+  "67942": 3,
+  "67738": 4,
+  "68114": 4,
+  "66011": 2,
+  "67390": 2,
+  "66239": 2,
+  "65997": 1,
+  "67734": 1,
+  "68010": 4,
+  "67582": 2,
+  "67276": 2,
+  "66121": 4,
+  "66765": 4,
+  "66699": 4,
+  "67778": 4,
+  "66185": 2,
+  "66759": 4,
+  "66725": 3,
+  "66689": 2,
+  "66781": 2,
+  "66753": 1,
+  "66415": 1,
+  "66069": 2,
+  "66201": 1,
+  "66057": 4,
+  "66485": 2,
+  "66945": 2,
+  "66885": 4,
+  "66361": 3,
+  "66101": 4,
+  "66949": 4,
+  "66723": 3,
+  "66137": 3,
+  "66891": 2,
+  "66135": 2,
+  "66377": 3,
+  "67828": 4,
+  "66871": 3,
+  "66337": 1,
+  "66889": 1,
+  "66719": 2,
+  "66079": 2,
+  "67584": 3,
+  "66839": 1,
+  "67910": 3,
+  "67037": 2,
+  "67968": 1,
+  "66483": 2,
+  "68582": 2,
+  "68592": 4,
+  "68512": 1,
+  "68573": 4,
+  "68558": 3,
+  "68668": 4,
+  "68737": 4,
+  "68659": 4,
+  "68639": 4,
+  "68566": 4,
+  "68570": 2,
+  "66425": 2,
+  "68466": 4,
+  "68497": 4,
+  "68720": 3,
+  "68569": 4,
+  "67466": 3,
+  "68581": 4,
+  "68549": 4,
+  "68587": 4,
+  "68489": 4,
+  "68666": 3,
+  "68577": 4,
+  "68477": 4,
+  "68663": 4,
+  "68677": 4,
+  "68462": 4,
+  "68629": 3,
+  "68472": 4,
+  "68557": 4,
+  "66081": 1,
+  "68730": 4,
+  "68652": 1,
+  "68670": 4,
+  "68596": 4,
+  "68554": 4,
+  "68564": 2,
+  "68715": 4,
+  "68700": 4,
+  "68563": 4,
+  "68559": 2,
+  "68525": 4,
+  "68506": 2,
+  "68676": 4,
+  "68495": 4,
+  "68674": 2,
+  "68654": 4,
+  "68529": 4,
+  "68513": 4,
+  "68501": 4,
+  "68681": 4,
+  "68542": 3,
+  "68531": 4,
+  "68628": 3,
+  "68703": 4,
+  "68504": 4,
+  "68534": 4,
+  "68492": 4,
+  "68590": 4,
+  "67318": 3,
+  "68604": 4,
+  "68717": 4,
+  "66821": 2,
+  "68536": 1,
+  "65989": 1,
+  "68016": 1,
+  "67112": 3,
+  "68606": 4,
+  "68574": 3,
+  "68598": 4,
+  "68605": 4,
+  "68595": 4,
+  "68608": 4,
+  "68467": 4,
+  "68721": 4,
+  "68661": 4,
+  "68544": 4,
+  "68556": 4,
+  "68518": 4,
+  "68539": 4,
+  "68648": 4,
+  "66389": 2,
+  "66221": 2,
+  "68671": 4,
+  "68524": 4,
+  "68505": 4,
+  "68516": 3,
+  "68625": 4,
+  "68527": 3,
+  "68541": 4,
+  "68667": 4,
+  "68528": 4,
+  "68626": 4,
+  "68548": 4,
+  "68636": 2,
+  "68642": 2,
+  "68494": 2,
+  "68685": 4,
+  "68723": 4,
+  "68130": 2,
+  "68500": 1,
+  "68502": 4,
+  "68672": 2,
+  "68601": 4,
+  "68599": 3,
+  "68722": 4,
+  "68545": 2,
+  "68555": 4,
+  "68508": 1,
+  "67336": 4,
+  "66031": 3,
+  "68493": 4,
+  "68738": 4,
+  "68649": 2,
+  "68688": 4,
+  "68509": 4,
+  "68653": 4,
+  "68074": 4,
+  "68551": 1,
+  "68632": 3,
+  "67776": 4,
+  "67826": 4,
+  "67844": 2,
+  "67842": 3,
+  "67838": 1,
+  "67808": 4,
+  "67768": 4,
+  "68036": 2,
+  "68066": 2,
+  "67786": 4,
+  "67782": 4,
+  "67848": 2,
+  "67788": 4,
+  "67682": 2,
+  "68078": 3,
+  "68028": 3,
+  "67752": 4,
+  "67704": 4,
+  "68154": 2,
+  "67846": 4,
+  "68116": 1,
+  "67966": 4,
+  "67878": 1,
+  "67896": 3,
+  "67836": 1,
+  "68643": 2,
+  "67424": 2,
+  "68084": 2,
+  "67958": 3,
+  "67730": 4,
+  "68006": 1,
+  "67976": 2,
+  "67744": 3,
+  "67722": 1,
+  "67954": 1,
+  "67750": 4,
+  "68162": 1,
+  "68126": 2,
+  "68152": 1,
+  "68142": 1,
+  "68463": 2,
+  "67850": 2,
+  "67686": 1,
+  "67890": 2,
+  "67886": 1,
+  "66713": 1,
+  "66659": 4,
+  "67702": 1,
+  "68004": 1,
+  "67990": 1,
+  "67804": 2,
+  "68540": 2,
+  "66383": 2,
+  "67830": 1,
+  "67916": 2,
+  "67908": 1,
+  "68058": 2,
+  "68046": 2,
+  "68024": 1,
+  "67716": 3,
+  "68008": 4,
+  "68094": 3,
+  "68124": 2,
+  "67378": 3,
+  "68072": 1,
+  "68585": 1,
+  "65977": 1,
+  "68712": 4,
+  "67858": 1,
+  "67234": 4,
+  "67802": 2,
+  "68044": 2,
+  "66091": 3,
+  "66067": 4,
+  "67132": 4,
+  "66003": 1,
+  "65961": 2,
+  "67180": 4,
+  "67116": 1,
+  "67150": 4,
+  "66963": 1,
+  "66427": 2,
+  "68664": 2,
+  "68614": 3,
+  "66819": 4,
+  "66279": 1,
+  "66737": 1,
+  "68469": 2,
+  "66459": 1,
+  "67698": 1,
+  "66109": 2,
+  "67284": 4,
+  "66363": 4,
+  "67314": 4,
+  "67488": 1,
+  "67274": 4,
+  "67118": 4,
+  "67312": 4,
+  "67126": 3,
+  "67258": 4,
+  "67168": 4,
+  "67262": 4,
+  "67592": 2,
+  "67374": 4,
+  "67278": 4,
+  "67562": 4,
+  "67248": 4,
+  "67122": 4,
+  "67148": 4,
+  "67270": 4,
+  "67264": 4,
+  "67282": 4,
+  "67134": 4,
+  "67124": 3,
+  "67266": 4,
+  "67190": 4,
+  "67392": 4,
+  "67288": 4,
+  "67268": 4,
+  "67596": 3,
+  "66197": 4,
+  "67556": 4,
+  "67528": 4,
+  "67216": 4,
+  "67434": 2,
+  "67494": 2,
+  "67356": 3,
+  "67246": 4,
+  "67194": 4,
+  "67476": 2,
+  "67492": 3,
+  "67506": 1,
+  "67200": 4,
+  "67192": 4,
+  "67338": 4,
+  "67204": 4,
+  "67158": 4,
+  "67328": 4,
+  "67178": 4,
+  "67428": 4,
+  "67508": 4,
+  "67184": 4,
+  "67244": 2,
+  "67224": 4,
+  "67452": 3,
+  "67120": 4,
+  "67212": 4,
+  "67260": 4,
+  "67396": 2,
+  "67590": 4,
+  "67364": 2,
+  "67108": 4,
+  "67520": 4,
+  "67238": 4,
+  "66455": 2,
+  "67286": 4,
+  "67138": 4,
+  "67210": 2,
+  "67376": 4,
+  "67302": 4,
+  "67106": 3,
+  "67386": 4,
+  "67414": 4,
+  "67458": 4,
+  "67220": 4,
+  "67574": 2,
+  "67406": 4,
+  "67418": 4,
+  "67510": 2,
+  "67304": 2,
+  "67254": 4,
+  "67558": 4,
+  "68623": 2,
+  "67554": 4,
+  "67354": 4,
+  "67202": 4,
+  "67400": 4,
+  "67436": 1,
+  "67130": 1,
+  "67602": 3,
+  "67416": 4,
+  "67594": 4,
+  "67532": 2,
+  "67438": 4,
+  "67432": 4,
+  "67410": 4,
+  "67430": 4,
+  "67446": 4,
+  "67444": 4,
+  "67296": 3,
+  "67232": 3,
+  "67456": 4,
+  "67340": 4,
+  "67352": 4,
+  "67546": 4,
+  "67402": 1,
+  "66705": 4,
+  "67572": 1,
+  "67450": 2,
+  "67564": 4,
+  "67306": 4,
+  "67560": 3,
+  "67422": 4,
+  "67442": 4,
+  "66633": 1,
+  "68609": 1,
+  "67226": 3,
+  "67382": 4,
+  "67380": 4,
+  "67110": 4,
+  "67152": 3,
+  "67172": 1,
+  "67230": 1,
+  "67530": 3,
+  "67522": 3,
+  "67114": 2,
+  "68718": 4,
+  "67566": 3,
+  "67198": 3,
+  "67236": 3,
+  "65967": 4,
+  "67144": 4,
+  "67186": 4,
+  "67490": 2,
+  "67454": 4,
+  "67426": 1,
+  "67372": 4,
+  "67412": 4,
+  "67350": 3,
+  "67164": 3,
+  "67294": 1,
+  "67142": 4,
+  "67156": 1,
+  "67448": 2,
+  "67420": 3,
+  "67462": 4,
+  "67009": 2,
+  "66915": 3,
+  "67588": 2,
+  "67538": 2,
+  "68547": 4,
+  "68640": 1,
+  "66913": 2,
+  "67408": 4,
+  "67544": 3,
+  "67486": 2,
+  "67580": 2,
+  "68483": 4,
+  "68735": 4,
+  "68631": 1,
+  "68630": 4,
+  "68644": 2,
+  "68586": 4,
+  "68578": 4,
+  "69781": 4,
+  "66125": 4,
+  "67218": 2,
+  "65993": 1,
+  "66813": 2,
+  "66673": 2,
+  "66267": 3,
+  "66907": 2,
+  "66695": 4,
+  "66933": 1,
+  "66271": 1,
+  "68120": 1,
+  "66835": 4,
+  "66217": 1,
+  "67766": 1,
+  "67360": 2,
+  "66447": 2,
+  "68532": 1,
+  "66169": 1,
+  "66763": 4,
+  "66775": 4,
+  "68714": 2,
+  "68673": 1,
+  "66691": 1,
+  "68613": 2,
+  "68132": 1,
+  "66251": 3,
+  "66131": 2,
+  "67784": 1,
+  "66823": 1,
+  "66803": 2,
+  "66879": 1,
+  "66829": 2,
+  "66663": 4,
+  "66717": 4,
+  "66845": 3,
+  "66795": 4,
+  "66807": 4,
+  "66655": 1,
+  "66897": 2,
+  "67011": 1,
+  "66623": 1,
+  "66627": 2,
+  "66833": 3,
+  "66825": 1,
+  "66965": 1,
+  "67003": 2,
+  "66289": 1,
+  "66335": 1,
+  "66245": 1,
+  "66297": 3,
+  "66341": 2,
+  "66293": 2,
+  "66409": 3,
+  "66017": 1,
+  "66025": 1,
+  "66333": 1,
+  "66033": 1,
+  "66261": 1,
+  "66001": 3,
+  "67242": 4,
+  "66797": 2,
+  "66657": 2,
+  "66625": 1,
+  "66743": 2,
+  "66671": 3,
+  "66741": 2,
+  "66767": 1,
+  "66755": 4,
+  "66651": 1,
+  "66639": 1,
+  "66751": 1,
+  "66757": 1,
+  "66631": 2,
+  "66785": 3,
+  "66629": 1,
+  "66771": 1,
+  "66141": 1,
+  "66195": 2,
+  "66165": 1,
+  "66007": 2,
+  "66281": 1,
+  "66285": 1,
+  "66179": 1,
+  "66193": 1,
+  "68098": 1,
+  "66805": 1,
+  "66643": 3,
+  "66923": 1,
+  "66653": 2,
+  "66715": 1,
+  "66711": 1,
+  "66895": 2,
+  "66857": 1,
+  "66991": 1,
+  "66703": 2,
+  "66927": 2,
+  "66693": 1,
+  "68465": 1,
+  "66059": 1,
+  "67252": 4,
+  "67892": 1,
+  "68734": 1,
+  "68713": 1,
+  "68682": 2,
+  "68657": 2,
+  "68669": 1,
+  "68538": 3,
+  "69185": 4,
+  "69318": 4,
+  "69273": 4,
+  "69379": 4,
+  "69156": 4,
+  "69358": 4,
+  "69213": 2,
+  "69324": 4,
+  "69270": 4,
+  "69263": 4,
+  "69215": 4,
+  "69206": 4,
+  "69264": 4,
+  "69143": 4,
+  "69228": 4,
+  "69312": 4,
+  "69142": 4,
+  "69331": 4,
+  "69148": 4,
+  "69240": 4,
+  "69396": 4,
+  "69336": 4,
+  "69164": 4,
+  "69382": 4,
+  "69255": 4,
+  "69219": 4,
+  "69153": 4,
+  "69305": 4,
+  "69210": 4,
+  "69299": 4,
+  "69260": 4,
+  "69251": 4,
+  "69218": 4,
+  "69225": 4,
+  "69286": 4,
+  "69397": 4,
+  "69182": 4,
+  "69243": 4,
+  "69222": 4,
+  "69261": 4,
+  "69282": 4,
+  "69233": 4,
+  "69194": 4,
+  "69169": 4,
+  "69136": 4,
+  "69146": 4,
+  "69303": 4,
+  "69196": 3,
+  "69328": 1,
+  "69400": 4,
+  "69304": 4,
+  "69191": 4,
+  "69221": 4,
+  "69267": 4,
+  "69395": 4,
+  "69145": 4,
+  "69130": 4,
+  "69321": 4,
+  "69391": 4,
+  "69266": 4,
+  "69241": 4,
+  "69348": 4,
+  "69154": 4,
+  "69176": 4,
+  "69195": 4,
+  "69325": 4,
+  "69201": 4,
+  "69315": 4,
+  "69404": 4,
+  "69167": 4,
+  "69205": 4,
+  "69274": 4,
+  "69133": 4,
+  "69337": 4,
+  "69216": 4,
+  "69245": 4,
+  "69355": 4,
+  "69373": 4,
+  "69401": 4,
+  "69280": 4,
+  "69268": 4,
+  "69184": 4,
+  "69131": 4,
+  "69332": 4,
+  "69262": 3,
+  "69162": 4,
+  "69172": 4,
+  "69197": 4,
+  "69165": 4,
+  "69320": 4,
+  "69281": 3,
+  "69203": 4,
+  "69229": 2,
+  "69310": 3,
+  "69385": 4,
+  "69178": 4,
+  "69291": 2,
+  "69276": 4,
+  "69129": 4,
+  "69200": 4,
+  "69134": 4,
+  "69265": 4,
+  "69138": 4,
+  "69159": 4,
+  "69345": 4,
+  "69388": 4,
+  "69387": 1,
+  "69254": 4,
+  "69311": 2,
+  "69405": 4,
+  "69192": 4,
+  "69226": 4,
+  "69384": 4,
+  "69278": 4,
+  "69269": 4,
+  "69175": 4,
+  "69386": 4,
+  "69220": 3,
+  "69238": 4,
+  "69301": 4,
+  "69174": 4,
+  "69199": 4,
+  "69188": 4,
+  "69338": 4,
+  "69307": 1,
+  "69181": 4,
+  "69290": 3,
+  "69329": 4,
+  "69253": 4,
+  "69394": 1,
+  "69346": 4,
+  "69217": 4,
+  "69330": 4,
+  "69193": 4,
+  "69389": 4,
+  "69171": 2,
+  "69135": 4,
+  "69326": 4,
+  "69271": 4,
+  "69187": 4,
+  "69163": 4,
+  "69257": 4,
+  "69333": 3,
+  "69406": 4,
+  "66421": 3,
+  "69198": 4,
+  "69259": 4,
+  "69319": 4,
+  "69289": 2,
+  "69141": 4,
+  "69272": 4,
+  "69295": 1,
+  "69227": 4,
+  "69224": 4,
+  "69248": 4,
+  "69214": 4,
+  "69352": 4,
+  "69344": 4,
+  "69313": 4,
+  "69232": 4,
+  "69403": 4,
+  "69239": 4,
+  "69235": 4,
+  "69300": 4,
+  "67362": 4,
+  "66919": 1,
+  "66095": 1,
+  "69347": 4,
+  "69339": 3,
+  "69173": 2,
+  "69157": 4,
+  "69140": 4,
+  "69212": 4,
+  "69293": 4,
+  "69376": 3,
+  "69152": 4,
+  "69392": 4,
+  "69398": 4,
+  "69132": 4,
+  "69361": 3,
+  "69144": 4,
+  "69177": 4,
+  "69149": 4,
+  "69296": 4,
+  "69383": 4,
+  "69244": 4,
+  "69150": 4,
+  "69283": 3,
+  "69249": 4,
+  "69247": 4,
+  "69230": 4,
+  "69202": 3,
+  "69179": 4,
+  "69246": 4,
+  "69402": 1,
+  "69285": 1,
+  "69208": 4,
+  "69292": 3,
+  "69231": 4,
+  "69207": 4,
+  "69343": 4,
+  "69322": 3,
+  "69277": 4,
+  "69170": 4,
+  "69287": 4,
+  "69160": 1,
+  "69335": 4,
+  "69302": 4,
+  "69316": 3,
+  "66969": 4,
+  "69204": 2,
+  "69158": 4,
+  "69279": 1,
+  "69180": 4,
+  "69317": 2,
+  "68530": 2,
+  "66727": 3,
+  "69161": 4,
+  "69367": 1,
+  "69308": 4,
+  "69147": 4,
+  "69364": 4,
+  "69166": 3,
+  "69334": 1,
+  "66777": 2,
+  "66787": 1,
+  "69211": 3,
+  "69309": 1,
+  "69168": 4,
+  "69294": 2,
+  "69137": 1,
+  "68731": 1,
+  "69306": 4,
+  "69242": 2,
+  "69223": 4,
+  "69209": 3,
+  "67484": 3,
+  "66371": 3,
+  "69151": 2,
+  "66701": 1,
+  "69380": 4,
+  "69186": 4,
+  "69183": 2,
+  "69250": 2,
+  "69298": 1,
+  "69340": 1,
+  "69390": 3,
+  "69275": 1,
+  "67956": 1,
+  "69190": 4,
+  "69399": 4,
+  "69256": 3,
+  "69237": 2,
+  "69258": 2,
+  "69314": 2,
+  "66687": 4,
+  "68302": 4,
+  "67834": 1,
+  "67906": 1,
+  "66127": 1,
+  "69139": 2,
+  "69252": 2,
+  "69155": 1,
+  "65987": 3,
+  "69288": 2,
+  "68180": 1,
+  "67013": 1,
+  "66349": 1,
+  "66815": 1,
+  "66859": 1,
+  "69407": 4,
+  "70140": 4,
+  "70141": 4,
+  "66231": 2,
+  "66477": 1,
+  "68576": 4,
+  "66495": 2,
+  "69189": 2,
+  "69323": 2,
+  "69417": 1,
+  "69381": 2,
+  "69420": 2,
+  "69419": 3,
+  "69418": 4,
+  "68641": 1,
+  "68499": 1,
+  "68651": 1,
+  "67332": 2,
+  "67534": 1,
+  "68503": 1,
+  "69342": 2,
+  "66429": 1,
+  "66977": 1,
+  "67346": 2,
+  "65973": 1,
+  "69236": 1,
+  "69327": 1,
+  "69393": 4,
+  "66841": 2,
+  "66635": 2,
+  "66729": 1,
+  "66855": 1,
+  "66827": 1,
+  "66851": 1,
+  "66993": 1,
+  "66731": 1,
+  "66761": 1,
+  "66849": 2,
+  "66769": 1,
+  "66123": 1,
+  "66463": 1,
+  "66411": 1,
+  "66255": 1,
+  "66247": 2,
+  "66219": 1,
+  "66321": 1,
+  "66365": 1,
+  "66089": 1,
+  "66497": 1,
+  "66225": 1,
+  "66021": 2,
+  "66199": 1,
+  "66999": 2,
+  "66853": 2,
+  "66867": 1,
+  "66809": 2,
+  "66899": 1,
+  "66779": 1,
+  "66961": 1,
+  "66861": 1,
+  "66307": 1,
+  "66369": 1,
+  "66253": 1,
+  "66487": 1,
+  "66299": 3,
+  "66183": 1,
+  "66243": 1,
+  "66329": 1,
+  "66347": 1,
+  "66373": 1,
+  "67366": 1,
+  "66331": 2,
+  "66105": 1,
+  "66073": 1,
+  "66445": 1,
+  "66047": 1,
+  "66139": 1,
+  "66065": 1,
+  "66469": 1,
+  "67502": 2,
+  "67344": 1,
+  "67290": 2,
+  "67398": 1,
+  "68583": 2,
+  "67536": 2,
+  "67384": 3,
+  "67480": 1,
+  "67512": 2,
+  "67334": 1,
+  "67576": 2,
+  "67404": 1,
+  "67568": 2,
+  "67474": 1,
+  "67322": 1,
+  "67300": 1,
+  "67470": 2,
+  "67542": 2,
+  "69349": 1,
+  "66875": 1,
+  "66227": 1,
+  "66305": 1,
+  "69370": 1,
+  "66367": 1,
+  "66909": 1
+}
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+[UnityCrossThreadLogger]4/2/2019 3:01:51 PM
+<== PlayerInventory.GetPlayerArtSkins(301)
+{
+  "122154": "DA",
+  "152027": "DA",
+  "400332": "DA",
+  "400748": "DA",
+  "400831": "DA",
+  "401425": "DA",
+  "402057": "DA",
+  "402723": "DA",
+  "402913": "DA",
+  "402959": "DA",
+  "403359": "DA",
+  "404135": "DA",
+  "404488": "DA",
+  "404796": "DA",
+  "405215": "DA",
+  "405570": "DA"
+}
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+[UnityCrossThreadLogger]4/2/2019 3:01:51 PM
+<== Deck.GetDeckListsV3(302)
+[
+  {
+    "cardSkins": null,
+    "id": "6cb1b89d-e2cb-4cf6-8145-7d11074900b3",
+    "name": "Selesnya Convoke (C)",
+    "description": "",
+    "format": "Standard",
+    "deckTileId": 68736,
+    "mainDeck": [
+      67460,
+      3,
+      66891,
+      2,
+      67482,
+      3,
+      68647,
+      3,
+      67464,
+      2,
+      67440,
+      4,
+      68605,
+      2,
+      68676,
+      1,
+      68467,
+      4,
+      68697,
+      2,
+      66533,
+      7,
+      66501,
+      5,
+      68736,
+      4,
+      68488,
+      4,
+      68481,
+      3,
+      68472,
+      3,
+      68598,
+      1,
+      68604,
+      3,
+      67466,
+      1,
+      68622,
+      3
+    ],
+    "sideboard": [],
+    "cardBack": null,
+    "lastUpdated": "2018-11-25T21:20:08.9850747"
+  },
+  {
+    "cardSkins": null,
+    "id": "e982571b-709a-4d7d-b357-c616fe04203d",
+    "name": "Boros (CU)",
+    "description": "",
+    "format": "Standard",
+    "deckTileId": 68580,
+    "mainDeck": [
+      68475,
+      4,
+      68563,
+      1,
+      68487,
+      2,
+      68617,
+      2,
+      68581,
+      2,
+      68670,
+      1,
+      66263,
+      4,
+      68700,
+      1,
+      68725,
+      4,
+      66525,
+      8,
+      66501,
+      7,
+      68580,
+      1,
+      67992,
+      3,
+      68489,
+      2,
+      68252,
+      2,
+      68467,
+      2,
+      67660,
+      1,
+      68561,
+      1,
+      68194,
+      4,
+      68114,
+      3,
+      68659,
+      3,
+      68648,
+      1,
+      67974,
+      1
+    ],
+    "sideboard": [],
+    "cardBack": null,
+    "lastUpdated": "2018-12-25T19:05:35.1366288"
+  },
+  {
+    "cardSkins": [],
+    "id": "bdebdd9f-29af-45f8-8b9e-4f63da04876b",
+    "name": "Boros (S)",
+    "description": "",
+    "format": "Standard",
+    "deckTileId": 68614,
+    "mainDeck": [
+      67132,
+      1,
+      67015,
+      9,
+      67156,
+      1,
+      68475,
+      1,
+      66003,
+      1,
+      66659,
+      1,
+      65961,
+      1,
+      67011,
+      1,
+      69155,
+      1,
+      66815,
+      1,
+      67180,
+      1,
+      67116,
+      1,
+      67146,
+      1,
+      67752,
+      1,
+      67748,
+      1,
+      67686,
+      1,
+      68467,
+      1,
+      67150,
+      1,
+      68491,
+      1,
+      67992,
+      1,
+      67021,
+      8,
+      68569,
+      1,
+      66263,
+      1,
+      68581,
+      1,
+      69157,
+      1,
+      68617,
+      1,
+      68643,
+      1,
+      66963,
+      1,
+      68626,
+      1,
+      66427,
+      1,
+      68664,
+      1,
+      68665,
+      1,
+      68614,
+      1,
+      68114,
+      1,
+      68724,
+      1,
+      67582,
+      1,
+      68735,
+      1,
+      66819,
+      1,
+      68563,
+      1,
+      66279,
+      1,
+      67388,
+      1,
+      66651,
+      1,
+      68570,
+      1,
+      69235,
+      1,
+      68473,
+      1
+    ],
+    "sideboard": [],
+    "cardBack": null,
+    "lastUpdated": "2019-03-09T00:48:54.2763633"
+  },
+  {
+    "cardSkins": null,
+    "id": "c5faabfd-fb69-457c-8344-6307e136c451",
+    "name": "Control (S)",
+    "description": "",
+    "format": "Standard",
+    "deckTileId": 66003,
+    "mainDeck": [
+      67015,
+      6,
+      66641,
+      1,
+      67748,
+      1,
+      67686,
+      1,
+      68467,
+      1,
+      66029,
+      1,
+      67174,
+      1,
+      66091,
+      1,
+      67017,
+      6,
+      66121,
+      1,
+      67760,
+      1,
+      67768,
+      1,
+      67788,
+      1,
+      68498,
+      1,
+      68509,
+      1,
+      67808,
+      1,
+      68513,
+      1,
+      67776,
+      1,
+      68515,
+      1,
+      68493,
+      1,
+      68506,
+      1,
+      67019,
+      4,
+      67900,
+      1,
+      68544,
+      1,
+      68545,
+      1,
+      67924,
+      1,
+      66223,
+      1,
+      68268,
+      1,
+      66925,
+      1,
+      68667,
+      1,
+      68666,
+      1,
+      66415,
+      1,
+      66489,
+      1,
+      68188,
+      1,
+      68726,
+      1,
+      66485,
+      1,
+      68196,
+      1,
+      68740,
+      1,
+      68182,
+      1,
+      67586,
+      1,
+      67132,
+      1,
+      66031,
+      1,
+      67166,
+      1,
+      67146,
+      1,
+      67180,
+      1,
+      67708,
+      1,
+      68250,
+      1
+    ],
+    "sideboard": [],
+    "cardBack": null,
+    "lastUpdated": "2018-12-05T03:02:08.6987216"
+  },
+  {
+    "cardSkins": [],
+    "id": "f3461e14-dbe1-46eb-b6ec-f356d6e672dd",
+    "name": "Boros (C)",
+    "description": "",
+    "format": "Standard",
+    "deckTileId": 68475,
+    "mainDeck": [
+      68475,
+      4,
+      67015,
+      7,
+      67718,
+      4,
+      68252,
+      2,
+      66857,
+      1,
+      67752,
+      4,
+      67992,
+      4,
+      67352,
+      4,
+      68571,
+      4,
+      68659,
+      4,
+      68724,
+      4,
+      68194,
+      4,
+      67021,
+      6,
+      69152,
+      4,
+      66647,
+      1,
+      66299,
+      3
+    ],
+    "sideboard": [],
+    "cardBack": null,
+    "lastUpdated": "2019-03-17T15:12:03.8019728"
+  },
+  {
+    "cardSkins": null,
+    "id": "8fc2ab1f-3ddb-4c97-8a73-aedf5948246b",
+    "name": "Dimir (C)",
+    "description": "",
+    "format": "Standard",
+    "deckTileId": 66067,
+    "mainDeck": [
+      67017,
+      9,
+      67224,
+      4,
+      66705,
+      2,
+      67208,
+      4,
+      68520,
+      4,
+      68528,
+      4,
+      67019,
+      6,
+      68654,
+      4,
+      68612,
+      3,
+      68726,
+      4,
+      68196,
+      4,
+      67808,
+      4,
+      67788,
+      2,
+      68492,
+      2,
+      67264,
+      3,
+      67916,
+      1
+    ],
+    "sideboard": [],
+    "cardBack": null,
+    "lastUpdated": "2018-12-27T20:04:56.0022604"
+  },
+  {
+    "cardSkins": [],
+    "id": "d1894210-4cae-4752-a4e1-36d817d2658e",
+    "name": "Storm",
+    "description": "",
+    "format": "Standard",
+    "deckTileId": 68668,
+    "mainDeck": [
+      68668,
+      4,
+      67017,
+      9,
+      67021,
+      6,
+      67224,
+      4,
+      66057,
+      3,
+      68008,
+      3,
+      66251,
+      3,
+      66263,
+      4,
+      68688,
+      4,
+      66835,
+      4,
+      68505,
+      2,
+      68738,
+      4,
+      67598,
+      4,
+      66805,
+      1,
+      68635,
+      4,
+      67992,
+      1
+    ],
+    "sideboard": [],
+    "cardBack": null,
+    "lastUpdated": "2019-03-06T02:56:43.1580598"
+  },
+  {
+    "cardSkins": null,
+    "id": "df490bd0-606f-43fe-bf62-8c21ef4910aa",
+    "name": "Jank Jeskai",
+    "description": "",
+    "format": "Standard",
+    "deckTileId": 67750,
+    "mainDeck": [
+      67750,
+      4,
+      67015,
+      3,
+      67166,
+      3,
+      66029,
+      1,
+      67698,
+      1,
+      67224,
+      3,
+      67017,
+      2,
+      66109,
+      2,
+      68493,
+      3,
+      68626,
+      4,
+      67342,
+      2,
+      68515,
+      4,
+      68691,
+      2,
+      67218,
+      1,
+      65993,
+      1,
+      68656,
+      1,
+      67238,
+      1,
+      67582,
+      1,
+      68735,
+      3,
+      68194,
+      3,
+      67598,
+      1,
+      68738,
+      2,
+      68186,
+      2,
+      68732,
+      3,
+      66489,
+      1,
+      68188,
+      4,
+      67106,
+      1,
+      67940,
+      1
+    ],
+    "sideboard": [],
+    "cardBack": null,
+    "lastUpdated": "2019-01-16T01:23:22.1075679"
+  },
+  {
+    "cardSkins": null,
+    "id": "3566ac1e-587e-4db0-b0e9-ae87c106b6a4",
+    "name": "Grixis Connive",
+    "description": "",
+    "format": "Standard",
+    "deckTileId": 68685,
+    "mainDeck": [
+      68685,
+      4,
+      67017,
+      7,
+      67019,
+      7,
+      66485,
+      1,
+      68740,
+      2,
+      68196,
+      3,
+      68726,
+      3,
+      67224,
+      4,
+      66057,
+      4,
+      66109,
+      2,
+      67212,
+      1,
+      66707,
+      1,
+      66781,
+      2,
+      66223,
+      2,
+      67284,
+      3,
+      68116,
+      1,
+      66763,
+      3,
+      68545,
+      2,
+      66677,
+      1,
+      68653,
+      1,
+      67490,
+      1,
+      68120,
+      1,
+      66775,
+      3,
+      68714,
+      1
+    ],
+    "sideboard": [],
+    "cardBack": null,
+    "lastUpdated": "2019-01-05T03:41:41.5524573"
+  },
+  {
+    "cardSkins": [],
+    "id": "ff5e126d-94be-4f41-918f-5675aadbbb12",
+    "name": "Izzet Drakes",
+    "description": "",
+    "format": "Standard",
+    "deckTileId": 68624,
+    "mainDeck": [
+      66067,
+      2,
+      67017,
+      8,
+      67224,
+      4,
+      66125,
+      3,
+      67992,
+      4,
+      67021,
+      6,
+      66057,
+      4,
+      68569,
+      4,
+      68112,
+      4,
+      68624,
+      4,
+      68688,
+      4,
+      68738,
+      4,
+      67598,
+      4,
+      69175,
+      4,
+      66071,
+      1
+    ],
+    "sideboard": [
+      68653,
+      2,
+      68570,
+      2,
+      66275,
+      2,
+      66705,
+      3,
+      67388,
+      2,
+      68498,
+      1,
+      66071,
+      2,
+      68615,
+      1
+    ],
+    "cardBack": null,
+    "lastUpdated": "2019-02-27T20:01:39.9718946"
+  },
+  {
+    "cardSkins": [],
+    "id": "e92027ea-5651-43c0-b3d7-3185f770d70f",
+    "name": "Shit Boros",
+    "description": "",
+    "format": "Standard",
+    "deckTileId": 67132,
+    "mainDeck": [
+      67132,
+      2,
+      67015,
+      12,
+      68476,
+      3,
+      66003,
+      1,
+      66659,
+      4,
+      65961,
+      2,
+      66651,
+      1,
+      67116,
+      1,
+      67146,
+      2,
+      68467,
+      3,
+      68491,
+      2,
+      68614,
+      3,
+      67021,
+      3,
+      68114,
+      3,
+      67150,
+      2,
+      68617,
+      3,
+      68665,
+      3,
+      68735,
+      3,
+      67582,
+      1,
+      68475,
+      4,
+      68724,
+      2
+    ],
+    "sideboard": [],
+    "cardBack": null,
+    "lastUpdated": "2019-02-20T01:17:24.557704"
+  },
+  {
+    "cardSkins": [
+      {
+        "grpId": 66705,
+        "ccv": "DA"
+      }
+    ],
+    "id": "ccb627dc-3395-4b79-9098-3b917caa31f5",
+    "name": "Mono Blue Tempo",
+    "description": "",
+    "format": "Standard",
+    "deckTileId": 66687,
+    "mainDeck": [
+      66687,
+      4,
+      67017,
+      19,
+      66067,
+      4,
+      68302,
+      1,
+      67224,
+      4,
+      69175,
+      4,
+      66121,
+      4,
+      66125,
+      3,
+      66705,
+      1,
+      66057,
+      1,
+      69165,
+      2,
+      67216,
+      4,
+      66071,
+      1,
+      67240,
+      4,
+      67254,
+      4
+    ],
+    "sideboard": [
+      69165,
+      1,
+      68498,
+      1,
+      66705,
+      3,
+      67834,
+      1,
+      66081,
+      1,
+      67204,
+      2,
+      67017,
+      1,
+      66071,
+      2,
+      69167,
+      1,
+      68144,
+      2
+    ],
+    "cardBack": null,
+    "lastUpdated": "2019-04-02T00:27:34.0257085"
+  },
+  {
+    "cardSkins": [],
+    "id": "f2497c7a-2a72-4e4c-807b-675e2bb18fb3",
+    "name": "?=?Loc/Decks/Precon/Precon_PW_RNA_1",
+    "description": "Decks/Precon/Precon_PW_RNA_1_Desc",
+    "format": "precon",
+    "deckTileId": 69417,
+    "mainDeck": [
+      69417,
+      1,
+      69252,
+      1,
+      69381,
+      1,
+      69420,
+      2,
+      69224,
+      2,
+      69228,
+      2,
+      69233,
+      2,
+      69249,
+      1,
+      69263,
+      1,
+      69272,
+      2,
+      69278,
+      1,
+      69287,
+      1,
+      69301,
+      3,
+      69343,
+      3,
+      69419,
+      3,
+      69397,
+      4,
+      69221,
+      2,
+      69271,
+      2,
+      69418,
+      4,
+      69411,
+      11,
+      69412,
+      11
+    ],
+    "sideboard": [],
+    "cardBack": null,
+    "lastUpdated": "2019-01-10T01:44:18.6206376Z"
+  },
+  {
+    "cardSkins": [],
+    "id": "dccd5ccd-e6c0-4ae1-814b-fcfea7817c78",
+    "name": "Gruul",
+    "description": "",
+    "format": "Standard",
+    "deckTileId": 69294,
+    "mainDeck": [
+      66815,
+      1,
+      68570,
+      2,
+      69242,
+      2,
+      69781,
+      4,
+      69355,
+      3,
+      69338,
+      4,
+      67402,
+      1,
+      66839,
+      1,
+      69407,
+      4,
+      69343,
+      4,
+      69307,
+      1,
+      69294,
+      2,
+      67023,
+      7,
+      66263,
+      3,
+      67021,
+      7,
+      66491,
+      1,
+      67950,
+      2,
+      69250,
+      2,
+      68597,
+      4,
+      69256,
+      3,
+      69398,
+      2
+    ],
+    "sideboard": [],
+    "cardBack": null,
+    "lastUpdated": "2019-03-22T17:23:20.5617695"
+  },
+  {
+    "cardSkins": [],
+    "id": "bda4cb3a-dc32-4dd9-9015-d2a1b0994cc0",
+    "name": "Gates",
+    "description": "",
+    "format": "Standard",
+    "deckTileId": 69254,
+    "mainDeck": [
+      69254,
+      4,
+      69398,
+      4,
+      69131,
+      2,
+      67021,
+      2,
+      69230,
+      4,
+      69311,
+      2,
+      69380,
+      2,
+      69306,
+      4,
+      69405,
+      4,
+      68626,
+      3,
+      68493,
+      2,
+      68586,
+      4,
+      68691,
+      2,
+      68502,
+      4,
+      69277,
+      3,
+      69392,
+      4,
+      68732,
+      4,
+      67017,
+      1,
+      69402,
+      1,
+      68737,
+      4
+    ],
+    "sideboard": [],
+    "cardBack": null,
+    "lastUpdated": "2019-02-20T03:07:06.5839368"
+  },
+  {
+    "cardSkins": [],
+    "id": "223cc674-f622-435f-8c68-243b66ebfafe",
+    "name": "Stormy Gates",
+    "description": "",
+    "format": "Standard",
+    "deckTileId": 68668,
+    "mainDeck": [
+      67224,
+      4,
+      68728,
+      4,
+      68635,
+      4,
+      69405,
+      4,
+      69306,
+      4,
+      69398,
+      4,
+      68586,
+      4,
+      68668,
+      4,
+      68502,
+      4,
+      66263,
+      4,
+      66805,
+      1,
+      68505,
+      1,
+      69259,
+      4,
+      68691,
+      1,
+      66459,
+      1,
+      69402,
+      1,
+      68733,
+      4,
+      69407,
+      1,
+      67017,
+      2,
+      68736,
+      2,
+      67023,
+      2
+    ],
+    "sideboard": [],
+    "cardBack": null,
+    "lastUpdated": "2019-02-25T04:15:24.6119569"
+  },
+  {
+    "cardSkins": [
+      {
+        "grpId": 67992,
+        "ccv": "DA"
+      },
+      {
+        "grpId": 66819,
+        "ccv": "DA"
+      },
+      {
+        "grpId": 68012,
+        "ccv": "DA"
+      }
+    ],
+    "id": "acd08352-afba-467f-b3f0-9907fec24513",
+    "name": "RDW",
+    "description": "",
+    "format": "Standard",
+    "deckTileId": 66819,
+    "mainDeck": [
+      66819,
+      4,
+      67021,
+      19,
+      67358,
+      4,
+      68012,
+      4,
+      67362,
+      4,
+      68576,
+      4,
+      67992,
+      4,
+      66263,
+      4,
+      67408,
+      4,
+      69235,
+      4,
+      68560,
+      4,
+      69243,
+      1
+    ],
+    "sideboard": [
+      68569,
+      4,
+      69355,
+      3,
+      66477,
+      1,
+      66815,
+      1
+    ],
+    "cardBack": "CardBack_EmbossedDefaultArena",
+    "lastUpdated": "2019-04-02T02:31:15.8195654"
+  },
+  {
+    "cardSkins": [],
+    "id": "b1b4bbb3-a6e3-448e-975c-8ea3e31a9d99",
+    "name": "WU Tempo",
+    "description": "",
+    "format": "Standard",
+    "deckTileId": 69293,
+    "mainDeck": [
+      67132,
+      4,
+      67017,
+      8,
+      66687,
+      4,
+      67015,
+      8,
+      67750,
+      4,
+      67748,
+      1,
+      66067,
+      3,
+      66125,
+      3,
+      66705,
+      2,
+      69293,
+      4,
+      69279,
+      1,
+      69376,
+      3,
+      67156,
+      1,
+      67146,
+      2,
+      69399,
+      4,
+      66489,
+      1,
+      68188,
+      3,
+      67752,
+      4
+    ],
+    "sideboard": [],
+    "cardBack": null,
+    "lastUpdated": "2019-03-13T00:47:59.5210397"
+  },
+  {
+    "cardSkins": [],
+    "id": "7435c1a6-c5ce-42a7-bc2f-2f227b84d58b",
+    "name": "Concoct",
+    "description": "",
+    "format": "Standard",
+    "deckTileId": 68685,
+    "mainDeck": [
+      68653,
+      1,
+      68515,
+      4,
+      67019,
+      4,
+      68685,
+      2,
+      67017,
+      12,
+      66057,
+      3,
+      66109,
+      2,
+      68493,
+      2,
+      67212,
+      1,
+      66067,
+      2,
+      68545,
+      2,
+      66223,
+      2,
+      67284,
+      3,
+      68667,
+      4,
+      68666,
+      3,
+      68740,
+      4,
+      66485,
+      2,
+      68727,
+      1,
+      66415,
+      1,
+      67106,
+      1,
+      66775,
+      3,
+      67224,
+      1
+    ],
+    "sideboard": [
+      70141,
+      4
+    ],
+    "cardBack": null,
+    "lastUpdated": "2019-03-14T01:44:48.9930441"
+  },
+  {
+    "cardSkins": [],
+    "id": "eaae546a-c7ea-483d-8126-f1e658a243a8",
+    "name": "WW (C)",
+    "description": "",
+    "format": "Standard",
+    "deckTileId": 67756,
+    "mainDeck": [
+      69132,
+      4,
+      67015,
+      24,
+      68475,
+      4,
+      68252,
+      2,
+      66663,
+      3,
+      67730,
+      4,
+      67122,
+      4,
+      67704,
+      4,
+      67756,
+      4,
+      68481,
+      4,
+      67546,
+      3
+    ],
+    "sideboard": [],
+    "cardBack": null,
+    "lastUpdated": "2019-03-18T01:07:44.5060547"
+  }
+]
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+[UnityCrossThreadLogger]4/2/2019 3:02:00 PM
+==> MotD.GetMotD(304):
+{
+  "jsonrpc": "2.0",
+  "method": "MotD.GetMotD",
+  "params": {},
+  "id": "304"
+}
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+[UnityCrossThreadLogger]4/2/2019 3:02:00 PM
+<== MotD.GetMotD(304)
+{
+  "Message": null,
+  "Title": null,
+  "ImageId": "00000000-0000-0000-0000-000000000000"
+}
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+[UnityCrossThreadLogger]4/2/2019 3:02:00 PM
+==> Log.Info(305):
+{
+  "jsonrpc": "2.0",
+  "method": "Log.Info",
+  "params": {
+    "messageName": "Client.SceneChange",
+    "humanContext": "Client changed scenes to Home, duration 00:00:12.0491403",
+    "payloadObject": {
+      "fromSceneName": "EventLanding",
+      "toSceneName": "Home",
+      "timestamp": "2019-04-02T19:02:00.177492Z",
+      "duration": "00:00:12.0491403",
+      "initiator": "System",
+      "context": "Landing Page 'Home'",
+      "playerId": "EZIDLEQCFFAMLE27DG4TFGLT5Q"
+    },
+    "transactionId": "00000000-0000-0000-0000-000000000000"
+  },
+  "id": "305"
+}
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+AudioManager: Failed to PostEvent: sfx_amb_city_gen_amb_loop_stop on Object: Listener
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+[UnityCrossThreadLogger]4/2/2019 3:02:00 PM
+<== Log.Info(305)
+True
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+[UnityCrossThreadLogger]4/2/2019 3:02:00 PM
+==> Event.GetActiveEventsV2(306):
+{
+  "jsonrpc": "2.0",
+  "method": "Event.GetActiveEventsV2",
+  "params": {},
+  "id": "306"
+}
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+[UnityCrossThreadLogger]4/2/2019 3:02:00 PM
+==> Config.JoinEventQueueStatus(307):
+{
+  "jsonrpc": "2.0",
+  "method": "Config.JoinEventQueueStatus",
+  "params": {},
+  "id": "307"
+}
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+[UnityCrossThreadLogger]4/2/2019 3:02:00 PM
+==> Quest.GetPlayerQuests(308):
+{
+  "jsonrpc": "2.0",
+  "method": "Quest.GetPlayerQuests",
+  "params": {},
+  "id": "308"
+}
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+[UnityCrossThreadLogger]4/2/2019 3:02:00 PM
+==> Quest.GetTrackDetail(309):
+{
+  "jsonrpc": "2.0",
+  "method": "Quest.GetTrackDetail",
+  "params": {
+    "trackName": "Promotional"
+  },
+  "id": "309"
+}
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+[UnityCrossThreadLogger]4/2/2019 3:02:00 PM
+==> PlayerInventory.GetPlayerSequenceData(310):
+{
+  "jsonrpc": "2.0",
+  "method": "PlayerInventory.GetPlayerSequenceData",
+  "params": {},
+  "id": "310"
+}
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+[UnityCrossThreadLogger]4/2/2019 3:02:00 PM
+<== Event.GetActiveEventsV2(306)
+[
+  {
+    "PublicEventName": "AIBotMatch",
+    "InternalEventName": "AIBotMatch",
+    "EventState": "Active",
+    "EventType": "Constructed",
+    "ModuleGlobalData": {
+      "DeckSelect": "Standard"
+    },
+    "StartTime": "2018-04-30T15:40:22.4181124Z",
+    "LockedTime": "2118-01-01T15:40:21.4181124Z",
+    "ClosedTime": "2118-01-01T15:40:21.4181124Z",
+    "Parameters": {},
+    "Group": "",
+    "PastEntries": null,
+    "DisplayPriority": -1,
+    "IsArenaPlayModeEvent": true,
+    "Emblems": null,
+    "UsePlayerCourse": false
+  },
+  {
+    "PublicEventName": "RNA_Comp_Draft",
+    "InternalEventName": "CompDraft_RNA_20190117",
+    "EventState": "Active",
+    "EventType": "Limited",
+    "ModuleGlobalData": {
+      "EntryFees": [
+        {
+          "CurrencyType": "Gem",
+          "Quantity": 1500,
+          "MaxUses": null
+        },
+        {
+          "CurrencyType": "DraftToken",
+          "Quantity": 1,
+          "MaxUses": null
+        }
+      ],
+      "CollationIds": [
+        200010,
+        200010,
+        200010
+      ],
+      "DeckSelect": "Draft",
+      "MaxWins": 5,
+      "MaxLosses": 2,
+      "Prizes": [
+        "b5657dc0-1650-46d9-ac90-f7bfc3302d57",
+        "a836272c-4889-4145-91df-776b4c86a1e5",
+        "29f47f28-5ccc-48ba-97c5-63e49b93a3ea",
+        "77429b3f-59c5-4e1b-b676-bcfbb97d0ee5",
+        "c94ac49f-6960-4ec0-8cb2-36a9569a7441",
+        "7a2a8a34-6743-45fa-a27e-9e4f864c6664"
+      ],
+      "ChestDescriptions": [
+        {
+          "image1": "ObjectiveIcon_Pack_RNA",
+          "image2": null,
+          "image3": null,
+          "prefab": "RewardPopup3DIcon_Pack",
+          "referenceId": "100010",
+          "headerLocKey": "MainNav/EventRewards/Pack",
+          "descriptionLocKey": "MainNav/General/Empty_String",
+          "quantity": "0",
+          "locParams": {},
+          "availableDate": "0001-01-01T00:00:00"
+        },
+        {
+          "image1": "ObjectiveIcon_Pack_RNA",
+          "image2": null,
+          "image3": null,
+          "prefab": "RewardPopup3DIcon_Pack",
+          "referenceId": "100010",
+          "headerLocKey": "MainNav/EventRewards/Packs",
+          "descriptionLocKey": "MainNav/General/Empty_String",
+          "quantity": "2",
+          "locParams": {
+            "number1": 2
+          },
+          "availableDate": "0001-01-01T00:00:00"
+        },
+        {
+          "image1": "ObjectiveEventIcon_Gem5",
+          "image2": null,
+          "image3": "ObjectiveIcon_Pack_RNA",
+          "prefab": "RewardPopup3DIcon_GemPack",
+          "referenceId": "100010",
+          "headerLocKey": "MainNav/EventRewards/Gems_And_Packs",
+          "descriptionLocKey": "MainNav/General/Empty_String",
+          "quantity": "3",
+          "locParams": {
+            "number1": 800,
+            "number2": 3
+          },
+          "availableDate": "0001-01-01T00:00:00"
+        },
+        {
+          "image1": "ObjectiveEventIcon_Gem5",
+          "image2": null,
+          "image3": "ObjectiveIcon_Pack_RNA",
+          "prefab": "RewardPopup3DIcon_GemPack",
+          "referenceId": "100010",
+          "headerLocKey": "MainNav/EventRewards/Gems_And_Packs",
+          "descriptionLocKey": "MainNav/General/Empty_String",
+          "quantity": "4",
+          "locParams": {
+            "number1": 1500,
+            "number2": 4
+          },
+          "availableDate": "0001-01-01T00:00:00"
+        },
+        {
+          "image1": "ObjectiveEventIcon_Gem7",
+          "image2": null,
+          "image3": "ObjectiveIcon_Pack_RNA",
+          "prefab": "RewardPopup3DIcon_GemPack",
+          "referenceId": "100010",
+          "headerLocKey": "MainNav/EventRewards/Gems_And_Packs",
+          "descriptionLocKey": "MainNav/General/Empty_String",
+          "quantity": "5",
+          "locParams": {
+            "number1": 1800,
+            "number2": 5
+          },
+          "availableDate": "0001-01-01T00:00:00"
+        },
+        {
+          "image1": "ObjectiveEventIcon_Gem8",
+          "image2": null,
+          "image3": "ObjectiveIcon_Pack_RNA",
+          "prefab": "RewardPopup3DIcon_GemPack",
+          "referenceId": "100010",
+          "headerLocKey": "MainNav/EventRewards/Gems_And_Packs",
+          "descriptionLocKey": "MainNav/General/Empty_String",
+          "quantity": "6",
+          "locParams": {
+            "number1": 2100,
+            "number2": 6
+          },
+          "availableDate": "0001-01-01T00:00:00"
+        }
+      ]
+    },
+    "StartTime": "2019-01-18T20:00:00Z",
+    "LockedTime": "2019-04-29T15:00:00Z",
+    "ClosedTime": "2019-04-29T18:00:00Z",
+    "Parameters": {},
+    "Group": "",
+    "PastEntries": null,
+    "DisplayPriority": 63,
+    "IsArenaPlayModeEvent": false,
+    "Emblems": null,
+    "UsePlayerCourse": true
+  },
+  {
+    "PublicEventName": "ConstructedBestOf3",
+    "InternalEventName": "Constructed_BestOf3",
+    "EventState": "Active",
+    "EventType": "Constructed",
+    "ModuleGlobalData": {
+      "DeckSelect": "TraditionalStandard"
+    },
+    "StartTime": "2018-01-20T18:00:00Z",
+    "LockedTime": "2118-12-20T18:00:00Z",
+    "ClosedTime": "2118-12-20T18:00:00Z",
+    "Parameters": {},
+    "Group": "",
+    "PastEntries": null,
+    "DisplayPriority": -1,
+    "IsArenaPlayModeEvent": false,
+    "Emblems": null,
+    "UsePlayerCourse": true
+  },
+  {
+    "PublicEventName": "Constructed_Event",
+    "InternalEventName": "Constructed_Event",
+    "EventState": "Active",
+    "EventType": "Constructed",
+    "ModuleGlobalData": {
+      "EntryFees": [
+        {
+          "CurrencyType": "Gold",
+          "Quantity": 500,
+          "MaxUses": null
+        },
+        {
+          "CurrencyType": "Gem",
+          "Quantity": 95,
+          "MaxUses": null
+        }
+      ],
+      "DeckSelect": "Standard",
+      "MaxWins": 7,
+      "MaxLosses": 3,
+      "Prizes": [
+        "732b07cd-1da9-407d-9f4a-0234c74e0aae",
+        "da62c8f2-c6df-4037-9e80-2113eae03ccd",
+        "76c2c941-1ef3-45c1-b320-f2b392ae1ee3",
+        "262c6553-de23-41f5-a9da-c1e64f327db2",
+        "b8d6867a-5838-4356-88f9-1e232ec9a38d",
+        "eae07b94-2021-4338-b59a-ec68e2b78f88",
+        "9b7e2295-5ae8-405d-96f7-94a6e563a00f",
+        "585e5a86-0a76-43e3-9bc8-1d89ef20e254"
+      ],
+      "ChestDescriptions": [
+        {
+          "image1": "ObjectiveEventIcon_Coin1",
+          "image2": "ObjectiveEventIcon_CardsA3B0",
+          "image3": null,
+          "prefab": "RewardPopup3DIcon_CoinCard",
+          "referenceId": "0",
+          "headerLocKey": "MainNav/EventRewards/Gold_And_Cards",
+          "descriptionLocKey": "MainNav/EventPage/Event_Popup_Text_Constructed_Zero_To_Three_Win",
+          "quantity": "0",
+          "locParams": {
+            "number1": 100,
+            "number2": 3
+          },
+          "availableDate": "0001-01-01T00:00:00"
+        },
+        {
+          "image1": "ObjectiveEventIcon_Coin2",
+          "image2": "ObjectiveEventIcon_CardsA3B0",
+          "image3": null,
+          "prefab": "RewardPopup3DIcon_CoinCard",
+          "referenceId": "0",
+          "headerLocKey": "MainNav/EventRewards/Gold_And_Cards",
+          "descriptionLocKey": "MainNav/EventPage/Event_Popup_Text_Constructed_Zero_To_Three_Win",
+          "quantity": "0",
+          "locParams": {
+            "number1": 200,
+            "number2": 3
+          },
+          "availableDate": "0001-01-01T00:00:00"
+        },
+        {
+          "image1": "ObjectiveEventIcon_Coin3",
+          "image2": "ObjectiveEventIcon_CardsA3B0",
+          "image3": null,
+          "prefab": "RewardPopup3DIcon_CoinCard",
+          "referenceId": "0",
+          "headerLocKey": "MainNav/EventRewards/Gold_And_Cards",
+          "descriptionLocKey": "MainNav/EventPage/Event_Popup_Text_Constructed_Zero_To_Three_Win",
+          "quantity": "0",
+          "locParams": {
+            "number1": 300,
+            "number2": 3
+          },
+          "availableDate": "0001-01-01T00:00:00"
+        },
+        {
+          "image1": "ObjectiveEventIcon_Coin4",
+          "image2": "ObjectiveEventIcon_CardsA3B0",
+          "image3": null,
+          "prefab": "RewardPopup3DIcon_CoinCard",
+          "referenceId": "0",
+          "headerLocKey": "MainNav/EventRewards/Gold_And_Cards",
+          "descriptionLocKey": "MainNav/EventPage/Event_Popup_Text_Constructed_Zero_To_Three_Win",
+          "quantity": "0",
+          "locParams": {
+            "number1": 400,
+            "number2": 3
+          },
+          "availableDate": "0001-01-01T00:00:00"
+        },
+        {
+          "image1": "ObjectiveEventIcon_Coin5",
+          "image2": "ObjectiveEventIcon_CardsA3B0",
+          "image3": null,
+          "prefab": "RewardPopup3DIcon_CoinCard",
+          "referenceId": "0",
+          "headerLocKey": "MainNav/EventRewards/Gold_And_Cards",
+          "descriptionLocKey": "MainNav/EventPage/Event_Popup_Text_Constructed_Zero_To_Three_Win",
+          "quantity": "0",
+          "locParams": {
+            "number1": 500,
+            "number2": 3
+          },
+          "availableDate": "0001-01-01T00:00:00"
+        },
+        {
+          "image1": "ObjectiveEventIcon_Coin6",
+          "image2": "ObjectiveEventIcon_CardsA2B1",
+          "image3": null,
+          "prefab": "RewardPopup3DIcon_CoinCard",
+          "referenceId": "0",
+          "headerLocKey": "MainNav/EventRewards/Gold_And_Cards",
+          "descriptionLocKey": "MainNav/EventPage/Event_Popup_Text_Constructed_Four_To_Five_Win",
+          "quantity": "0",
+          "locParams": {
+            "number1": 600,
+            "number2": 3
+          },
+          "availableDate": "0001-01-01T00:00:00"
+        },
+        {
+          "image1": "ObjectiveEventIcon_Coin7",
+          "image2": "ObjectiveEventIcon_CardsA1B2",
+          "image3": null,
+          "prefab": "RewardPopup3DIcon_CoinCard",
+          "referenceId": "0",
+          "headerLocKey": "MainNav/EventRewards/Gold_And_Cards",
+          "descriptionLocKey": "MainNav/EventPage/Event_Popup_Text_Constructed_Six_To_Seven_Win",
+          "quantity": "0",
+          "locParams": {
+            "number1": 800,
+            "number2": 3
+          },
+          "availableDate": "0001-01-01T00:00:00"
+        },
+        {
+          "image1": "ObjectiveEventIcon_Coin8",
+          "image2": "ObjectiveEventIcon_CardsA1B2",
+          "image3": null,
+          "prefab": "RewardPopup3DIcon_CoinCard",
+          "referenceId": "0",
+          "headerLocKey": "MainNav/EventRewards/Gold_And_Cards",
+          "descriptionLocKey": "MainNav/EventPage/Event_Popup_Text_Constructed_Six_To_Seven_Win",
+          "quantity": "0",
+          "locParams": {
+            "number1": 1000,
+            "number2": 3
+          },
+          "availableDate": "0001-01-01T00:00:00"
+        }
+      ]
+    },
+    "StartTime": "2018-12-14T16:00:22Z",
+    "LockedTime": "2020-04-01T16:00:22Z",
+    "ClosedTime": "2020-04-01T19:00:22Z",
+    "Parameters": {},
+    "Group": "",
+    "PastEntries": null,
+    "DisplayPriority": 94,
+    "IsArenaPlayModeEvent": false,
+    "Emblems": [],
+    "UsePlayerCourse": true
+  },
+  {
+    "PublicEventName": "DirectGame",
+    "InternalEventName": "DirectGame",
+    "EventState": "Active",
+    "EventType": "Constructed",
+    "ModuleGlobalData": {
+      "DeckSelect": "DirectGame"
+    },
+    "StartTime": "2018-10-15T07:00:12Z",
+    "LockedTime": "2243-01-01T00:00:11Z",
+    "ClosedTime": "2243-01-01T00:00:11Z",
+    "Parameters": {},
+    "Group": "",
+    "PastEntries": null,
+    "DisplayPriority": -1,
+    "IsArenaPlayModeEvent": true,
+    "Emblems": [],
+    "UsePlayerCourse": false
+  },
+  {
+    "PublicEventName": "Ladder",
+    "InternalEventName": "Ladder",
+    "EventState": "Active",
+    "EventType": "Constructed",
+    "ModuleGlobalData": {
+      "DeckSelect": "Standard",
+      "RankUpdateType": "Constructed"
+    },
+    "StartTime": "2018-11-14T18:00:00Z",
+    "LockedTime": "2118-12-20T18:00:00Z",
+    "ClosedTime": "2118-12-20T18:00:00Z",
+    "Parameters": {},
+    "Group": "",
+    "PastEntries": null,
+    "DisplayPriority": -1,
+    "IsArenaPlayModeEvent": true,
+    "Emblems": null,
+    "UsePlayerCourse": true
+  },
+  {
+    "PublicEventName": "NPE",
+    "InternalEventName": "NPE",
+    "EventState": "Active",
+    "EventType": "Constructed",
+    "ModuleGlobalData": {},
+    "StartTime": "2018-04-30T15:40:22.4181124Z",
+    "LockedTime": "2118-01-01T15:40:21.4181124Z",
+    "ClosedTime": "2118-01-01T15:40:21.4181124Z",
+    "Parameters": {},
+    "Group": "NPE",
+    "PastEntries": null,
+    "DisplayPriority": -1,
+    "IsArenaPlayModeEvent": true,
+    "Emblems": null,
+    "UsePlayerCourse": true
+  },
+  {
+    "PublicEventName": "Play",
+    "InternalEventName": "Play",
+    "EventState": "Active",
+    "EventType": "Constructed",
+    "ModuleGlobalData": {
+      "DeckSelect": "Standard"
+    },
+    "StartTime": "2018-11-14T18:00:00Z",
+    "LockedTime": "2118-12-20T18:00:00Z",
+    "ClosedTime": "2118-12-20T18:00:00Z",
+    "Parameters": {},
+    "Group": "",
+    "PastEntries": null,
+    "DisplayPriority": -1,
+    "IsArenaPlayModeEvent": true,
+    "Emblems": null,
+    "UsePlayerCourse": true
+  },
+  {
+    "PublicEventName": "M19_Quick_Draft",
+    "InternalEventName": "QuickDraft_M19_20190329",
+    "EventState": "Active",
+    "EventType": "Limited",
+    "ModuleGlobalData": {
+      "EntryFees": [
+        {
+          "CurrencyType": "Gold",
+          "Quantity": 5000,
+          "MaxUses": null
+        },
+        {
+          "CurrencyType": "Gem",
+          "Quantity": 750,
+          "MaxUses": null
+        }
+      ],
+      "CollationIds": [
+        200008,
+        200008,
+        200008
+      ],
+      "DeckSelect": "Draft",
+      "RankUpdateType": "Limited",
+      "MaxWins": 7,
+      "MaxLosses": 3,
+      "Prizes": [
+        "cc49763a-d0f5-4237-9f6f-da6bb0461d84",
+        "1388a77e-ce38-4c2a-9a62-f643b4c9789b",
+        "1c843977-ffb6-4599-93fa-9354d5cde2e2",
+        "658e5646-5a80-4b13-9c7f-b0eec09881eb",
+        "153734ff-7d07-4184-ace6-d6e7d30c3639",
+        "75e9a886-5e22-48b3-a57d-6a78c4d25e73",
+        "26975666-cabb-4123-a519-d3d094ebe1bb",
+        "322171ad-7662-4b3d-ba14-477c00b4459a"
+      ],
+      "ChestDescriptions": [
+        {
+          "image1": "ObjectiveEventIcon_Gem1",
+          "image2": null,
+          "image3": "ObjectiveIcon_Pack_M19",
+          "prefab": "RewardPopup3DIcon_GemPack",
+          "referenceId": "100008",
+          "headerLocKey": "MainNav/EventRewards/Gems_And_Pack",
+          "descriptionLocKey": "MainNav/EventsPage/Event_Popup_Text_Draft_Prize1",
+          "quantity": "0",
+          "locParams": {
+            "number1": 50
+          },
+          "availableDate": "0001-01-01T00:00:00"
+        },
+        {
+          "image1": "ObjectiveEventIcon_Gem2",
+          "image2": null,
+          "image3": "ObjectiveIcon_Pack_M19",
+          "prefab": "RewardPopup3DIcon_GemPack",
+          "referenceId": "100008",
+          "headerLocKey": "MainNav/EventRewards/Gems_And_Pack",
+          "descriptionLocKey": "MainNav/EventsPage/Event_Popup_Text_Draft_Prize2",
+          "quantity": "0",
+          "locParams": {
+            "number1": 100
+          },
+          "availableDate": "0001-01-01T00:00:00"
+        },
+        {
+          "image1": "ObjectiveEventIcon_Gem3",
+          "image2": null,
+          "image3": "ObjectiveIcon_Pack_M19",
+          "prefab": "RewardPopup3DIcon_GemPack",
+          "referenceId": "100008",
+          "headerLocKey": "MainNav/EventRewards/Gems_And_Pack",
+          "descriptionLocKey": "MainNav/EventsPage/Event_Popup_Text_Draft_Prize3",
+          "quantity": "0",
+          "locParams": {
+            "number1": 200
+          },
+          "availableDate": "0001-01-01T00:00:00"
+        },
+        {
+          "image1": "ObjectiveEventIcon_Gem4",
+          "image2": null,
+          "image3": "ObjectiveIcon_Pack_M19",
+          "prefab": "RewardPopup3DIcon_GemPack",
+          "referenceId": "100008",
+          "headerLocKey": "MainNav/EventRewards/Gems_And_Pack",
+          "descriptionLocKey": "MainNav/EventsPage/Event_Popup_Text_Draft_Prize4",
+          "quantity": "0",
+          "locParams": {
+            "number1": 300
+          },
+          "availableDate": "0001-01-01T00:00:00"
+        },
+        {
+          "image1": "ObjectiveEventIcon_Gem5",
+          "image2": null,
+          "image3": "ObjectiveIcon_Pack_M19",
+          "prefab": "RewardPopup3DIcon_GemPack",
+          "referenceId": "100008",
+          "headerLocKey": "MainNav/EventRewards/Gems_And_Pack",
+          "descriptionLocKey": "MainNav/EventsPage/Event_Popup_Text_Draft_Prize5",
+          "quantity": "0",
+          "locParams": {
+            "number1": 450
+          },
+          "availableDate": "0001-01-01T00:00:00"
+        },
+        {
+          "image1": "ObjectiveEventIcon_Gem6",
+          "image2": null,
+          "image3": "ObjectiveIcon_Pack_M19",
+          "prefab": "RewardPopup3DIcon_GemPack",
+          "referenceId": "100008",
+          "headerLocKey": "MainNav/EventRewards/Gems_And_Pack",
+          "descriptionLocKey": "MainNav/EventsPage/Event_Popup_Text_Draft_Prize6",
+          "quantity": "0",
+          "locParams": {
+            "number1": 650
+          },
+          "availableDate": "0001-01-01T00:00:00"
+        },
+        {
+          "image1": "ObjectiveEventIcon_Gem7",
+          "image2": null,
+          "image3": "ObjectiveIcon_Pack_M19",
+          "prefab": "RewardPopup3DIcon_GemPack",
+          "referenceId": "100008",
+          "headerLocKey": "MainNav/EventRewards/Gems_And_Pack",
+          "descriptionLocKey": "MainNav/EventsPage/Event_Popup_Text_Draft_Prize7",
+          "quantity": "0",
+          "locParams": {
+            "number1": 850
+          },
+          "availableDate": "0001-01-01T00:00:00"
+        },
+        {
+          "image1": "ObjectiveEventIcon_Gem8",
+          "image2": null,
+          "image3": "ObjectiveIcon_Pack_M19",
+          "prefab": "RewardPopup3DIcon_GemPack",
+          "referenceId": "100008",
+          "headerLocKey": "MainNav/EventRewards/Gems_And_Packs",
+          "descriptionLocKey": "MainNav/General/Empty_String",
+          "quantity": "2",
+          "locParams": {
+            "number1": 950,
+            "number2": 2
+          },
+          "availableDate": "0001-01-01T00:00:00"
+        }
+      ]
+    },
+    "StartTime": "2019-03-29T15:00:00Z",
+    "LockedTime": "2019-04-12T15:00:00Z",
+    "ClosedTime": "2019-04-12T18:00:00Z",
+    "Parameters": {},
+    "Group": "",
+    "PastEntries": null,
+    "DisplayPriority": 70,
+    "IsArenaPlayModeEvent": true,
+    "Emblems": null,
+    "UsePlayerCourse": true
+  },
+  {
+    "PublicEventName": "Traditional_Cons_Event",
+    "InternalEventName": "Traditional_Cons_Event",
+    "EventState": "Active",
+    "EventType": "Constructed",
+    "ModuleGlobalData": {
+      "EntryFees": [
+        {
+          "CurrencyType": "Gold",
+          "Quantity": 1000,
+          "MaxUses": null
+        },
+        {
+          "CurrencyType": "Gem",
+          "Quantity": 190,
+          "MaxUses": null
+        }
+      ],
+      "DeckSelect": "TraditionalStandard",
+      "MaxWins": 5,
+      "MaxLosses": 2,
+      "Prizes": [
+        "39fcc53a-8976-4c6c-b27c-3885408dd242",
+        "93e0d7bb-0829-406f-9e66-0110325f12f9",
+        "56af91db-a3ef-4358-ad39-cc85868f1f87",
+        "23665c3b-7797-4cd1-8c92-1bedc9d69a06",
+        "1acb411e-d4aa-4bd9-a72a-38bc3b0497b9",
+        "4aa49d9a-1adb-4eaf-8013-4d71b308a39f"
+      ],
+      "ChestDescriptions": [
+        {
+          "image1": "ObjectiveEventIcon_CardsA3B0",
+          "image2": null,
+          "image3": null,
+          "prefab": "RewardPopup3DIcon_Card_Uncommon",
+          "referenceId": "0",
+          "headerLocKey": "MainNav/EventRewards/Cards",
+          "descriptionLocKey": "MainNav/EventRewards/CompetitiveConstructedPrize_0Wins",
+          "quantity": "0",
+          "locParams": {
+            "number1": 3
+          },
+          "availableDate": "0001-01-01T00:00:00"
+        },
+        {
+          "image1": "ObjectiveEventIcon_Coin2",
+          "image2": "ObjectiveEventIcon_CardsA3B0",
+          "image3": null,
+          "prefab": "RewardPopup3DIcon_CoinCard",
+          "referenceId": "0",
+          "headerLocKey": "MainNav/EventRewards/Gold_And_Cards",
+          "descriptionLocKey": "MainNav/EventRewards/CompetitiveConstructedPrize_1Wins",
+          "quantity": "0",
+          "locParams": {
+            "number1": 500,
+            "number2": 3
+          },
+          "availableDate": "0001-01-01T00:00:00"
+        },
+        {
+          "image1": "ObjectiveEventIcon_Coin4",
+          "image2": "ObjectiveEventIcon_CardsA3B0",
+          "image3": null,
+          "prefab": "RewardPopup3DIcon_CoinCard",
+          "referenceId": "0",
+          "headerLocKey": "MainNav/EventRewards/Gold_And_Cards",
+          "descriptionLocKey": "MainNav/EventRewards/CompetitiveConstructedPrize_2Wins",
+          "quantity": "0",
+          "locParams": {
+            "number1": 1000,
+            "number2": 3
+          },
+          "availableDate": "0001-01-01T00:00:00"
+        },
+        {
+          "image1": "ObjectiveEventIcon_Coin5",
+          "image2": "ObjectiveEventIcon_CardsA2B1",
+          "image3": null,
+          "prefab": "RewardPopup3DIcon_CoinCard",
+          "referenceId": "0",
+          "headerLocKey": "MainNav/EventRewards/Gold_And_Cards",
+          "descriptionLocKey": "MainNav/EventRewards/CompetitiveConstructedPrize_3Wins",
+          "quantity": "0",
+          "locParams": {
+            "number1": 1500,
+            "number2": 3
+          },
+          "availableDate": "0001-01-01T00:00:00"
+        },
+        {
+          "image1": "ObjectiveEventIcon_Coin6",
+          "image2": "ObjectiveEventIcon_CardsA2B1",
+          "image3": null,
+          "prefab": "RewardPopup3DIcon_CoinCard",
+          "referenceId": "0",
+          "headerLocKey": "MainNav/EventRewards/Gold_And_Cards",
+          "descriptionLocKey": "MainNav/EventRewards/CompetitiveConstructedPrize_4Wins",
+          "quantity": "0",
+          "locParams": {
+            "number1": 1700,
+            "number2": 3
+          },
+          "availableDate": "0001-01-01T00:00:00"
+        },
+        {
+          "image1": "ObjectiveEventIcon_Coin8",
+          "image2": "ObjectiveEventIcon_CardsA1B2",
+          "image3": null,
+          "prefab": "RewardPopup3DIcon_CoinCard",
+          "referenceId": "0",
+          "headerLocKey": "MainNav/EventRewards/Gold_And_Cards",
+          "descriptionLocKey": "MainNav/EventRewards/CompetitiveConstructedPrize_5Wins",
+          "quantity": "0",
+          "locParams": {
+            "number1": 2100,
+            "number2": 3
+          },
+          "availableDate": "0001-01-01T00:00:00"
+        }
+      ]
+    },
+    "StartTime": "2018-12-14T16:00:22Z",
+    "LockedTime": "2020-04-01T16:00:22Z",
+    "ClosedTime": "2020-04-01T16:00:22Z",
+    "Parameters": {},
+    "Group": "",
+    "PastEntries": null,
+    "DisplayPriority": 93,
+    "IsArenaPlayModeEvent": false,
+    "Emblems": [],
+    "UsePlayerCourse": true
+  },
+  {
+    "PublicEventName": "Traditional_Ladder",
+    "InternalEventName": "Traditional_Ladder",
+    "EventState": "Active",
+    "EventType": "Constructed",
+    "ModuleGlobalData": {
+      "DeckSelect": "TraditionalStandard",
+      "RankUpdateType": "Constructed"
+    },
+    "StartTime": "2019-01-31T20:05:00Z",
+    "LockedTime": "2118-12-20T18:00:00Z",
+    "ClosedTime": "2118-12-20T18:00:00Z",
+    "Parameters": {},
+    "Group": "",
+    "PastEntries": null,
+    "DisplayPriority": -1,
+    "IsArenaPlayModeEvent": false,
+    "Emblems": null,
+    "UsePlayerCourse": true
+  }
+]
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+[UnityCrossThreadLogger]4/2/2019 3:02:00 PM
+<== Config.JoinEventQueueStatus(307)
+true
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+[UnityCrossThreadLogger]4/2/2019 3:02:00 PM
+==> Event.GetPlayerCoursesV2(311):
+{
+  "jsonrpc": "2.0",
+  "method": "Event.GetPlayerCoursesV2",
+  "params": {},
+  "id": "311"
+}
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+[UnityCrossThreadLogger]4/2/2019 3:02:00 PM
+<== Quest.GetPlayerQuests(308)
+[]
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+[UnityCrossThreadLogger]4/2/2019 3:02:00 PM
+<== Quest.GetTrackDetail(309)
+{
+  "ActiveQuestDetails": [],
+  "CompletedQuestDetails": [
+    {
+      "LocName": "OB-NPE-C-14",
+      "ChainName": "NPE-C-OB",
+      "ChainIndex": 14,
+      "ChainMax": 14
+    }
+  ],
+  "DontReplenishBeforeTime": "0001-01-01T00:00:00"
+}
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+[UnityCrossThreadLogger]4/2/2019 3:02:00 PM
+<== PlayerInventory.GetPlayerSequenceData(310)
+{
+  "playerId": "EZIDLEQCFFAMLE27DG4TFGLT5Q",
+  "dailySequence": 4,
+  "weeklySequence": 9,
+  "dailyLastAwarded": "2019-04-02T18:57:01.6625895",
+  "weeklyLastAwarded": "2019-04-02T18:57:01.6625895"
+}
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+[UnityCrossThreadLogger]4/2/2019 3:02:00 PM
+<== Event.GetPlayerCoursesV2(311)
+[
+  {
+    "Id": "00000000-0000-0000-0000-000000000000",
+    "InternalEventName": "AIBotMatch",
+    "PlayerId": null,
+    "ModuleInstanceData": {},
+    "CurrentEventState": "PreMatch",
+    "CurrentModule": "Join",
+    "CardPool": null,
+    "CourseDeck": null,
+    "PreviousOpponents": []
+  },
+  {
+    "Id": "b93a4c59-353b-4f87-97fc-f909b3a3bd21",
+    "InternalEventName": "CompDraft_RNA_20190117",
+    "PlayerId": null,
+    "ModuleInstanceData": {
+      "HasPaidEntry": "Gem",
+      "DraftInfo": {
+        "DraftId": "EZIDLEQCFFAMLE27DG4TFGLT5Q:CompDraft_RNA_20190117:Draft"
+      },
+      "DraftComplete": true,
+      "HasGranted": true,
+      "DeckSelected": true,
+      "WinLossGate": {
+        "MaxWins": 5,
+        "MaxLosses": 2,
+        "CurrentWins": 1,
+        "CurrentLosses": 1,
+        "ProcessedMatchIds": [
+          "e4200797-b84f-4c2e-91f9-9c6b4d6f4488",
+          "7f84a8cd-fea5-4374-b5dd-47c94878df74"
+        ]
+      }
+    },
+    "CurrentEventState": "ReadyToMatch",
+    "CurrentModule": "WinLossGate",
+    "CardPool": [
+      69136,
+      69358,
+      69318,
+      69389,
+      69312,
+      69162,
+      69388,
+      69168,
+      69198,
+      69403,
+      69348,
+      69400,
+      69159,
+      69238,
+      69147,
+      69191,
+      69149,
+      69192,
+      69247,
+      69391,
+      69215,
+      69194,
+      69197,
+      69312,
+      69384,
+      69391,
+      69206,
+      69135,
+      69152,
+      69337,
+      69199,
+      69209,
+      69156,
+      69358,
+      69174,
+      69299,
+      69156,
+      69181,
+      69131,
+      69187,
+      69395,
+      69277,
+      69142,
+      69392,
+      69348
+    ],
+    "CourseDeck": {
+      "cardSkins": [],
+      "id": "6ad8e505-1a8b-4e59-98d8-fe5444c311e9",
+      "name": "Esper",
+      "description": "",
+      "format": "Draft",
+      "deckTileId": 69358,
+      "mainDeck": [
+        69358,
+        2,
+        69318,
+        1,
+        69312,
+        2,
+        69168,
+        1,
+        69400,
+        1,
+        69147,
+        1,
+        69389,
+        1,
+        69403,
+        1,
+        69348,
+        2,
+        69152,
+        1,
+        69206,
+        1,
+        69391,
+        2,
+        69194,
+        1,
+        69192,
+        1,
+        69337,
+        1,
+        69135,
+        0,
+        69384,
+        1,
+        69197,
+        1,
+        69215,
+        0,
+        69209,
+        1,
+        69299,
+        1,
+        69191,
+        1,
+        69131,
+        1,
+        69395,
+        1,
+        69392,
+        1,
+        69199,
+        1,
+        69156,
+        1,
+        67015,
+        4,
+        67017,
+        2,
+        67019,
+        5
+      ],
+      "sideboard": [
+        69159,
+        1,
+        69149,
+        1,
+        69135,
+        1,
+        69215,
+        1,
+        69156,
+        1,
+        69162,
+        1,
+        69181,
+        1,
+        69174,
+        1,
+        69187,
+        1,
+        69198,
+        1,
+        69136,
+        1,
+        69388,
+        1,
+        69238,
+        1,
+        69247,
+        1,
+        69277,
+        1,
+        69142,
+        1
+      ],
+      "cardBack": null,
+      "lastUpdated": "2019-03-22T18:21:36.4826258"
+    },
+    "PreviousOpponents": []
+  },
+  {
+    "Id": "00000000-0000-0000-0000-000000000000",
+    "InternalEventName": "Constructed_BestOf3",
+    "PlayerId": null,
+    "ModuleInstanceData": {},
+    "CurrentEventState": "PreMatch",
+    "CurrentModule": "Join",
+    "CardPool": null,
+    "CourseDeck": null,
+    "PreviousOpponents": []
+  },
+  {
+    "Id": "00000000-0000-0000-0000-000000000000",
+    "InternalEventName": "Constructed_Event",
+    "PlayerId": null,
+    "ModuleInstanceData": {},
+    "CurrentEventState": "PreMatch",
+    "CurrentModule": "Join",
+    "CardPool": null,
+    "CourseDeck": null,
+    "PreviousOpponents": []
+  },
+  {
+    "Id": "00000000-0000-0000-0000-000000000000",
+    "InternalEventName": "DirectGame",
+    "PlayerId": null,
+    "ModuleInstanceData": {},
+    "CurrentEventState": "PreMatch",
+    "CurrentModule": "Join",
+    "CardPool": null,
+    "CourseDeck": null,
+    "PreviousOpponents": []
+  },
+  {
+    "Id": "00000000-0000-0000-0000-000000000000",
+    "InternalEventName": "Ladder",
+    "PlayerId": null,
+    "ModuleInstanceData": {},
+    "CurrentEventState": "PreMatch",
+    "CurrentModule": "Join",
+    "CardPool": null,
+    "CourseDeck": null,
+    "PreviousOpponents": []
+  },
+  {
+    "Id": "00000000-0000-0000-0000-000000000000",
+    "InternalEventName": "NPE",
+    "PlayerId": null,
+    "ModuleInstanceData": {},
+    "CurrentEventState": "PreMatch",
+    "CurrentModule": "Join",
+    "CardPool": null,
+    "CourseDeck": null,
+    "PreviousOpponents": []
+  },
+  {
+    "Id": "00000000-0000-0000-0000-000000000000",
+    "InternalEventName": "Play",
+    "PlayerId": null,
+    "ModuleInstanceData": {},
+    "CurrentEventState": "PreMatch",
+    "CurrentModule": "Join",
+    "CardPool": null,
+    "CourseDeck": null,
+    "PreviousOpponents": []
+  },
+  {
+    "Id": "00000000-0000-0000-0000-000000000000",
+    "InternalEventName": "QuickDraft_M19_20190329",
+    "PlayerId": null,
+    "ModuleInstanceData": {},
+    "CurrentEventState": "PreMatch",
+    "CurrentModule": "Join",
+    "CardPool": null,
+    "CourseDeck": null,
+    "PreviousOpponents": []
+  },
+  {
+    "Id": "00000000-0000-0000-0000-000000000000",
+    "InternalEventName": "Traditional_Cons_Event",
+    "PlayerId": null,
+    "ModuleInstanceData": {},
+    "CurrentEventState": "PreMatch",
+    "CurrentModule": "Join",
+    "CardPool": null,
+    "CourseDeck": null,
+    "PreviousOpponents": []
+  },
+  {
+    "Id": "00000000-0000-0000-0000-000000000000",
+    "InternalEventName": "Traditional_Ladder",
+    "PlayerId": null,
+    "ModuleInstanceData": {},
+    "CurrentEventState": "PreMatch",
+    "CurrentModule": "Join",
+    "CardPool": null,
+    "CourseDeck": null,
+    "PreviousOpponents": []
+  }
+]
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+[UnityCrossThreadLogger]4/2/2019 3:02:00 PM
+==> Event.GetEventAndSeasonPayouts(312):
+{
+  "jsonrpc": "2.0",
+  "method": "Event.GetEventAndSeasonPayouts",
+  "params": {},
+  "id": "312"
+}
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+[UnityCrossThreadLogger]4/2/2019 3:02:00 PM
+<== Event.GetEventAndSeasonPayouts(312)
+{
+  "eventPayouts": [],
+  "seasonPayout": null
+}
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+Started unloading 50 unused assets at 4/2/2019 3:02:46 PM.
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+Unloading 2 Unused Serialized files (Serialized files now loaded: 18)
+
+Unloading 959 unused Assets to reduce memory usage. Loaded Objects now: 100776.
+Total: 1792.475000 ms (FindLiveObjects: 219.238500 ms CreateObjectMapping: 12.491700 ms MarkObjects: 1525.517900 ms  DeleteObjects: 35.225900 ms)
+
+Finished unloading unused assets at 4/2/2019 3:02:48 PM.
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+AudioManager: Failed to PostEvent: Music_SetState_Battlefield_GRN_baselayer on Object: null
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+Started unloading 50 unused assets at 4/2/2019 3:03:46 PM.
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+Unloading 0 Unused Serialized files (Serialized files now loaded: 18)
+
+Unloading 48 unused Assets to reduce memory usage. Loaded Objects now: 100253.
+Total: 707.324000 ms (FindLiveObjects: 13.482000 ms CreateObjectMapping: 27.341300 ms MarkObjects: 664.305800 ms  DeleteObjects: 2.194000 ms)
+
+Finished unloading unused assets at 4/2/2019 3:03:47 PM.
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+Started unloading 58 unused assets at 4/2/2019 3:04:16 PM.
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+Unloading 0 Unused Serialized files (Serialized files now loaded: 18)
+
+Unloading 97 unused Assets to reduce memory usage. Loaded Objects now: 99725.
+Total: 666.152500 ms (FindLiveObjects: 10.708800 ms CreateObjectMapping: 13.164300 ms MarkObjects: 638.422400 ms  DeleteObjects: 3.856000 ms)
+
+Finished unloading unused assets at 4/2/2019 3:04:17 PM.
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+
+[UnityCrossThreadLogger]FrontDoorConnection.Close(reason = "")
+ 
+(Filename: C:\buildslave\unity\build\Runtime/Export/Debug.bindings.h Line: 43)
+

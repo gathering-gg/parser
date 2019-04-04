@@ -165,10 +165,8 @@ func TestLogCrackBooster(t *testing.T) {
 }
 
 func TestLogEvents(t *testing.T) {
-	t.Skip()
-	// TODO: Join event and check structure
 	a := assert.New(t)
-	file := "test/valentines-2019-update.txt"
+	file := "test/march-constructed.txt"
 	f, err := os.Open(file)
 	a.Nil(err)
 	alog, err := ParseLog(f)
@@ -179,19 +177,17 @@ func TestLogEvents(t *testing.T) {
 	e := eventResults[0]
 	a.NotNil(e.ClaimPrize)
 	a.NotNil(e.Prize)
-	a.Equal("d2fcb515-beb0-41c2-a069-6a6a7aa3d099", e.ClaimPrize.ID)
-	a.Equal("Valentines_2019", e.ClaimPrize.InternalEventName)
-	a.Equal(5, e.ClaimPrize.ModuleInstanceData.WinLossGate.MaxWins)
-	a.Equal(5, e.ClaimPrize.ModuleInstanceData.WinLossGate.CurrentWins)
-	a.Equal(0, e.ClaimPrize.ModuleInstanceData.WinLossGate.CurrentLosses)
-	a.Equal(70140, e.Prize.Delta.CardsAdded[0])
-	a.Equal(70141, e.Prize.Delta.CardsAdded[1])
-	a.Equal(0, e.Prize.Delta.GoldDelta)
+	a.Equal("00f2bcfe-e5c3-45ba-9950-05d10d2687ad", e.ClaimPrize.ID)
+	a.Equal("Constructed_Event", e.ClaimPrize.InternalEventName)
+	a.Equal(7, e.ClaimPrize.ModuleInstanceData.WinLossGate.MaxWins)
+	a.Equal(4, e.ClaimPrize.ModuleInstanceData.WinLossGate.CurrentWins)
+	a.Equal(3, e.ClaimPrize.ModuleInstanceData.WinLossGate.CurrentLosses)
+	a.Equal(67692, e.Prize.Delta.CardsAdded[0])
+	a.Equal(66821, e.Prize.Delta.CardsAdded[1])
+	a.Equal(500, e.Prize.Delta.GoldDelta)
 }
 
 func TestLogBestOfThree(t *testing.T) {
-	t.Skip()
-	// TODO: Play another best of 3
 	a := assert.New(t)
 	f, err := os.Open("test/bo3-small.txt")
 	a.Nil(err)
