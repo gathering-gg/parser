@@ -84,7 +84,13 @@ func getCards(cards interface{}) []ArenaDeckCard {
 				})
 				i++
 			case map[string]interface{}:
-				id, _ := strconv.Atoi(val.(map[string]interface{})["id"].(string))
+				var id int
+				switch val.(map[string]interface{})["id"].(type) {
+				case string:
+					id, _ = strconv.Atoi(val.(map[string]interface{})["id"].(string))
+				case float64:
+					id = int(val.(map[string]interface{})["id"].(float64))
+				}
 				final = append(final, ArenaDeckCard{
 					ID:       id,
 					Quantity: int(val.(map[string]interface{})["quantity"].(float64)),
