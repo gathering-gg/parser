@@ -112,6 +112,9 @@ func TestLogFindDecks(t *testing.T) {
 		decks, err := alog.Decks()
 		a.Nil(err)
 		a.Len(decks, i)
+		for _, d := range decks {
+			a.True(len(d.MainDeck) > 0)
+		}
 	}
 }
 

@@ -77,10 +77,10 @@ func getCards(cards interface{}) []ArenaDeckCard {
 		for i := 0; i < len(array); i++ {
 			val := array[i]
 			switch val.(type) {
-			case int:
+			case float64:
 				final = append(final, ArenaDeckCard{
-					ID:       val.(int),
-					Quantity: array[i+1].(int),
+					ID:       int(val.(float64)),
+					Quantity: int(array[i+1].(float64)),
 				})
 				i++
 			case map[string]interface{}:
