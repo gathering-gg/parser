@@ -1,6 +1,7 @@
 package gathering
 
 import (
+	"encoding/json"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
@@ -33,4 +34,26 @@ func TestParseEmptyArrayWithText(t *testing.T) {
 	decks, err := s.ParseArenaDecks()
 	a.Nil(err)
 	a.Empty(decks)
+}
+
+func TestUnmarshal(t *testing.T) {
+	a := assert.New(t)
+	deck := ArenaDeck{
+		ID:         "id",
+		Name:       "name",
+		DeckTileID: 1,
+		MainDeck: []ArenaDeckCard{
+			ArenaDeckCard{
+				ID:       2,
+				Quantity: 3,
+			},
+		},
+		Sideboard: []ArenaDeckCard{},
+	}
+	data, _ := json.Marshal(deck)
+	var parsed ArenaDeck
+	json.Unmarshal(data, &parsed)
+	a.Equal(2, parsed.MainDeck[0].ID)
+	a.Equal(3, parsed.MainDeck[0].Quantity)
+
 }
