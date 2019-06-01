@@ -1,6 +1,8 @@
 package main
 
 import (
+	"bytes"
+	"encoding/json"
 	"flag"
 	"fmt"
 	"log"
@@ -17,6 +19,18 @@ import (
 )
 
 const fileName = "output_log.txt"
+
+func debugJ(format string, o interface{}) (n int, err error) {
+	b, _ := json.Marshal(o)
+	return debug(format, string(b[:]))
+}
+
+func debug(format string, a ...interface{}) (n int, err error) {
+	if os.Getenv("GG_DEBUG") != "" {
+		return fmt.Printf(format, a...)
+	}
+	return 0, nil
+}
 
 //SIFormat prints bytes in the International System of Units format
 func siformat(numIn int64) string {
@@ -68,18 +82,21 @@ func ParseAll(filePath string) (gathering.UploadData, error) {
 	if err != nil {
 		log.Printf("error getting collection: %v\n", err.Error())
 	} else {
+		debugJ("***collection %v", col)
 		data.Collection = col
 	}
 	rank, err := alog.Rank()
 	if err != nil {
 		log.Printf("error getting rank: %v\n", err.Error())
 	} else {
+		debugJ("***rank %v", rank)
 		data.Rank = rank
 	}
 	inv, err := alog.Inventory()
 	if err != nil {
 		log.Printf("error getting inventory: %v\n", err.Error())
 	} else {
+		debugJ("***inv %v", inv)
 		data.Inventory = inv
 	}
 	name, err := alog.Auth()
@@ -97,24 +114,28 @@ func ParseAll(filePath string) (gathering.UploadData, error) {
 	if err != nil {
 		log.Printf("error getting decks: %v\n", err.Error())
 	} else {
+		debugJ("***decks %v", decks)
 		data.Decks = decks
 	}
 	boosters, err := alog.Boosters()
 	if err != nil {
 		log.Printf("error getting boosters: %v\n", err.Error())
 	} else {
+		debugJ("***boosters %v", boosters)
 		data.Boosters = boosters
 	}
 	matches, err := alog.Matches()
 	if err != nil {
 		log.Printf("error getting matches: %v\n", err.Error())
 	} else {
+		debugJ("***matches %v", matches)
 		data.Matches = matches
 	}
 	events, err := alog.Events()
 	if err != nil {
 		log.Printf("error getting events: %v\n", err.Error())
 	} else {
+		debugJ("***events %v", events)
 		data.Events = events
 	}
 	running, err := gathering.IsArenaRunning()
@@ -139,13 +160,13 @@ func onChange(f string) {
 		log.Printf("error creating request: %v\n", err.Error())
 		return
 	}
-	var data map[string]interface{}
-	_, err = api.Do(req, &data)
+	var mes bytes.Buffer
+	_, err = api.Do(req, &mes)
 	if err != nil {
 		log.Printf("error uploading data: %v\n", err.Error())
 		return
 	}
-	log.Printf("upload success!")
+	log.Printf("upload success! Server => %v", mes.String())
 }
 
 // main
